@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -7,8 +8,6 @@
 <script type="text/javascript" src="./js/datatables.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/style.css">
-
-
 </head>
 <body>
 
@@ -36,46 +35,20 @@
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
-<div style="padding-left:16px">
-<h2>Mantenimiento-Criterio</h2>
-<a href="crear_criterio.php">Agregar Criterio</a>
- <table>
- <thead>
- <tr>
- <th>
- ID Criterio
- </th>
- <th>
- Criterio
- </th>
- </tr>
- </thead>
- <tbody>
- <?php
- include_once("../controllers/criterio_controller.php ");
-                $criterios = criterio_controller::findAll();
-								foreach ($criterios as $criterio) { ?>
-									<tr>
-										<td><?php echo $criterio->getId_criterio(); ?></td>
-                                        <td><?php echo $criterio->getNombre(); ?></td>
-                                    
-                    <td><a href="editar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Editar</a></td>
-                    <td><a href="eliminar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Eliminar</a></td>
-                    <td></td></tr>
-                <?php }?>
- </tbody>
- </table>
+<form method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre"><br><br>
+    <input type="submit" value="Guardar" name="guardar">
+</form>
 
-</div>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+<?php
+if(isset($_POST['guardar'])){
+    include_once("../controllers/tipo_criterio_controller.php");
+    $cc = new tipo_criterio_controller();
+    $tipo_criterio= new tipo_criterio();
+    $tipo_criterio->setId_tipo_criterio(null);
+    $tipo_criterio->setNombre($_POST['nombre']);
+    $cc->save($tipo_criterio);
 }
-</script>
-</body>
+
+?>
