@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -7,6 +8,8 @@
 <script type="text/javascript" src="./js/datatables.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
 <body>
 
@@ -20,7 +23,7 @@
     <div class="dropdown-content">
       <a href="index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
-      <a href="./index_curso.php">Cohorte</a>
+      <a href="./index_cohorte.php">Cohorte</a>
       <a href="./index_rol.php">Rol</a>
       <a href="./index_usuario.php">Usuario</a>
       <a href="./index_alumno.php">Alumno</a>
@@ -33,58 +36,36 @@
   <a href="#about">Cerrar sesión</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-<?php
-include_once("../controllers/sede_controller.php");
-$cs = new sede_controller();
-if(isset($_GET['id_sede'])){
-  $id_sede = $_GET['id_sede'];
-  $sede = $cs->findById($id_sede);
-}else{
-  header("location:index_sede.php");
-}
 
-if (isset($_POST) && !empty($_POST)) {
-  $s = new Sede();
-  $s->setId_sede($_POST['id_sede']);
-  $s->setNombre($_POST['nombre']);
-  $s->setTelefono($_POST['telefono']);
-  $s->setDireccion($_POST['direccion']);
-  $s->setCorreo($_POST['correo']);
-  $s->setDepartamento($_POST['departamento']);
-  $s->setMunicipio($_POST['municipio']);
-  $cs->update($s);
-}
-?>
-<form method='post'>
-	<table>
-		<input type='hidden' name='id_sede' value='<?php echo $sede->getId_sede(); ?>'>
-        <input type='hidden' name='action' value='update'>
-		<tr>
-			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $sede->getNombre(); ?>'></td>
-		</tr>
-	</table>	
-	<input type="submit" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_curso.php">Cancelar</a>
+<form method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre"><br><br>
+    <label for="telefono">Teléfono:</label>
+    <input type="text" name="telefono"><br><br>
+    <label for="direccion">Dirección:</label>
+    <input type="text" name="direccion"><br><br>
+    <label for="correo">Correo:</label>
+    <input type="text" name="correo"><br><br>
+    <label for="departamento">Departamento:</label>
+    <input type="text" name="departamento"><br><br>
+    <label for="municipio">Municipio:</label>
+    <input type="text" name="municipio"><br><br>
+    <input type="submit" value="Guardar" name="guardar">
 </form>
 
+<?php
+if(isset($_POST['guardar'])){
+    include_once("../controllers/sede_controller.php");
+    $sc = new sede_controller();
+    $sede = new Sede();
+    $sede->setId_sede(null);
+    $sede->setNombre($_POST['nombre']);
+    $sede->setCorreo($_POST['correo']);
+    $sede->setDepartamento($_POST['departamento']);
+    $sede->setDireccion($_POST['direccion']);
+    $sede->setMunicipio($_POST['municipio']);
+    $sede->setTelefono($_POST['telefono']);
+    $sc->save($sede);
+}
 
-
-
-
-
-
-
-
-
-
-
+?>

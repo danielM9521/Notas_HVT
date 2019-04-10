@@ -21,12 +21,12 @@
       <a href="index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
       <a href="./index_curso.php">Cohorte</a>
-      <a href="./index_rol.php">Rol</a>
-      <a href="./index_usuario.php">Usuario</a>
-      <a href="./index_alumno.php">Alumno</a>
-      <a href="./index_competencia.php">Competencia</a>
-      <a href="./index_criterio.php">Criterio</a>
-      <a href="./index_nota.php">Nota</a>
+      <a href="./index_rol">Rol</a>
+      <a href="./index_usuario">Usuario</a>
+      <a href="./index_alumno">Alumno</a>
+      <a href="./index_competencia">Competencia</a>
+      <a href="./index_criterio">Criterio</a>
+      <a href="./index_nota">Nota</a>
     </div>
   </div> 
   <a href="#about">Acerca de</a>
@@ -44,37 +44,33 @@ function myFunction() {
 }
 </script>
 <?php
-include_once("../controllers/sede_controller.php");
-$cs = new sede_controller();
-if(isset($_GET['id_sede'])){
-  $id_sede = $_GET['id_sede'];
-  $sede = $cs->findById($id_sede);
+include_once("../controllers/rol_controller.php");
+$cc = new rol_controller();
+if(isset($_GET['id_rol'])){
+  $id_rol = $_GET['id_rol'];
+  $rol = $cc->findById($id_rol);
 }else{
-  header("location:index_sede.php");
+  header("location:index_rol.php");
 }
 
 if (isset($_POST) && !empty($_POST)) {
-  $s = new Sede();
-  $s->setId_sede($_POST['id_sede']);
-  $s->setNombre($_POST['nombre']);
-  $s->setTelefono($_POST['telefono']);
-  $s->setDireccion($_POST['direccion']);
-  $s->setCorreo($_POST['correo']);
-  $s->setDepartamento($_POST['departamento']);
-  $s->setMunicipio($_POST['municipio']);
-  $cs->update($s);
+  $c = new rol();
+  $c->setId_rol($_POST['id_rol']);
+  $c->setNombre($_POST['nombre']);
+  $cc->update($c);
 }
 ?>
+
 <form method='post'>
 	<table>
-		<input type='hidden' name='id_sede' value='<?php echo $sede->getId_sede(); ?>'>
+		<input type='hidden' name='id_rol' value='<?php echo $rol->getId_rol(); ?>'>
         <input type='hidden' name='action' value='update'>
 		<tr>
-			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $sede->getNombre(); ?>'></td>
+			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $rol->getNombre(); ?>'></td>
 		</tr>
 	</table>	
 	<input type="submit" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_curso.php">Cancelar</a>
+    <a class="btn btn-warning" href="./index_rol.php">Cancelar</a>
 </form>
 
 

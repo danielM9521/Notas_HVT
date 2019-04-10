@@ -21,14 +21,14 @@
     </button>
     <div class="drop-content">
       <a href="index_sede.php">Sede</a>
-      <a href="../index_curso.php">Curso</a>
-      <a href="../index_curso.php">Cohorte</a>
-      <a href="../index_rol">Rol</a>
-      <a href="../index_usuario">Usuario</a>
-      <a href="../index_alumno">Alumno</a>
-      <a href="../index_competencia">Competencia</a>
-      <a href="../index_criterio">Criterio</a>
-      <a href="../index_nota">Nota</a>
+      <a href="./index_curso.php">Curso</a>
+      <a href="./index_cohorte.php">Cohorte</a>
+      <a href="./index_rol.php">Rol</a>
+      <a href="./index_usuario.php">Usuario</a>
+      <a href="./index_alumno.php">Alumno</a>
+      <a href="./index_competencia.php">Competencia</a>
+      <a href="./index_criterio.php">Criterio</a>
+      <a href="./index_nota.php">Nota</a>
     </div>
   </div> 
   <a href="#about">Acerca de</a>
@@ -38,6 +38,7 @@
 
 <div style="padding-left:16px">
 <h2>Mantenimiento-Sede</h2>
+<a href="crear_sede.php">Agregar sede</a>
  <table>
  <thead>
  <tr>
@@ -74,7 +75,7 @@
 										<td><?php echo $sede->getDepartamento();?></td>
 										<td><?php echo $sede->getMunicipio();?></td>
                     <td><a href="editar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Editar</a></td>
-                    <td><a href="">Eliminar</a></td>
+                    <td><a href="eliminar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Eliminar</a></td>
                     <td></td>
                 <?php }?>
  </tbody>

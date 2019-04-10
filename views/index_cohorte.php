@@ -7,6 +7,8 @@
 <script type="text/javascript" src="./js/datatables.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
 <body>
 
@@ -20,7 +22,7 @@
     <div class="dropdown-content">
       <a href="index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
-      <a href="./index_curso.php">Cohorte</a>
+      <a href="./index_cohorte.php">Cohorte</a>
       <a href="./index_rol.php">Rol</a>
       <a href="./index_usuario.php">Usuario</a>
       <a href="./index_alumno.php">Alumno</a>
@@ -33,6 +35,58 @@
   <a href="#about">Cerrar sesión</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
+
+<div style="padding-left:16px">
+<h2>Mantenimiento-Cohorte</h2>
+<a href="crear_cohorte.php">Agregar cohorte</a>
+ <table>
+ <thead>
+ <tr>
+ <th>
+ ID Cohorte
+ </th>
+ <th>
+ Cohorte
+ </th>
+ <th>
+ Fecha de inicio
+ </th>
+ <th>
+ Fecha de finalización
+ </th>
+ <th>
+ Sede
+ </th>
+ <th>
+ Curso
+ </th>
+ <th>
+ Estado
+ </th>
+ </tr>
+ </thead>
+ <tbody>
+ <?php
+ include_once("../controllers/cohorte_controller.php ");
+                $cohortes = cohorte_controller::findAll();
+								foreach ($cohortes as $cohorte) { ?>
+									<tr>
+										<td><?php echo $cohorte->getId_cohorte(); ?></td>
+										<td><?php echo $cohorte->getNombre(); ?></td>
+										<td><?php echo $cohorte->getFecha_inicio();?></td>
+										<td><?php echo $cohorte->getFecha_fin();?></td>
+										<td><?php echo $cohorte->getId_sede();?></td>
+                                        <td><?php echo $cohorte->getId_curso();?></td>
+                                        <td><?php echo $cohorte->getEstado();?></td>
+                    <td><a href="editar_cohorte.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Editar</a></td>
+                    <td><a href="eliminar_cohorte.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Eliminar</a></td>
+                    <td></td>
+                <?php }?>
+ </tbody>
+ </table>
+
+</div>
+
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
@@ -43,48 +97,4 @@ function myFunction() {
   }
 }
 </script>
-<?php
-include_once("../controllers/sede_controller.php");
-$cs = new sede_controller();
-if(isset($_GET['id_sede'])){
-  $id_sede = $_GET['id_sede'];
-  $sede = $cs->findById($id_sede);
-}else{
-  header("location:index_sede.php");
-}
-
-if (isset($_POST) && !empty($_POST)) {
-  $s = new Sede();
-  $s->setId_sede($_POST['id_sede']);
-  $s->setNombre($_POST['nombre']);
-  $s->setTelefono($_POST['telefono']);
-  $s->setDireccion($_POST['direccion']);
-  $s->setCorreo($_POST['correo']);
-  $s->setDepartamento($_POST['departamento']);
-  $s->setMunicipio($_POST['municipio']);
-  $cs->update($s);
-}
-?>
-<form method='post'>
-	<table>
-		<input type='hidden' name='id_sede' value='<?php echo $sede->getId_sede(); ?>'>
-        <input type='hidden' name='action' value='update'>
-		<tr>
-			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $sede->getNombre(); ?>'></td>
-		</tr>
-	</table>	
-	<input type="submit" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_curso.php">Cancelar</a>
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
+</body>

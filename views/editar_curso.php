@@ -44,33 +44,29 @@ function myFunction() {
 }
 </script>
 <?php
-include_once("../controllers/sede_controller.php");
-$cs = new sede_controller();
-if(isset($_GET['id_sede'])){
-  $id_sede = $_GET['id_sede'];
-  $sede = $cs->findById($id_sede);
+include_once("../controllers/curso_controller.php");
+$cc = new curso_controller();
+if(isset($_GET['id_curso'])){
+  $id_curso = $_GET['id_curso'];
+  $curso = $cc->findById($id_curso);
 }else{
-  header("location:index_sede.php");
+  header("location:index_curso.php");
 }
 
 if (isset($_POST) && !empty($_POST)) {
-  $s = new Sede();
-  $s->setId_sede($_POST['id_sede']);
-  $s->setNombre($_POST['nombre']);
-  $s->setTelefono($_POST['telefono']);
-  $s->setDireccion($_POST['direccion']);
-  $s->setCorreo($_POST['correo']);
-  $s->setDepartamento($_POST['departamento']);
-  $s->setMunicipio($_POST['municipio']);
-  $cs->update($s);
+  $c = new Curso();
+  $c->setId_curso($_POST['id_curso']);
+  $c->setNombre($_POST['nombre']);
+  $cc->update($c);
 }
 ?>
+
 <form method='post'>
 	<table>
-		<input type='hidden' name='id_sede' value='<?php echo $sede->getId_sede(); ?>'>
+		<input type='hidden' name='id_curso' value='<?php echo $curso->getId_curso(); ?>'>
         <input type='hidden' name='action' value='update'>
 		<tr>
-			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $sede->getNombre(); ?>'></td>
+			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $curso->getNombre(); ?>'></td>
 		</tr>
 	</table>	
 	<input type="submit" name="actualizar" value='Actualizar'>
