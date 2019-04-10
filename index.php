@@ -18,14 +18,14 @@
     </button>
     <div class="dropdown-content">
       <a href="views/index_sede.php">Sede</a>
-      <a href="views/index.php">Curso</a>
-      <a href="views/index.php">Cohorte</a>
-      <a href="views/index.php">Rol</a>
-      <a href="views/index.php">Usuario</a>
-      <a href="views/index.php">Alumno</a>
-      <a href="views/index.php">Competencia</a>
-      <a href="views/index.php">Criterio</a>
-      <a href="views/index.php">Nota</a>
+      <a href="views/index_curso.php">Curso</a>
+      <a href="views/index_cohorte.php">Cohorte</a>
+      <a href="views/index_rol.php">Rol</a>
+      <a href="views/index_usuario.php">Usuario</a>
+      <a href="views/index_alumno.php">Alumno</a>
+      <a href="views/index_tipo_criterio.php">Competencia</a>
+      <a href="views/index_criterio.php">Criterio</a>
+      <a href="views/index_nota.php">Nota</a>
     </div>
   </div> 
   <a href="#contact">Acerca de</a>

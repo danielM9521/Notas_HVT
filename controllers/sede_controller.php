@@ -54,26 +54,30 @@ public static function update($sede){
     $update->bindValue('departamento',$sede->getDepartamento());
     $update->bindValue('municipio',$sede->getMunicipio());
     $update->execute();
-    require_once("../views/index_sede.php");
+    header("location:../views/index_sede.php");
 }
 
+// la función para eliminar por el id
+public static function delete($id_sede){
+    $conexion=Conexion::getConnect();
+    $delete=$conexion->prepare('DELETE FROM Sede WHERE id_sede=:id_sede');
+    $delete->bindValue('id_sede',$id_sede);
+    $delete->execute();
+    }
 
+//la función para registrar un usuario
+public static function save($sede){
+    $conexion=Conexion::getConnect();
+    $insert=$conexion->prepare('INSERT INTO Sede VALUES(NULL,:nombre,:telefono,:correo,:direccion,:departamento,:municipio)');
+    $insert->bindValue('nombre',$sede->getNombre());
+    $insert->bindValue('telefono',$sede->getTelefono());
+    $insert->bindValue('correo',$sede->getCorreo());
+    $insert->bindValue('direccion',$sede->getDireccion());
+    $insert->bindValue('departamento',$sede->getDepartamento());
+    $insert->bindValue('municipio',$sede->getMunicipio());
+    $insert->execute();
+    header("location:../views/index_sede.php");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 ?>
