@@ -37,45 +37,45 @@
 </div>
 
 <div style="padding-left:16px">
-<h2>Mantenimiento-Sede</h2>
-<a href="crear_sede.php">Agregar sede</a>
+<h2>Mantenimiento-Alumno</h2>
+<a href="crear_alumno.php">Agregar alumno</a>
  <table>
  <thead>
  <tr>
  <th>
- ID Sede
+ ID Alumno
  </th>
  <th>
- Sede
- </th>
- <th>
- Teléfono
+ Nombre completo
  </th>
  <th>
  Dirección
  </th>
  <th>
- Departamento
+ Estado civil
  </th>
  <th>
- Municipio
+ Sexo
+ </th>
+ <th>
+ Estado
  </th>
  </tr>
  </thead>
  <tbody>
  <?php
- include_once("../controllers/sede_controller.php ");
-                $sedes = sede_controller::findAll();
-								foreach ($sedes as $sede) { ?>
+ include_once("../controllers/alumno_controller.php ");
+                $alumnos = alumno_controller::findAll();
+								foreach ($alumnos as $alumno) { ?>
 									<tr>
-										<td><?php echo $sede->getId_sede(); ?></td>
-										<td><?php echo $sede->getNombre(); ?></td>
-										<td><?php echo $sede->getTelefono();?></td>
-										<td><?php echo $sede->getDireccion();?></td>
-										<td><?php echo $sede->getDepartamento();?></td>
-										<td><?php echo $sede->getMunicipio();?></td>
-                    <td><a href="editar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Editar</a></td>
-                    <td><a href="eliminar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Eliminar</a></td>
+										<td><?php echo $alumno->getId_alumno(); ?></td>
+										<td><?php echo $alumno->getApellidos().", ".$alumno->getNombre(); ?></td>
+										<td><?php echo $alumno->getDireccion();?></td>
+										<td><?php echo $alumno->getEstado_civil();?></td>
+                    <td><?php echo $alumno->getSexo();?></td>
+                    <td><?php echo $alumno->getId_cohorte();?></td>
+                    <td><a href="editar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Editar</a></td>
+                    <td><a href="eliminar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Eliminar</a></td>
                     <td></td>
                 <?php }?>
  </tbody>
