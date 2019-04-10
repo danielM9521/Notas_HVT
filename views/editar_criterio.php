@@ -7,8 +7,6 @@
 <script type="text/javascript" src="./js/datatables.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/style.css">
-
-
 </head>
 <body>
 
@@ -20,54 +18,21 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="./index_sede.php">Sede</a>
+      <a href="index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
       <a href="./index_curso.php">Cohorte</a>
-      <a href="./index_rol.php">Rol</a>
-      <a href="./index_usuario.php">Usuario</a>
-      <a href="./index_alumno.php">Alumno</a>
-      <a href="./index_competencia.php">Competencia</a>
-      <a href="./index_criterio.php">Criterio</a>
-      <a href="./index_nota.php">Nota</a>
+      <a href="./index_rol">Rol</a>
+      <a href="./index_usuario">Usuario</a>
+      <a href="./index_alumno">Alumno</a>
+      <a href="./index_competencia">Competencia</a>
+      <a href="./index_criterio">Criterio</a>
+      <a href="./index_nota">Nota</a>
     </div>
   </div> 
   <a href="#about">Acerca de</a>
   <a href="#about">Cerrar sesión</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-
-<div style="padding-left:16px">
-<h2>Mantenimiento-Rol</h2>
-<a href="crear_rol.php">Agregar rol</a>
- <table>
- <thead>
- <tr>
- <th>
- ID Rol
- </th>
- <th>
- Rol
- </th>
- </tr>
- </thead>
- <tbody>
- <?php
- include_once("../controllers/rol_controller.php ");
-                $roles = rol_controller::findAll();
-								foreach ($roles as $rol) { ?>
-									<tr>
-										<td><?php echo $rol->getId_rol(); ?></td>
-                                        <td><?php echo $rol->getNombre(); ?></td>
-                                    
-                    <td><a href="editar_rol.php?id_rol=<?php echo $rol->getId_rol();?>">Editar</a></td>
-                    <td><a href="eliminar_rol.php?id_rol=<?php echo $rol->getId_rol();?>">Eliminar</a></td>
-                    <td></td></tr>
-                <?php }?>
- </tbody>
- </table>
-
-</div>
-
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
@@ -78,4 +43,44 @@ function myFunction() {
   }
 }
 </script>
-</body>
+<?php
+include_once("../controllers/criterio_controller.php");
+$cc = new criterio_controller();
+if(isset($_GET['id_criterio'])){
+  $id_criterio = $_GET['id_criterio'];
+  $criterio = $cc->findById($id_criterio);
+}else{
+  header("location:index_criterio.php");
+}
+
+if (isset($_POST) && !empty($_POST)) {
+  $c = new Criterio();
+  $c->setId_criterio($_POST['id_criterio']);
+  $c->setNombre($_POST['nombre']);
+  $cc->update($c);
+}
+?>
+
+<form method='post'>
+	<table>
+		<input type='hidden' name='id_criterio' value='<?php echo $criterio->getId_criterio(); ?>'>
+        <input type='hidden' name='action' value='update'>
+		<tr>
+			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $criterio->getNombre(); ?>'></td>
+		</tr>
+	</table>	
+	<input type="submit" name="actualizar" value='Actualizar'>
+    <a class="btn btn-warning" href="./index_criterio.php">Cancelar</a>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+

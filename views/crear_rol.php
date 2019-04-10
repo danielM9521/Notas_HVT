@@ -43,12 +43,12 @@
 
 <?php
 if(isset($_POST['guardar'])){
-    include_once("../controllers/curso_controller.php");
-    $cc = new curso_controller();
-    $curso= new curso();
-    $curso->setId_curso(null);
-    $curso->setNombre($_POST['nombre']);
-    $cc->save($curso);
+    include_once("../controllers/rol_controller.php");
+    $cc = new rol_controller();
+    $rol = new rol();
+    $rol->setId_rol(null);
+    $rol->setNombre($_POST['nombre']);
+    $cc->save($rol);
 }
 
 ?>

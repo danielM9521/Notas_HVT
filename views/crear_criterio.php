@@ -43,12 +43,12 @@
 
 <?php
 if(isset($_POST['guardar'])){
-    include_once("../controllers/curso_controller.php");
-    $cc = new curso_controller();
-    $curso= new curso();
-    $curso->setId_curso(null);
-    $curso->setNombre($_POST['nombre']);
-    $cc->save($curso);
+    include_once("../controllers/criterio_controller.php");
+    $cc = new criterio_controller();
+    $criterio= new criterio();
+    $criterio->setId_criterio(null);
+    $criterio->setNombre($_POST['nombre']);
+    $cc->save($criterio);
 }
 
 ?>
