@@ -7,7 +7,7 @@ class tipo_criterio_controller{
 public static function findAll(){
     $coleccion = array();
     $db=Conexion::getConnect();
-    $sql=$db->query('SELECT * FROM tipo_criterio');
+    $sql=$db->query('SELECT * FROM Tipo_criterio');
     // carga en la $listaUsuarios cada registro desde la base de datos
     foreach ($sql->fetchAll() as $tipo_criterio) {
         $c= new Tipo_criterio();

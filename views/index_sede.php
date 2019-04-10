@@ -15,11 +15,11 @@
 <div class="topnav" id="myTopnav">
   <a href="../index.php" class="active">Inicio</a>
   
-  <div class="dropdown">
+  <div class="drop">
     <button class="dropbtn">Mantenimiento 
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-content">
+    <div class="drop-content">
       <a href="index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
       <a href="./index_cohorte.php">Cohorte</a>
