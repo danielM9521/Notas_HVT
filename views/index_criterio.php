@@ -20,13 +20,9 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="index_sede.php">Sede</a>
+      <a href="./index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
-<<<<<<< HEAD:views/index_alumno.php
-      <a href="./index_cohorte.php">Cohorte</a>
-=======
       <a href="./index_curso.php">Cohorte</a>
->>>>>>> d72310e910de775c52292706df5c79c53f424522:views/index_rol.php
       <a href="./index_rol.php">Rol</a>
       <a href="./index_usuario.php">Usuario</a>
       <a href="./index_alumno.php">Alumno</a>
@@ -41,46 +37,31 @@
 </div>
 
 <div style="padding-left:16px">
-<h2>Mantenimiento-Alumno</h2>
-<a href="crear_alumno.php">Agregar alumno</a>
+<h2>Mantenimiento-Criterio</h2>
+<a href="crear_criterio.php">Agregar Criterio</a>
  <table>
  <thead>
  <tr>
  <th>
- ID Alumno
+ ID Criterio
  </th>
  <th>
- Nombre completo
- </th>
- <th>
- Dirección
- </th>
- <th>
- Estado civil
- </th>
- <th>
- Sexo
- </th>
- <th>
- Estado
+ Criterio
  </th>
  </tr>
  </thead>
  <tbody>
  <?php
- include_once("../controllers/alumno_controller.php ");
-                $alumnos = alumno_controller::findAll();
-								foreach ($alumnos as $alumno) { ?>
+ include_once("../controllers/criterio_controller.php ");
+                $criterios = criterio_controller::findAll();
+								foreach ($criterios as $criterio) { ?>
 									<tr>
-										<td><?php echo $alumno->getId_alumno(); ?></td>
-										<td><?php echo $alumno->getApellidos().", ".$alumno->getNombre(); ?></td>
-										<td><?php echo $alumno->getDireccion();?></td>
-										<td><?php echo $alumno->getEstado_civil();?></td>
-                    <td><?php echo $alumno->getSexo();?></td>
-                    <td><?php echo $alumno->getId_cohorte();?></td>
-                    <td><a href="editar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Editar</a></td>
-                    <td><a href="eliminar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Eliminar</a></td>
-                    <td></td>
+										<td><?php echo $criterio->getId_criterio(); ?></td>
+                                        <td><?php echo $criterio->getNombre(); ?></td>
+                                    
+                    <td><a href="editar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Editar</a></td>
+                    <td><a href="eliminar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Eliminar</a></td>
+                    <td></td></tr>
                 <?php }?>
  </tbody>
  </table>

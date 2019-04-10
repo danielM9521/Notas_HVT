@@ -21,13 +21,13 @@
     <div class="dropdown-content">
       <a href="./index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
-      <a href="./index_cohorte.php">Cohorte</a>
-      <a href="./index_rol.php">Rol</a>
-      <a href="./index_usuario.php">Usuario</a>
-      <a href="./index_alumno.php">Alumno</a>
-      <a href="./index_competencia.php">Competencia</a>
-      <a href="./index_criterio.php">Criterio</a>
-      <a href="./index_nota.php">Nota</a>
+      <a href="./index_curso.php">Cohorte</a>
+      <a href="./index_rol">Rol</a>
+      <a href="./index_usuario">Usuario</a>
+      <a href="./index_alumno">Alumno</a>
+      <a href="./index_competencia">Competencia</a>
+      <a href="./index_criterio">Criterio</a>
+      <a href="./index_nota">Nota</a>
     </div>
   </div> 
   <a href="#about">Acerca de</a>
@@ -43,12 +43,12 @@
 
 <?php
 if(isset($_POST['guardar'])){
-    include_once("../controllers/curso_controller.php");
-    $cc = new curso_controller();
-    $curso= new curso();
-    $curso->setId_curso(null);
-    $curso->setNombre($_POST['nombre']);
-    $cc->save($curso);
+    include_once("../controllers/criterio_controller.php");
+    $cc = new criterio_controller();
+    $criterio= new criterio();
+    $criterio->setId_criterio(null);
+    $criterio->setNombre($_POST['nombre']);
+    $cc->save($criterio);
 }
 
 ?>
