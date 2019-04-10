@@ -22,14 +22,14 @@
     </button>
     <div class="dropdown-content">
       <a href="index_sede.php">Sede</a>
-      <a href="../index_curso.php">Curso</a>
-      <a href="../index_curso.php">Cohorte</a>
-      <a href="../index_rol">Rol</a>
-      <a href="../index_usuario">Usuario</a>
-      <a href="../index_alumno">Alumno</a>
-      <a href="../index_competencia">Competencia</a>
-      <a href="../index_criterio">Criterio</a>
-      <a href="../index_nota">Nota</a>
+      <a href="./index_curso.php">Curso</a>
+      <a href="./index_cohorte.php">Cohorte</a>
+      <a href="./index_rol.php">Rol</a>
+      <a href="./index_usuario.php">Usuario</a>
+      <a href="./index_alumno.php">Alumno</a>
+      <a href="./index_competencia.php">Competencia</a>
+      <a href="./index_criterio.php">Criterio</a>
+      <a href="./index_nota.php">Nota</a>
     </div>
   </div> 
   <a href="#about">Acerca de</a>

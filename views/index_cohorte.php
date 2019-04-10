@@ -20,9 +20,9 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="./index_sede.php">Sede</a>
+      <a href="index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
-      <a href="./index_curso.php">Cohorte</a>
+      <a href="./index_cohorte.php">Cohorte</a>
       <a href="./index_rol.php">Rol</a>
       <a href="./index_usuario.php">Usuario</a>
       <a href="./index_alumno.php">Alumno</a>
@@ -37,31 +37,50 @@
 </div>
 
 <div style="padding-left:16px">
-<h2>Mantenimiento-Rol</h2>
-<a href="crear_rol.php">Agregar rol</a>
+<h2>Mantenimiento-Cohorte</h2>
+<a href="crear_cohorte.php">Agregar cohorte</a>
  <table>
  <thead>
  <tr>
  <th>
- ID Rol
+ ID Cohorte
  </th>
  <th>
- Rol
+ Cohorte
+ </th>
+ <th>
+ Fecha de inicio
+ </th>
+ <th>
+ Fecha de finalización
+ </th>
+ <th>
+ Sede
+ </th>
+ <th>
+ Curso
+ </th>
+ <th>
+ Estado
  </th>
  </tr>
  </thead>
  <tbody>
  <?php
- include_once("../controllers/rol_controller.php ");
-                $roles = rol_controller::findAll();
-								foreach ($roles as $rol) { ?>
+ include_once("../controllers/cohorte_controller.php ");
+                $cohortes = cohorte_controller::findAll();
+								foreach ($cohortes as $cohorte) { ?>
 									<tr>
-										<td><?php echo $rol->getId_rol(); ?></td>
-                                        <td><?php echo $rol->getNombre(); ?></td>
-                                    
-                    <td><a href="editar_rol.php?id_rol=<?php echo $rol->getId_rol();?>">Editar</a></td>
-                    <td><a href="eliminar_rol.php?id_rol=<?php echo $rol->getId_rol();?>">Eliminar</a></td>
-                    <td></td></tr>
+										<td><?php echo $cohorte->getId_cohorte(); ?></td>
+										<td><?php echo $cohorte->getNombre(); ?></td>
+										<td><?php echo $cohorte->getFecha_inicio();?></td>
+										<td><?php echo $cohorte->getFecha_fin();?></td>
+										<td><?php echo $cohorte->getId_sede();?></td>
+                                        <td><?php echo $cohorte->getId_curso();?></td>
+                                        <td><?php echo $cohorte->getEstado();?></td>
+                    <td><a href="editar_cohorte.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Editar</a></td>
+                    <td><a href="eliminar_cohorte.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Eliminar</a></td>
+                    <td></td>
                 <?php }?>
  </tbody>
  </table>

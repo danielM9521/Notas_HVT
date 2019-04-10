@@ -15,14 +15,14 @@
 <div class="topnav" id="myTopnav">
   <a href="../index.php" class="active">Inicio</a>
   
-  <div class="dropdown">
+  <div class="drop">
     <button class="dropbtn">Mantenimiento 
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-content">
-      <a href="./index_sede.php">Sede</a>
+    <div class="drop-content">
+      <a href="index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
-      <a href="./index_curso.php">Cohorte</a>
+      <a href="./index_cohorte.php">Cohorte</a>
       <a href="./index_rol.php">Rol</a>
       <a href="./index_usuario.php">Usuario</a>
       <a href="./index_alumno.php">Alumno</a>
@@ -37,31 +37,46 @@
 </div>
 
 <div style="padding-left:16px">
-<h2>Mantenimiento-Rol</h2>
-<a href="crear_rol.php">Agregar rol</a>
+<h2>Mantenimiento-Alumno</h2>
+<a href="crear_alumno.php">Agregar alumno</a>
  <table>
  <thead>
  <tr>
  <th>
- ID Rol
+ ID Alumno
  </th>
  <th>
- Rol
+ Nombre completo
+ </th>
+ <th>
+ Dirección
+ </th>
+ <th>
+ Estado civil
+ </th>
+ <th>
+ Sexo
+ </th>
+ <th>
+ Estado
  </th>
  </tr>
  </thead>
  <tbody>
  <?php
- include_once("../controllers/rol_controller.php ");
-                $roles = rol_controller::findAll();
-								foreach ($roles as $rol) { ?>
+ include_once("../controllers/alumno_controller.php ");
+                $alumnos = alumno_controller::findAll();
+								foreach ($alumnos as $alumno) { ?>
 									<tr>
-										<td><?php echo $rol->getId_rol(); ?></td>
-                                        <td><?php echo $rol->getNombre(); ?></td>
-                                    
-                    <td><a href="editar_rol.php?id_rol=<?php echo $rol->getId_rol();?>">Editar</a></td>
-                    <td><a href="eliminar_rol.php?id_rol=<?php echo $rol->getId_rol();?>">Eliminar</a></td>
-                    <td></td></tr>
+										<td><?php echo $alumno->getId_alumno(); ?></td>
+										<td><?php echo $alumno->getApellidos().", ".$alumno->getNombre(); ?></td>
+										<td><?php echo $alumno->getDireccion();?></td>
+										<td><?php echo $alumno->getEstado_civil();?></td>
+                    <td><?php echo $alumno->getSexo();?></td>
+                    <td><?php echo $alumno->getId_cohorte();?></td>
+                    <td><a href="editar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Editar</a></td>
+                    <td><a href="eliminar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Eliminar</a></td>
+                    <td></td>
                 <?php }?>
  </tbody>
  </table>
