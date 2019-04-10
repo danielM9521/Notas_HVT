@@ -37,43 +37,55 @@
 </div>
 
 <div style="padding-left:16px">
-<h2>Mantenimiento-Sede</h2>
+<h2>Mantenimiento-Nota</h2>
  <table>
  <thead>
  <tr>
  <th>
- ID Sede
+ ID Nota
  </th>
  <th>
- Sede
+ Alumno
  </th>
  <th>
- Teléfono
+ Materia
  </th>
  <th>
- Dirección
+ Criterio
  </th>
  <th>
- Departamento
+ Nota inicio
  </th>
  <th>
- Municipio
+ Nota fin
+ </th>
+ <th>
+ Fecha llenado inicio
+ </th>
+ <th>
+ Fecha llenado fin
+ </th>
+ <th>
+ Evaluador
  </th>
  </tr>
  </thead>
  <tbody>
  <?php
- include_once("../controllers/sede_controller.php ");
-                $sedes = sede_controller::findAll();
-								foreach ($sedes as $sede) { ?>
+ include_once("../controllers/nota_controller.php ");
+                $notas = nota_controller::findAll();
+								foreach ($notas as $nota) { ?>
 									<tr>
-										<td><?php echo $sede->getId_sede(); ?></td>
-										<td><?php echo $sede->getNombre(); ?></td>
-										<td><?php echo $sede->getTelefono();?></td>
-										<td><?php echo $sede->getDireccion();?></td>
-										<td><?php echo $sede->getDepartamento();?></td>
-										<td><?php echo $sede->getMunicipio();?></td>
-                    <td><a href="editar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Editar</a></td>
+                                        <td><?php echo $nota->getId_nota(); ?></td>
+                                        <td><?php echo $nota->getId_alumno();?></td>
+										<td><?php echo $nota->getinombre_materia(); ?></td>
+										<td><?php echo $nota->getId_criterio();?></td>
+										<td><?php echo $nota->getNota_inicio();?></td>
+										<td><?php echo $nota->getnota_fin();?></td>
+                                        <td><?php echo $nota->getfecha_llenado_inicio();?></td>
+                                        <td><?php echo $nota->getfecha_llenado_fin();?></td>
+                                        <td><?php echo $nota->getId_usuario();?></td>
+                    <td><a href="editar_nota.php?id_nota=<?php echo $nota->getId_nota();?>">Editar</a></td>
                     <td><a href="">Eliminar</a></td>
                     <td></td>
                 <?php }?>
