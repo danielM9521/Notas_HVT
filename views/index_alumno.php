@@ -22,11 +22,7 @@
     <div class="dropdown-content">
       <a href="index_sede.php">Sede</a>
       <a href="./index_curso.php">Curso</a>
-<<<<<<< HEAD:views/index_alumno.php
       <a href="./index_cohorte.php">Cohorte</a>
-=======
-      <a href="./index_curso.php">Cohorte</a>
->>>>>>> d72310e910de775c52292706df5c79c53f424522:views/index_rol.php
       <a href="./index_rol.php">Rol</a>
       <a href="./index_usuario.php">Usuario</a>
       <a href="./index_alumno.php">Alumno</a>
