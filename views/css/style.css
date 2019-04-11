@@ -102,6 +102,17 @@ body {margin:0;font-family:Arial}
     text-align: left;
   }
 }
+#materia{
+  width: 200px;
+}
+.criterios{
+  font-size: 12px;
+  
+}
+.tablath{
+  font-size: 15px;
+}
+
 .colortabla{
   background-color:rgb(1, 35, 54);
 }
