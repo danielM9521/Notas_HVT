@@ -23,21 +23,22 @@
         $cc->update($c);
     }
     ?>
+    <br><br>
     <form method='post'>
-        <table>
+        
             <input type='hidden' name='id_usuario' value='<?php echo $usuario->getId_usuario(); ?>'>
-            <tr>
-                <td><label>Nombres:</label></td>
-                <td><input type='text' name='nombre' value='<?php echo $usuario->getNombre(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Apellidos:</label></td>
-                <td><input type='text' name='apellidos' value='<?php echo $usuario->getApellidos(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Rol:</label></td>
-                <td>
-                    <select name="id_rol">
+            <div class="form-group col-md-6">
+                <label>Nombres:</label>
+                <input  class="form-control"  type='text' name='nombre' value='<?php echo $usuario->getNombre(); ?>'>
+                </div>
+                <div class="form-group col-md-6">
+                <label>Apellidos:</label>
+                <input class="form-control"  type='text' name='apellidos' value='<?php echo $usuario->getApellidos(); ?>'>
+                </div>
+                <div class="form-group col-md-6">
+                <label>Rol:</label>
+                
+                    <select  class="form-control"  name="id_rol">
                         <?php
                         include_once("../controllers/rol_controller.php");
                         $sc = new rol_controller();
@@ -48,21 +49,21 @@
                                                                                 } ?>><?php echo $rol->getNombre(); ?></option>
                         <?php }
                     ?>
-                </td>
+                
 
                 </select>
-            </tr>
-            <tr>
-                <td><label>Correo:</label></td>
-                <td><input type='text' name='correo' value='<?php echo $usuario->getCorreo(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Contraseña:</label></td>
-                <td><input type='text' name='contrasenia' value='<?php echo $usuario->getContrasenia(); ?>'></td>
-            </tr>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                <label>Correo:</label>
+                <input  class="form-control" type='text' name='correo' value='<?php echo $usuario->getCorreo(); ?>'>
+                                                                            </div>
+                <div class="form-group col-md-6">
+                <label>Contraseña:</label>
+                <input  class="form-control" type='text' name='contrasenia' value='<?php echo $usuario->getContrasenia(); ?>'>
+                                                                            </div>
             
 
-        </table>
-        <input type="submit" name="actualizar" value='Actualizar'>
+        
+        <input type="submit"class="btn btn-success boton" name="actualizar" value='Actualizar'>
         <a class="btn btn-warning" href="./index_usuario.php">Cancelar</a>
     </form>

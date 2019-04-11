@@ -2,10 +2,14 @@
 <link rel="stylesheet" href="./css/style.css">
 <body>
 <?php require_once("../navbar.php");?>
+<br><br>
 <form method="post">
+<div class="form-group col-md-6">
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre"><br><br>
-    <input type="submit" value="Guardar" name="guardar">
+    <input type="text"  class="form-control" name="nombre">
+</div>
+    <input type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
+    <a class="btn btn-info" href="./index_curso.php">Cancelar</a>
 </form>
 
 <?php

@@ -2,14 +2,19 @@
 <link rel="stylesheet" href="./css/style.css">
 <body>
 <?php require_once("../navbar.php");?>
+<br><br>
 <form method="post">
+<div class="form-group col-md-6">
     <label for="nombre">Nombres:</label>
-    <input type="text" name="nombre"><br><br>
+    <input type="text" class="form-control" name="nombre">
+    </div>
+    <div class="form-group col-md-6">
     <label for="apellidos">Apellidos:</label>
-    <input type="text" name="apellidos"><br><br>
-
+    <input class="form-control" type="text" name="apellidos">
+    </div>
+    <div class="form-group col-md-6">
     <label for="id_cohorte">Cohorte:</label>
-    <select name="id_cohorte">
+    <select class="form-control" name="id_cohorte">
         <?php 
             include_once("../controllers/cohorte_controller.php"); 
             $cc = new cohorte_controller();
@@ -18,36 +23,58 @@
                 <option value="<?php echo $cohorte->getId_cohorte();?>"><?php echo $cohorte->getNombre();?></option>
                   <?php }
         ?>
-    </select><br><br>
+    </select>
+            </div>
+    <div class="form-group col-md-6">    
     <label for="direccion">Dirección:</label>
-    <input type="text" name="direccion"><br><br>
+    <input  class="form-control" type="text" name="direccion">
+    </div>
+
+    <div class="form-group col-md-6"> 
     <label for="estado_civil">Estado civil:</label>
-    <select name="estado_civil">
+    <select class="form-control" name="estado_civil">
         <option value="Soltera/o">Soltera/o</option>
         <option value="Viuda/o">Viuda/o</option>
         <option value="Casada/o">Casada/o</option>
         <option value="Divorciada/o">Divorciada/o</option>
-    </select><br><br>
+    </select>
+    </div>
+    <div class="form-group col-md-6"> 
     <label for="sexo">Sexo:</label>
     <input type="radio" name="sexo" value="Femenino" checked>Femenino
     <input type="radio" name="sexo" value="Masculino">Masculino
     <input type="radio" name="sexo" value="Otro">Otro
-    <br><br>
+    </div>
+    <div class="form-group col-md-6"> 
     <label for="dui">Dui:</label>
-    <input type="text" name="dui"><br><br>
+    <input  class="form-control" type="text" name="dui">
+    </div>
+    <div class="form-group col-md-6"> 
     <label for="nit">Nit:</label>
-    <input type="text" name="nit"><br><br>
+    <input class="form-control" type="text" name="nit"> </div>
+
+    <div class="form-group col-md-6"> 
     <label for="carnet_minoridad">Carnet de minoridad:</label>
-    <input type="text" name="carnet_minoridad"><br><br>
+    <input class="form-control" type="text" name="carnet_minoridad"> </div>
+
+    <div class="form-group col-md-6"> 
     <label for="discapacidad">Discapacidad:</label>
-    <input type="text" name="discapacidad"><br><br>
+    <input class="form-control" type="text" name="discapacidad"> </div>
+
+    <div class="form-group col-md-6"> 
     <label for="telefono">Teléfono:</label>
-    <input type="text" name="telefono"><br><br>
+    <input class="form-control" type="text" name="telefono"> </div>
+
+    <div class="form-group col-md-6"> 
     <label for="correo">Correo:</label>
-    <input type="text" name="correo"><br><br>
+    <input class="form-control" type="text" name="correo"> </div>
+
+    <div class="form-group col-md-6"> 
     <label for="fecha_nac">Fecha de nacimiento:</label>
-    <input type="date" name="fecha_nac"><br><br>
-    <input type="submit" value="Guardar" name="guardar">
+    <input class="form-control" type="date" name="fecha_nac"> </div>
+
+    <input  type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
+    <a class="btn btn-info" href="./index_alumno.php">Cancelar</a>
 </form>
 
 <?php

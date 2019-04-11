@@ -24,16 +24,42 @@ if (isset($_POST) && !empty($_POST)) {
   $cs->update($s);
 }
 ?>
+<br><br>
 <form method='post'>
-	<table>
+	
 		<input type='hidden' name='id_sede' value='<?php echo $sede->getId_sede(); ?>'>
         <input type='hidden' name='action' value='update'>
-		<tr>
-			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $sede->getNombre(); ?>'></td>
-		</tr>
+
+<div class="form-group col-md-6">
+      <label for="nombre">Nombre:</label>
+      <input class="form-control" type='text' name='nombre'  value='<?php echo $sede->getNombre(); ?>'>
+</div>
+
+<div class="form-group col-md-6">
+      <label for="telefono">Teléfono:</label>
+      <input class="form-control" type='text' name='telefono' value='<?php echo $sede->getTelefono(); ?>'>
+</div>
+<div class="form-group col-md-6">
+      <label>Dirección:</label>
+      <input class="form-control" type='text' name='direccion' value='<?php echo $sede->getDireccion(); ?>'>
+</div>
+<div class="form-group col-md-6">
+      <label>Correo:</label>
+      <input class="form-control" type='text' name='correo' value='<?php echo $sede->getCorreo(); ?>'>
+</div>
+      <div class="form-group col-md-6">
+      <label>Departamento:</label>
+      <input class="form-control" type='text' name='departamento' value='<?php echo $sede->getDepartamento(); ?>'>
+</div> 
+<div class="form-group col-md-6">
+      <label>Municipio:</label>
+      <input class="form-control" type='text' name='municipio' value='<?php echo $sede->getMunicipio(); ?>'>
+</div>
+    
+    
 	</table>	
-	<input type="submit" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_curso.php">Cancelar</a>
+	<input type="submit"  class="btn btn-success boton" name="actualizar" value='Actualizar'>
+    <a class="btn btn-info" href="./index_sede.php">Cancelar</a>
 </form>
 
 
