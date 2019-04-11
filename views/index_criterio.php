@@ -3,9 +3,12 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento-Criterio</h2>
-<a href="crear_criterio.php">Agregar Criterio</a>
- <table class="table-hover table-bordered">
+<h2>Mantenimiento Criterio</h2>
+<br>
+<a class="btn btn-outline-success" href="crear_criterio.php">Agregar Criterio</a>
+<br><br>
+<div class="table-responsive">
+ <table class="table table-bordered">
  <thead>
  <tr>
  <th>
@@ -16,6 +19,9 @@
  </th>
  <th>
  Criterio
+ </th>
+ <th colspan = "2">
+ Acciones
  </th>
  </tr>
  </thead>
@@ -29,9 +35,9 @@
                     <td><?php echo $criterio->getId_tipo_criterio(); ?></td>
                                         <td><?php echo $criterio->getNombre(); ?></td>
                                     
-                    <td><a href="editar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Editar</a></td>
-                    <td><a href="eliminar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Eliminar</a></td>
-                    <td></td></tr>
+                    <td><a a class="btn btn-warning " href="editar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Editar</a></td>
+                    <td><a a class="btn btn-danger" href="eliminar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Eliminar</a></td>
+                    </tr>
                 <?php }?>
  </tbody>
  </table>

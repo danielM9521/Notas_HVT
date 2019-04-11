@@ -15,11 +15,11 @@
       <a href="./index_alumno.php">Alumno</a>
       <a href="./index_tipo_criterio.php">Competencia</a>
       <a href="./index_criterio.php">Criterio</a>
-      <a href="./index_nota.php">Nota</a>
+      
     </div>
   </div> 
   <a href="#about">Acerca de</a>
-  <a href="#about">Cerrar sesión</a>
+  <a href="../controllers/logout.php">Cerrar sesión</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 <script>

@@ -19,16 +19,17 @@ if (isset($_POST) && !empty($_POST)) {
   $cc->update($c);
 }
 ?>
-
+<br><br>
 <form method='post'>
-	<table>
+	
 		<input type='hidden' name='id_tipo_criterio' value='<?php echo $tipo_criterio->getId_tipo_criterio(); ?>'>
         <input type='hidden' name='action' value='update'>
-		<tr>
-			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $tipo_criterio->getNombre(); ?>'></td>
-		</tr>
-	</table>	
-	<input type="submit" name="actualizar" value='Actualizar'>
+        <div class="form-group col-md-6">
+	<label>Nombre:</label>
+  <input type='text'  class="form-control" name='nombre' value='<?php echo $tipo_criterio->getNombre(); ?>'>
+		</div>
+		
+    <input type="submit"  class="btn btn-success boton" name="actualizar" value='Actualizar'>
     <a class="btn btn-warning" href="./index_tipo_criterio.php">Cancelar</a>
 </form>
 

@@ -102,7 +102,6 @@ body {margin:0;font-family:Arial}
     text-align: left;
   }
 }
-<<<<<<< HEAD
 .colortabla{
   background-color:rgb(1, 35, 54);
 }
@@ -112,5 +111,19 @@ body {margin:0;font-family:Arial}
   margin-left: 200px;
   
 }
-=======
->>>>>>> a08fb2b862f82249b039bb478bc042350b820ff7
+.cont
+{
+margin:0 auto;
+
+width: 50%;
+
+}
+h3{
+  text-align: center;
+}
+
+@media only screen and (max-width:600px){
+  .cont{
+    width: 100%;
+  }
+}
