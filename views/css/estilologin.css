@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    font-family: century Gothic;
+}
+body{
+    
+    background: url("../images/fondo.jpg") no-repeat fixed;
+    background-size: cover;
+}
+.container{
+    margin: 0 auto;
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    background: rgb(13, 36, 63,0.5);
+    box-shadow: 0px 0px 3px #011c3b;
+    margin-top: 10%;
+    border-radius: 5px;
+}
+.container img{
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px  #011c3b;
+}
+.div_titulo{
+    margin-bottom: 15px;
+}
+.titulo{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+input{
+    height: 35px;
+    width: 250px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding-left: 35px;
+    border-radius: 5px;
+  
+    
+}
+.form_input::before{
+    font-family: "Font Awesome\ 5 Free";
+    
+    position: absolute;
+    font-size: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #54545f;
+}
+.div_user::before{
+    content: "\f007";
+}
+.div_pass::before{
+    content: "\f023";
+}
+button{
+    cursor: pointer;
+}
+button{
+    width: 285px;
+    height: 42px;
+    border:0;
+    padding-left: 5px;
+    border-radius: 5px;
+   
+   
+}
+.forgot{
+padding: 15px 0;
+}
+
+.forgot {
+    color:white;
+    font-size: 17px;
+}
+
+
+.bgcolor{
+    background-color:#e7962d;
+}
+.section:hover{
+    background-color: rgba(28, 241, 99, 0.7);
+}
+
+.forgot {
+    color:white;
+    font-size: 17px;
+    text-align: left;
+}

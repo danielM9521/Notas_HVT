@@ -18,7 +18,7 @@
       
     </div>
   </div> 
-  <a href="#about">Acerca de</a>
+  <a href="../views/acerca_de.php">Acerca de</a>
   <a href="../controllers/logout.php">Cerrar sesión</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
