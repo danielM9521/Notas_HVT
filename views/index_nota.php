@@ -3,14 +3,9 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<<<<<<< HEAD
 <h2>Mantenimiento-Sede</h2>
 <a href="crear_nota.php">Agregar nota</a>
  <table>
-=======
-<h2>Mantenimiento-Nota</h2>
- <table class="table-hover table-bordered">
->>>>>>> a08fb2b862f82249b039bb478bc042350b820ff7
  <thead>
  <tr>
  <th>
@@ -50,13 +45,8 @@
 								foreach ($notas as $nota) { ?>
 									<tr>
                                         <td><?php echo $nota->getId_nota(); ?></td>
-<<<<<<< HEAD
                                        
 										<td><?php echo $nota->getNombre_materia(); ?></td>
-=======
-                                        <td><?php echo $nota->getId_alumno();?></td>
-										<td><?php echo $nota->getnombre_materia(); ?></td>
->>>>>>> a08fb2b862f82249b039bb478bc042350b820ff7
 										<td><?php echo $nota->getId_criterio();?></td>
 										<td><?php echo $nota->getNota_inicio();?></td>
 										<td><?php echo $nota->getnota_fin();?></td>
