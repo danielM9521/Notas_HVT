@@ -1,7 +1,7 @@
 <?php include("header.php");?>
 <link rel="stylesheet" href="./views/css/style.css">
 
-<body>
+<body class="fondo">
 
 	<div class="topnav" id="myTopnav">
 		<a href="index.php" class="active">Inicio</a>
@@ -44,7 +44,7 @@
 				<!--team-1-->
 				<div class="col-lg-4">
 					<div class="our-team-main">
-						<div class="team-front ">
+						<div class="team-front">
 							<img src="http://placehold.it/110x110/9c27b0/fff?text=1" class="img-fluid" />
 							<h3><?php echo $cohorte->getId_curso(); ?>
 							</h3>
@@ -52,7 +52,7 @@
 							<p><?php echo $cohorte->getNombre(); ?>
 							</p>
 						</div>
-						<div class="team-back ">
+						<div class="team-back">
 							<span>
 								<br>
 								<a href="./views/registrar_nota.php?id_cohorte=<?php echo $cohorte->getId_cohorte(); ?>"

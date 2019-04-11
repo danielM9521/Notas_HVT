@@ -2,6 +2,30 @@
 <link rel="stylesheet" href="./css/style.css">
 <body>
 <?php require_once("../navbar.php");?>
+
+<?php
+if(isset($_POST['guardar'])){
+    include_once("../controllers/alumno_controller.php");
+    $sc = new alumno_controller();
+    $alumno = new Alumno();
+    $alumno->setId_alumno(null);
+    $alumno->setNombre($_POST['nombre']);
+    $alumno->setApellidos($_POST['apellidos']);
+    $alumno->setDireccion($_POST['direccion']);
+    $alumno->setEstado_civil($_POST['estado_civil']);
+    $alumno->setSexo($_POST['sexo']);
+    $alumno->setDui($_POST['dui']);
+    $alumno->setNit($_POST['nit']);
+    $alumno->setCarnet_minoridad($_POST['carnet_minoridad']);
+    $alumno->setDiscapacidad($_POST['discapacidad']);
+    $alumno->setTelefono($_POST['telefono']);
+    $alumno->setCorreo($_POST['correo']);
+    $alumno->setFecha_nac($_POST['fecha_nac']);
+    $alumno->setId_cohorte($_POST['id_cohorte']);
+    $sc->save($alumno);
+}
+
+?>
 <br><br>
 <form method="post">
 <div class="form-group col-md-6">
@@ -76,27 +100,3 @@
     <input  type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
     <a class="btn btn-info" href="./index_alumno.php">Cancelar</a>
 </form>
-
-<?php
-if(isset($_POST['guardar'])){
-    include_once("../controllers/alumno_controller.php");
-    $sc = new alumno_controller();
-    $alumno = new Alumno();
-    $alumno->setId_alumno(null);
-    $alumno->setNombre($_POST['nombre']);
-    $alumno->setApellidos($_POST['apellidos']);
-    $alumno->setDireccion($_POST['direccion']);
-    $alumno->setEstado_civil($_POST['estado_civil']);
-    $alumno->setSexo($_POST['sexo']);
-    $alumno->setDui($_POST['dui']);
-    $alumno->setNit($_POST['nit']);
-    $alumno->setCarnet_minoridad($_POST['carnet_minoridad']);
-    $alumno->setDiscapacidad($_POST['discapacidad']);
-    $alumno->setTelefono($_POST['telefono']);
-    $alumno->setCorreo($_POST['correo']);
-    $alumno->setFecha_nac($_POST['fecha_nac']);
-    $alumno->setId_cohorte($_POST['id_cohorte']);
-    $sc->save($alumno);
-}
-
-?>

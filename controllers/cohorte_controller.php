@@ -15,7 +15,7 @@ public static function findAll(){
         $ch->setId_cohorte($cohorte['0']);
         $ch->setNombre($cohorte['1']);
         $ch->setFecha_inicio($cohorte['2']);
-        $ch->setFecha_inicio($cohorte['3']);
+        $ch->setFecha_fin($cohorte['3']);
         $ch->setId_sede($cohorte['4']);
         $ch->setId_curso($cohorte['5']);
         if($cohorte['6']==1){
