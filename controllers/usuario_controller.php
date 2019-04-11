@@ -44,14 +44,13 @@ public static function findById($id_usuario){
     //la función para actualizar 
 public static function update($usuario){
     $conexion=Conexion::getConnect();
-    $update=$conexion->prepare('UPDATE Usuario SET nombre=:nombre, apellidos=:apellidos, id_rol=:id_rol, id_sede=:id_sede, id_curso=:id_curso, estado=:estado WHERE id_cohorte=:id_cohorte');
-    $update->bindValue('id_usuario', $usuario->getId_cohorte());
+    $update=$conexion->prepare('UPDATE Usuario SET nombre=:nombre, apellidos=:apellidos, id_rol=:id_rol, correo=:correo, contrasenia=:contrasenia WHERE id_usuario=:id_usuario');
+    $update->bindValue('id_usuario', $usuario->getId_usuario());
     $update->bindValue('nombre',$usuario->getNombre());
     $update->bindValue('apellidos',$usuario->getApellidos());
     $update->bindValue('id_rol',$usuario->getId_rol());
     $update->bindValue('correo',$usuario->getCorreo());
     $update->bindValue('contrasenia',$usuario->getContrasenia());
-    $update->bindValue('estado',$usuario->getEstado());
     $update->execute();
     header("location:../views/index_usuario.php");
 }
@@ -59,7 +58,7 @@ public static function update($usuario){
 // la función para eliminar por el id
 public static function delete($id_usuario){
     $conexion=Conexion::getConnect();
-    $delete=$conexion->prepare('DELETE FROM Cohorte WHERE id_usuario=:id_usuario');
+    $delete=$conexion->prepare('DELETE FROM Usuario WHERE id_usuario=:id_usuario');
     $delete->bindValue('id_usuario',$id_usuario);
     $delete->execute();
     }
@@ -67,14 +66,14 @@ public static function delete($id_usuario){
 //la función para registrar un usuario
 public static function save($usuario){
     $conexion=Conexion::getConnect();
-    $insert=$conexion->prepare('INSERT INTO Cohorte VALUES(NULL,:nombre,:apellidos,:id_rol,:correo,:contrasenia)');
+    $insert=$conexion->prepare('INSERT INTO Usuario VALUES(NULL,:nombre,:apellidos,:id_rol,:correo,:contrasenia)');
     $insert->bindValue('nombre',$usuario->getNombre());
     $insert->bindValue('apellidos',$usuario->getApellidos());
     $insert->bindValue('id_rol',$usuario->getId_rol());
     $insert->bindValue('correo',$usuario->getCorreo());
     $insert->bindValue('contrasenia',$usuario->getContrasenia());
     $insert->execute();
-    header("location:../views/index_alumno.php");
+    header("location:../views/index_usuario.php");
 }
 
 }
