@@ -18,6 +18,22 @@ public static function findAll(){
     }
     return $coleccion;
 }
+
+public static function findAll2(){
+    $coleccion = array();
+    $db=Conexion::getConnect();
+    $sql=$db->query('SELECT * FROM Criterio');
+    // carga en la $listaUsuarios cada registro desde la base de datos
+    foreach ($sql->fetchAll() as $criterio) {
+        $c= new Criterio();
+        $c->setId_criterio($criterio['0']);
+        $c->setId_tipo_criterio($criterio['1']);
+        $c->setNombre($criterio['2']);
+        array_push($coleccion, $c);
+    }
+    return $coleccion;
+}
+
 //Para la pantalla de registrar notas
 public static function findByTipoCriterio($id_tipo_criterio){
     $coleccion = array();
