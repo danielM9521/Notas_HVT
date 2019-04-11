@@ -2,11 +2,12 @@
 <link rel="stylesheet" href="./css/style.css">
 <body>
 <?php require_once("../navbar.php");?>
+<br><br>
 <form method="post">
     
-
+<div class="form-group col-md-6">
 <label for="id_sede">Sede:</label>
-    <select name="id_sede">
+    <select class="form-control" name="id_sede">
         <?php 
             include_once("../controllers/sede_controller.php"); 
             $sc = new sede_controller();
@@ -17,9 +18,10 @@
         ?>
 
     </select>
-
+            </div>
+            <div class="form-group col-md-6">
 <label for="id_curso">Curso:</label>
-    <select name="id_curso">
+    <select class="form-control" name="id_curso">
     <?php 
             include_once("../controllers/curso_controller.php"); 
             $cc = new curso_controller();
@@ -29,23 +31,37 @@
             <?php }
         ?>
 
-    </select><br><br>
+    </select>
+    </div>
 
+<div class="form-group col-md-6">
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre"><br><br>
-    
+    <input type="text"  class="form-control" name="nombre">
+</div>
+
+<div class="form-group col-md-6">
     <label for="fecha_inicio">Fecha de inicio:</label>
-    <input type="date" name="fecha_inicio"><br><br>
-
+    <input type="date"  class="form-control" name="fecha_inicio">
+            </div>
+            <div class="form-group col-md-6">
     <label for="fecha_fin">Fecha de finalización:</label>
-    <input type="date" name="fecha_fin"><br><br>
+    <input type="date"  class="form-control" name="fecha_fin">
+            </div>
 
+            <div class="form-group col-md-6">      
     <label for="estado">Estado:</label>
-    <input type="radio" name="estado" value="1">Activo
-    <input type="radio" name="estado" value="0">Inactivo
-    <br><br>
+    <div class="form-check inline ">
+    <input class="form-check-input" type="radio" name="estado" value="1">
+    <label class="form-check-label">Activo</label>
+    </div>
+    <div class="form-check inline ">    
+    <input class="form-check-input" type="radio" name="estado" value="0">
+    <label class="form-check-label">Inactivo</label>
+    </div>
+            </div>
 
-    <input type="submit" value="Guardar" name="guardar">
+            <input type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
+            <a class="btn btn-info" href="./index_cohorte.php">Cancelar</a>
 </form>
 
 <?php

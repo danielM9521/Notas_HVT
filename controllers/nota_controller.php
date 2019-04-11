@@ -13,13 +13,13 @@ public static function findAll(){
         $c= new Nota();
         $c->setId_nota($nota['id_nota']);
         $c->setNombre_materia($nota['nombre_materia']);
-        $c->setId_criterio($_POST['id_criterio']);
-        $c->setNota_inicio($_POST['nota_inicio']);
-        $c->setNota_fin($_POST['nota_fin']);
-        $c->setFecha_llenado_inicio($_POST['fecha_llenado_inicio']);
-        $c->setFecha_llenado_fin($_POST['fecha_llenado_fin']);
-        $c->setId_alumno($_POST['id_alumno']);
-        $c->setId_usuario($_POST['id_usuario']);
+        $c->setId_criterio($nota['id_criterio']);
+        $c->setNota_inicio($nota['nota_inicio']);
+        $c->setNota_fin($nota['nota_fin']);
+        $c->setFecha_llenado_inicio($nota['fecha_llenado_inicio']);
+        $c->setFecha_llenado_fin($nota['fecha_llenado_fin']);
+        $c->setId_alumno($nota['id_alumno']);
+        $c->setId_usuario($nota['id_usuario']);
         array_push($coleccion, $c);
     }
     return $coleccion;
@@ -52,18 +52,41 @@ public static function update($nota){
     $update=$conexion->prepare('UPDATE Nota SET nombre_materia=:nombre_materia, id_criterio=:id_criterio, nota_inicio=:nota_inicio, nota_fin=:nota_fin, fecha_llenado_inicio=:fecha_llenado_inicio,
      fecha_llenado_fin=:fecha_llenado_fin,id_alumno = :id_alumno,id_usuario =:id_usuario  WHERE id_nota=:id_nota');
      $update->bindValue('id_nota',$nota->getId_nota());
-     $update->bindValue('nombre_materia',$nota->getinombre_materia());
+     $update->bindValue('nombre_materia',$nota->getNombre_materia());
      $update->bindValue('id_criterio',$nota->getId_criterio());
-     $update->bindValue('nota_inicio',$nota->getnota_inicio());
-     $update->bindValue('nota_fin',$nota->getnota_fin());
-     $update->bindValue('fecha_llenado_inicio',$nota->getfecha_llenado_inicio());
-     $update->bindValue('fecha_llenado_fin',$nota->getfecha_llenado_fin());
+     $update->bindValue('nota_inicio',$nota->getNota_inicio());
+     $update->bindValue('nota_fin',$nota->getNota_fin());
+     $update->bindValue('fecha_llenado_inicio',$nota->getFecha_llenado_inicio());
+     $update->bindValue('fecha_llenado_fin',$nota->getFecha_llenado_fin());
      $update->bindValue('id_alumno',$nota->getId_alumno());
      $update->bindValue('id_usuario',$nota->getId_usuario());
     $update->execute();
     require_once("../views/index_nota.php");
 }
+public static function delete($id_nota){
+    $conexion=Conexion::getConnect();
+    $delete=$conexion->prepare('DELETE FROM Nota WHERE id_nota=:id_nota');
+    $delete->bindValue('id_nota',$id_nota);
+    $delete->execute();
+    }
 
+//la función para registrar un usuario
+public static function save($nota){
+    $conexion=Conexion::getConnect();
+    $insert=$conexion->prepare('INSERT INTO Nota VALUES(NULL,:nombre_materia, :id_criterio, :nota_inicio, :nota_fin, :fecha_llenado_inicio,
+    :fecha_llenado_fin, :id_alumno,:id_usuario)');
+ 
+  $insert->bindValue('nombre_materia',$nota->getNombre_materia());
+  $insert->bindValue('id_criterio',$nota->getId_criterio());
+  $insert->bindValue('nota_inicio',$nota->getNota_inicio());
+  $insert->bindValue('nota_fin',$nota->getNota_fin());
+  $insert->bindValue('fecha_llenado_inicio',$nota->getFecha_llenado_inicio());
+  $insert->bindValue('fecha_llenado_fin',$nota->getFecha_llenado_fin());
+  $insert->bindValue('id_alumno',$nota->getId_alumno());
+  $insert->bindValue('id_usuario',$nota->getId_usuario());
+  $insert->execute();
+    header("location:../views/index_nota.php");
+}
 
 }
 

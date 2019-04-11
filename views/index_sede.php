@@ -3,10 +3,13 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento-Sede</h2>
-<a href="crear_sede.php">Agregar sede</a>
- <table class="table-hover table-bordered">
- <thead>
+<h2>Mantenimiento Sede</h2>
+<br>
+<a class="btn btn-outline-success" href="crear_sede.php">Agregar sede</a>
+<br><br>
+<div class="table-responsive">
+ <table class="table table-bordered">
+ <thead >
  <tr>
  <th>
  ID Sede
@@ -26,6 +29,9 @@
  <th>
  Municipio
  </th>
+ <th colspan = "2">
+ Acciones
+ </th>
  </tr>
  </thead>
  <tbody>
@@ -40,9 +46,9 @@
 										<td><?php echo $sede->getDireccion();?></td>
 										<td><?php echo $sede->getDepartamento();?></td>
 										<td><?php echo $sede->getMunicipio();?></td>
-                    <td><a href="editar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Editar</a></td>
-                    <td><a href="eliminar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Eliminar</a></td>
-                    <td></td>
+                    <td><a class="btn btn-warning " href="editar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Editar</a></td>
+                    <td><a class="btn btn-danger" href="eliminar_sede.php?id_sede=<?php echo $sede->getId_sede();?>">Eliminar</a></td>
+                    
                 <?php }?>
  </tbody>
  </table>

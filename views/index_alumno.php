@@ -3,9 +3,12 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento-Alumno</h2>
-<a href="crear_alumno.php">Agregar alumno</a>
- <table class="table-hover table-bordered">
+<h2>Mantenimiento Alumno</h2>
+<br>
+<a class="btn btn-outline-success" href="crear_alumno.php">Agregar Alumno</a>
+<br><br>
+<div class="table-responsive">
+ <table class="table table-bordered">
  <thead>
  <tr>
  <th>
@@ -26,6 +29,9 @@
  <th>
  Estado
  </th>
+ <th colspan = "2">
+ Acciones
+ </th>
  </tr>
  </thead>
  <tbody>
@@ -40,9 +46,9 @@
 										<td><?php echo $alumno->getEstado_civil();?></td>
                     <td><?php echo $alumno->getSexo();?></td>
                     <td><?php echo $alumno->getId_cohorte();?></td>
-                    <td><a href="editar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Editar</a></td>
-                    <td><a href="eliminar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Eliminar</a></td>
-                    <td></td>
+                    <td><a class="btn btn-warning " href="editar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Editar</a></td>
+                    <td><a class="btn btn-danger " href="eliminar_alumno.php?id_alumno=<?php echo $alumno->getId_alumno();?>">Eliminar</a></td>
+                    
                 <?php }?>
  </tbody>
  </table>

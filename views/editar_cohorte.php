@@ -24,26 +24,26 @@
         $cc->update($c);
     }
     ?>
+    <br><br>
     <form method='post'>
         <table>
             <input type='hidden' name='id_cohorte' value='<?php echo $cohorte->getId_cohorte(); ?>'>
-            <tr>
-                <td><label>Nombre:</label></td>
-                <td><input type='text' name='nombre' value='<?php echo $cohorte->getNombre(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Fecha de inicio:</label></td>
-                <td><input type='date' name='fecha_inicio' value='<?php echo $cohorte->getFecha_inicio(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Fecha de finalización:</label></td>
-                <td><input type='date' name='fecha_fin' value='<?php echo $cohorte->getFecha_fin(); ?>'></td>
-            </tr>
-
-            <tr>
-                <td><label>Sede:</label></td>
-                <td>
-                    <select name="id_sede">
+            <div class="form-group col-md-6">
+            <label>Nombre:</label>
+                <input class="form-control" type='text' name='nombre' value='<?php echo $cohorte->getNombre(); ?>'>
+            </div>  
+            <div class="form-group col-md-6">
+           <label>Fecha de inicio:</label>
+            <input  class="form-control"type='date' name='fecha_inicio' value='<?php echo $cohorte->getFecha_inicio(); ?>'>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Fecha de finalización:</label>
+                <input class="form-control" type='date' name='fecha_fin' value='<?php echo $cohorte->getFecha_fin(); ?>'>
+                </div>
+                <div class="form-group col-md-6">
+                <label>Sede:</label>
+                
+                    <select class="form-control" name="id_sede">
                         <?php
                         include_once("../controllers/sede_controller.php");
                         $sc = new sede_controller();
@@ -54,14 +54,14 @@
                                                                                 } ?>><?php echo $sede->getNombre(); ?></option>
                         <?php }
                     ?>
-                </td>
+                
 
                 </select>
-            </tr>
-            <tr>
-                <td><label>Curso:</label></td>
-                <td>
-                    <select name="id_curso">
+                </div>
+    <div class="form-group col-md-6">
+    <label>Curso:</label>
+                
+                    <select  class="form-control" name="id_curso">
                         <?php
                         include_once("../controllers/curso_controller.php");
                         $cc = new curso_controller();
@@ -72,19 +72,19 @@
                                                                                 } ?>><?php echo $curso->getNombre(); ?></option>
                         <?php }
                     ?>
-                </td>
-            </tr>
-            <tr>
-                <td><label>Estado:</label></td>
-                <td><input type="radio" name="estado" value="1" <?php if ($cohorte->getEstado() == 1) {
+                
+                                                                            </select>
+                                                                            </div>
+                <div class="form-group col-md-6">
+                <label>Estado:</label>
+                <input type="radio" name="estado" value="1" <?php if ($cohorte->getEstado() == 1) {
                                                                     echo "checked";
                                                                 } ?>>Activo
                     <input type="radio" name="estado" value="0" <?php if ($cohorte->getEstado() == 0) {
                                                                     echo "checked";
                                                                 } ?>>Inactivo
-            </tr>
+            </div>
 
-        </table>
-        <input type="submit" name="actualizar" value='Actualizar'>
-        <a class="btn btn-warning" href="./index_cohorte.php">Cancelar</a>
+        	<input type="submit"  class="btn btn-success boton" name="actualizar" value='Actualizar'>
+    <a class="btn btn-warning" href="./index_cohorte.php">Cancelar</a>
     </form>

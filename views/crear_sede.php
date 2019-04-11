@@ -2,20 +2,35 @@
 <link rel="stylesheet" href="./css/style.css">
 <body>
 <?php require_once("../navbar.php");?>
+<br><br>
 <form method="post">
+<div class="form-group col-md-6">
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre"><br><br>
+    <input type="text" class="form-control" name="nombre">
+</div>
+<div class="form-group col-md-6">
     <label for="telefono">Teléfono:</label>
-    <input type="text" name="telefono"><br><br>
+    <input type="text" class="form-control" name="telefono">
+</div>
+<div class="form-group col-md-6">
     <label for="direccion">Dirección:</label>
-    <input type="text" name="direccion"><br><br>
+    <input type="text" class="form-control" name="direccion">
+    </div>
+<div class="form-group col-md-6">
     <label for="correo">Correo:</label>
-    <input type="text" name="correo"><br><br>
+    <input type="text" class="form-control" name="correo">
+    </div>
+<div class="form-group col-md-6">
     <label for="departamento">Departamento:</label>
-    <input type="text" name="departamento"><br><br>
+    <input type="text" class="form-control" name="departamento">
+    </div>
+    <div class="form-group col-md-6">
     <label for="municipio">Municipio:</label>
-    <input type="text" name="municipio"><br><br>
-    <input type="submit" value="Guardar" name="guardar">
+    <input type="text" class="form-control"  name="municipio">
+    </div>
+
+    <input  type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
+    <a class="btn btn-info" href="./index_sede.php">Cancelar</a>
 </form>
 
 <?php

@@ -3,9 +3,11 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento-Curso</h2>
-<a href="crear_curso.php">Agregar curso</a>
- <table class="table-hover table-bordered">
+<h2>Mantenimiento Curso</h2>
+<a  class="btn btn-outline-success" href="crear_curso.php">Agregar curso</a>
+<br><br>
+<div class="table-responsive">
+ <table class="table table-bordered">
  <thead>
  <tr>
  <th>
@@ -13,6 +15,9 @@
  </th>
  <th>
  Curso
+ </th>
+ <th colspan = "2">
+ Acciones
  </th>
  </tr>
  </thead>
@@ -25,9 +30,9 @@
 										<td><?php echo $curso->getId_curso(); ?></td>
                                         <td><?php echo $curso->getNombre(); ?></td>
                                     
-                    <td><a href="editar_curso.php?id_curso=<?php echo $curso->getId_curso();?>">Editar</a></td>
-                    <td><a href="eliminar_curso.php?id_curso=<?php echo $curso->getId_curso();?>">Eliminar</a></td>
-                    <td></td></tr>
+                    <td><a class="btn btn-warning " href="editar_curso.php?id_curso=<?php echo $curso->getId_curso();?>">Editar</a></td>
+                    <td><a class="btn btn-danger " href="eliminar_curso.php?id_curso=<?php echo $curso->getId_curso();?>">Eliminar</a></td>
+                    </tr>
                 <?php }?>
  </tbody>
  </table>

@@ -2,7 +2,7 @@ body {margin:0;font-family:Arial}
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #014085;;
 }
 
 .topnav a {
@@ -16,7 +16,7 @@ body {margin:0;font-family:Arial}
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: rgb(86, 90, 86);
   color: white;
 }
 
@@ -102,6 +102,7 @@ body {margin:0;font-family:Arial}
     text-align: left;
   }
 }
+<<<<<<< HEAD
 
 #materia{
   width: 200px;
@@ -113,3 +114,14 @@ body {margin:0;font-family:Arial}
 .tablath{
   font-size: 15px;
 }
+
+.colortabla{
+  background-color:rgb(1, 35, 54);
+}
+
+.boton{
+  text-align: center;
+  margin-left: 200px;
+  
+}
+

@@ -3,16 +3,15 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento-Nota</h2>
- <table class="table-hover table-bordered">
+<h2>Mantenimiento-Sede</h2>
+<a href="crear_nota.php">Agregar nota</a>
+ <table>
  <thead>
  <tr>
  <th>
  ID Nota
  </th>
- <th>
- Alumno
- </th>
+ 
  <th>
  Materia
  </th>
@@ -32,6 +31,9 @@
  Fecha llenado fin
  </th>
  <th>
+ Alumno
+ </th>
+ <th>
  Evaluador
  </th>
  </tr>
@@ -43,13 +45,14 @@
 								foreach ($notas as $nota) { ?>
 									<tr>
                                         <td><?php echo $nota->getId_nota(); ?></td>
-                                        <td><?php echo $nota->getId_alumno();?></td>
-										<td><?php echo $nota->getnombre_materia(); ?></td>
+                                       
+										<td><?php echo $nota->getNombre_materia(); ?></td>
 										<td><?php echo $nota->getId_criterio();?></td>
 										<td><?php echo $nota->getNota_inicio();?></td>
 										<td><?php echo $nota->getnota_fin();?></td>
-                                        <td><?php echo $nota->getfecha_llenado_inicio();?></td>
-                                        <td><?php echo $nota->getfecha_llenado_fin();?></td>
+                                        <td><?php echo $nota->getFecha_llenado_inicio();?></td>
+                                        <td><?php echo $nota->getFecha_llenado_fin();?></td>
+                                        <td><?php echo $nota->getId_alumno();?></td>
                                         <td><?php echo $nota->getId_usuario();?></td>
                     <td><a href="editar_nota.php?id_nota=<?php echo $nota->getId_nota();?>">Editar</a></td>
                     <td><a href="">Eliminar</a></td>
