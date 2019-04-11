@@ -8,7 +8,7 @@ class Tipo_criterio
     {
         return $this->id_tipo_criterio;
     }
-    public function setId_curso($id_tipo_criterio)
+    public function setId_tipo_criterio($id_tipo_criterio)
     {
         $this->id_tipo_criterio = $id_tipo_criterio;
     }

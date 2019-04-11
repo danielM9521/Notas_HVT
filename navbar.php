@@ -13,7 +13,7 @@
       <a href="./index_rol.php">Rol</a>
       <a href="./index_usuario.php">Usuario</a>
       <a href="./index_alumno.php">Alumno</a>
-      <a href="./index_competencia.php">Competencia</a>
+      <a href="./index_tipo_criterio.php">Competencia</a>
       <a href="./index_criterio.php">Criterio</a>
       <a href="./index_nota.php">Nota</a>
     </div>

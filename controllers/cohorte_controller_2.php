@@ -1,9 +1,9 @@
 <?php 
 
-require_once("../models/conexion.php");
-require_once("../models/cohorte.php");
+require_once("./models/conexion.php");
+require_once("./models/cohorte.php");
 
-class cohorte_controller{
+class cohorte_controller_2{
 
 public static function findAll(){
     $coleccion = array();
@@ -71,25 +71,6 @@ public static function findById($id_cohorte){
     $cohorte->setEstado($CohorteDb['estado']);
     return $cohorte;
     }
-
-    public static function findById2($id_cohorte){
-        //buscar
-        $conexion=Conexion::getConnect();
-        $select=$conexion->prepare('SELECT c.id_cohorte, c.nombre, c.fecha_inicio, c.fecha_fin, s.nombre, cu.nombre, c.estado FROM Cohorte c INNER JOIN Sede s ON c.id_sede = s.id_sede INNER JOIN Curso cu ON c.id_curso = cu.id_curso WHERE id_cohorte=:id_cohorte');
-        $select->bindValue('id_cohorte',$id_cohorte);
-        $select->execute();
-        //asignarlo al objeto usuario
-        $CohorteDb=$select->fetch();
-        $cohorte= new Cohorte();
-        $cohorte->setId_cohorte($CohorteDb['0']);
-        $cohorte->setNombre($CohorteDb['1']);
-        $cohorte->setFecha_inicio($CohorteDb['2']);
-        $cohorte->setFecha_fin($CohorteDb['3']);
-        $cohorte->setId_sede($CohorteDb['4']);
-        $cohorte->setId_curso($CohorteDb['5']);
-        $cohorte->setEstado($CohorteDb['6']);
-        return $cohorte;
-        }
 
     //la función para actualizar 
 public static function update($cohorte){

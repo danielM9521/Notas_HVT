@@ -3,11 +3,17 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
+<<<<<<< HEAD
 <h2>Mantenimiento Curso</h2>
 <a  class="btn btn-outline-success" href="crear_curso.php">Agregar curso</a>
 <br><br>
 <div class="table-responsive">
  <table class="table table-bordered">
+=======
+<h2>Mantenimiento-Curso</h2>
+<a href="crear_curso.php">Agregar curso</a>
+ <table class="table-hover table-bordered">
+>>>>>>> a08fb2b862f82249b039bb478bc042350b820ff7
  <thead>
  <tr>
  <th>

@@ -30,6 +30,35 @@ public static function findAll(){
     return $coleccion;
 }
 
+//Método para registrar las notas
+public static function findByCohorte($id_cohorte){
+    $coleccion = array();
+    $db=Conexion::getConnect();
+    $sql=$db->prepare('SELECT id_alumno, CONCAT(apellidos,", ",nombre) as nombreCompleto, apellidos, direccion, estado_civil, sexo, dui, nit, carnet_minoridad, discapacidad, telefono, correo, fecha_nac, id_cohorte FROM Alumno WHERE id_cohorte=:id_cohorte ORDER BY nombreCompleto');
+$sql->bindValue('id_cohorte',$id_cohorte);
+$sql->execute();
+    foreach ($sql->fetchAll() as $alumno) {
+        $a= new Alumno();
+        $a->setId_alumno($alumno['0']);
+        $a->setNombre($alumno['1']);
+        $a->setApellidos($alumno['2']);
+        $a->setDireccion($alumno['3']);
+        $a->setEstado_civil($alumno['4']);
+        $a->setSexo($alumno['5']);
+        $a->setDui($alumno['6']);
+        $a->setNit($alumno['7']);
+        $a->setCarnet_minoridad($alumno['8']);
+        $a->setDiscapacidad($alumno['9']);
+        $a->setTelefono($alumno['10']);
+        $a->setCorreo($alumno['11']);
+        $a->setFecha_nac($alumno['12']);
+        $a->setId_cohorte($alumno['13']);
+        array_push($coleccion, $a);
+    }
+    return $coleccion;
+}
+
+
 public static function findById($id_alumno){
     //buscar
     $conexion=Conexion::getConnect();

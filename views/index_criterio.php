@@ -5,11 +5,14 @@
 <div style="padding-left:16px">
 <h2>Mantenimiento-Criterio</h2>
 <a href="crear_criterio.php">Agregar Criterio</a>
- <table>
+ <table class="table-hover table-bordered">
  <thead>
  <tr>
  <th>
  ID Criterio
+ </th>
+ <th>
+ Competencia
  </th>
  <th>
  Criterio
@@ -23,6 +26,7 @@
 								foreach ($criterios as $criterio) { ?>
 									<tr>
 										<td><?php echo $criterio->getId_criterio(); ?></td>
+                    <td><?php echo $criterio->getId_tipo_criterio(); ?></td>
                                         <td><?php echo $criterio->getNombre(); ?></td>
                                     
                     <td><a href="editar_criterio.php?id_criterio=<?php echo $criterio->getId_criterio();?>">Editar</a></td>
