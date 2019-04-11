@@ -3,9 +3,9 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento-Tipo_Criterio</h2>
+<h2>Mantenimiento-Competencias</h2>
 <a href="crear_tipo_criterio.php">Agregar Tipo Criterio</a>
- <table>
+ <table class="table-hover table-bordered">
  <thead>
  <tr>
  <th>

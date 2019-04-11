@@ -3,7 +3,6 @@
 <body>
 <?php require_once("../navbar.php");?>
 <form method="post">
-
 <label for="id_rol">Rol:</label>
     <select name="id_rol">
     <?php 

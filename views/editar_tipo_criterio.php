@@ -6,7 +6,7 @@
 include_once("../controllers/tipo_criterio_controller.php");
 $cc = new tipo_criterio_controller();
 if(isset($_GET['id_tipo_criterio'])){
-  $tipo_criterio = $_GET['id_tipo_criterio'];
+  $id_tipo_criterio = $_GET['id_tipo_criterio'];
   $tipo_criterio = $cc->findById($id_tipo_criterio);
 }else{
   header("location:index_tipo_criterio.php");

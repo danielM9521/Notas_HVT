@@ -27,8 +27,8 @@ public static function findById($id_tipo_criterio){
     //asignarlo al objeto usuario
     $tipo_criterioDb=$select->fetch();
     $tipo_criterio= new Tipo_criterio();
-    $tipo_criterio->setId_criterio($tipo_criterioDb['id_criterio']);
-    $tipo_criterio->setNombre($tipo_criterio['nombre']);
+    $tipo_criterio->setId_tipo_criterio($tipo_criterioDb['id_tipo_criterio']);
+    $tipo_criterio->setNombre($tipo_criterioDb['nombre']);
     return $tipo_criterio;
     }
 
@@ -45,7 +45,7 @@ public static function update($tipo_criterio){
 // la función para eliminar por el id
 public static function delete($id_tipo_criterio){
     $conexion=Conexion::getConnect();
-    $delete=$conexion->prepare('DELETE FROM Tipo_criterio WHERE id_tipo_criterio=:tipo_criterio');
+    $delete=$conexion->prepare('DELETE FROM Tipo_criterio WHERE id_tipo_criterio=:id_tipo_criterio');
     $delete->bindValue('id_tipo_criterio',$id_tipo_criterio);
     $delete->execute();
     }

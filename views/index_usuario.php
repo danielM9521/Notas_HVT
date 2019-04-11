@@ -5,7 +5,7 @@
 <div style="padding-left:16px">
 <h2>Mantenimiento-Usuario</h2>
 <a href="crear_usuario.php">Agregar usuario</a>
- <table>
+ <table class="table-hover table-bordered">
  <thead>
  <tr>
  <th>

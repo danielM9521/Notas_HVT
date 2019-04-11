@@ -5,7 +5,7 @@
 <div style="padding-left:16px">
 <h2>Mantenimiento-Sede</h2>
 <a href="crear_sede.php">Agregar sede</a>
- <table>
+ <table class="table-hover table-bordered">
  <thead>
  <tr>
  <th>

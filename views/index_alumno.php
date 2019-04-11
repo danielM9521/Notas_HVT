@@ -5,7 +5,7 @@
 <div style="padding-left:16px">
 <h2>Mantenimiento-Alumno</h2>
 <a href="crear_alumno.php">Agregar alumno</a>
- <table>
+ <table class="table-hover table-bordered">
  <thead>
  <tr>
  <th>

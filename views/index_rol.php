@@ -5,7 +5,7 @@
     <div style="padding-left:16px">
         <h2>Mantenimiento-Rol</h2>
         <a href="crear_rol.php">Agregar rol</a>
-        <table>
+        <table class="table-hover table-bordered">
             <thead>
                 <tr>
                     <th>

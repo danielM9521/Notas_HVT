@@ -4,7 +4,7 @@
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
 <h2>Mantenimiento-Nota</h2>
- <table>
+ <table class="table-hover table-bordered">
  <thead>
  <tr>
  <th>
@@ -44,7 +44,7 @@
 									<tr>
                                         <td><?php echo $nota->getId_nota(); ?></td>
                                         <td><?php echo $nota->getId_alumno();?></td>
-										<td><?php echo $nota->getinombre_materia(); ?></td>
+										<td><?php echo $nota->getnombre_materia(); ?></td>
 										<td><?php echo $nota->getId_criterio();?></td>
 										<td><?php echo $nota->getNota_inicio();?></td>
 										<td><?php echo $nota->getnota_fin();?></td>
