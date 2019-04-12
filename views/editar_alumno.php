@@ -31,24 +31,27 @@
         $cc->update($a);
     }
     ?>
-    <br><br>
-    <form method='post'>
+   <br><br>
+<form method='post' class="cont">
+<h3>  EDITAR ALUMNO </h3>
+<div class="card">
+<div class="card-body">
         
             <input type='hidden' name='id_alumno' value='<?php echo $alumno->getId_alumno(); ?>'>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                 <label>Nombres:</label>
                 <input type='text' class="form-control" name='nombre' value='<?php echo $alumno->getNombre(); ?>'>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                 <label>Apellidos:</label>
                 <input type='text' class="form-control"  name='apellidos' value='<?php echo $alumno->getApellidos(); ?>'>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                 <label>Dirección:</label></td>
                 <input type='text' class="form-control"  name='direccion' value='<?php echo $alumno->getDireccion(); ?>'>
                 </div>
           
-                <div class="form-group col-md-6">
+                <div class="form-group ">
            <label>Cohorte:</label>
             
                     <select  class="form-control" name="id_cohorte">
@@ -65,7 +68,7 @@
                 
                 </select>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
            <label>Estado civil :</label>
                 
                     <select  class="form-control" name="estado_civil">
@@ -76,43 +79,46 @@
                     </select>                                                                
                 
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
                 <label>Sexo:</label>
                 
                     <input type="radio" name="sexo" value="Femenino" <?php if($alumno->getSexo()=="Femenino"){echo "checked";}?>>Femenino
                     <input type="radio" name="sexo" value="Masculino" <?php if($alumno->getSexo()=="Masculino"){echo "checked";}?>>Masculino
                     <input type="radio" name="sexo" value="Otro" <?php if($alumno->getSexo()=="Otro"){echo "checked";}?>>Otro
            </div>
-           <div class="form-group col-md-6">
+           <div class="form-group ">
                 <label>DUI:</label>
                 <input type='text' class="form-control"  name='dui' value='<?php echo $alumno->getDui(); ?>'>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
                 <label>NIT:</label>
                 <td><input type='text' class="form-control"  name='nit' value='<?php echo $alumno->getNit(); ?>'>
            </div>
-           <div class="form-group col-md-6">
+           <div class="form-group ">
                 <label>Carnet de minoridad:</label>
                 <input type='text' class="form-control" name='carnet_minoridad' value='<?php echo $alumno->getCarnet_minoridad(); ?>'>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
                 <label>Teléfono:</label>
                 <input type='text' class="form-control" name='telefono' value='<?php echo $alumno->getTelefono(); ?>'>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
                 <label>Correo:</label>
                 <input type='text' class="form-control" name='correo' value='<?php echo $alumno->getCorreo(); ?>'>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
             <label>Fecha de nacimiento:</label>
                 <input type='date' class="form-control" name='fecha_nac' value='<?php echo $alumno->getFecha_nac(); ?>'>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
            
                 <label>Discapacidad:</label>
                 <input type='text' class="form-control" name='discapacidad' value='<?php echo $alumno->getDiscapacidad(); ?>'>
             </div>
-        </table>
-        <input type="submit"  class="btn btn-success boton" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_alumno.php">Cancelar</a>
+            <div class="trans"> 
+	<input type="submit" class="btn btn-warning  btn-responsive btninter " name="actualizar" value='Actualizar'>
+    <a class="btn btn-info btn-responsive btninter  boton" href="./index_alumno.php">Cancelar</a>
+</div>
+</div>
+</div>
     </form>

@@ -20,17 +20,24 @@ if (isset($_POST) && !empty($_POST)) {
 }
 ?>
 <br><br>
-<form method='post'>
+<form method='post' class="cont">
+<h3>  EDITAR CURSO </h3>
+<div class="card">
+<div class="card-body">
 	
 		<input type='hidden' name='id_curso' value='<?php echo $curso->getId_curso(); ?>'>
         <input type='hidden' name='action' value='update'>
-        <div class="form-group col-md-6">
+        <div class="form-group ">
         <label>Nombre:</label>
         <input type='text'  class="form-control"  name='nombre' value='<?php echo $curso->getNombre(); ?>'>
 </div>
 		
-	<input type="submit"  class="btn btn-success boton" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_curso.php">Cancelar</a>
+<div class="trans"> 
+	<input type="submit" class="btn btn-warning  btn-responsive btninter " name="actualizar" value='Actualizar'>
+    <a class="btn btn-info btn-responsive btninter  boton" href="./index_curso.php">Cancelar</a>
+</div>
+</div>
+</div>
 </form>
 
 

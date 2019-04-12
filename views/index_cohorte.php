@@ -3,7 +3,8 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento Cohorte</h2>
+<br><br>
+<h2>MANTENIMIENTO COHORTE</h2>
 <br>
 <a class="btn btn-outline-success" href="crear_cohorte.php">Agregar Cohorte</a>
 <br><br>
@@ -52,7 +53,7 @@
                                         <td><?php echo $cohorte->getEstado();?></td>
                     <td><a  class="btn btn-warning " href="editar_cohorte.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Editar</a></td>
                     <td><a class="btn btn-danger "  href="eliminar_cohorte.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Eliminar</a></td>
-                    <td></td>
+                    
                 <?php }?>
  </tbody>
  </table>

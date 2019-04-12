@@ -25,41 +25,47 @@ if (isset($_POST) && !empty($_POST)) {
 }
 ?>
 <br><br>
-<form method='post'>
+<form method='post' class="cont">
+<h3>  EDITAR SEDE </h3>
+<div class="card">
+<div class="card-body">
 	
 		<input type='hidden' name='id_sede' value='<?php echo $sede->getId_sede(); ?>'>
         <input type='hidden' name='action' value='update'>
 
-<div class="form-group col-md-6">
+<div class="form-group c">
       <label for="nombre">Nombre:</label>
       <input class="form-control" type='text' name='nombre'  value='<?php echo $sede->getNombre(); ?>'>
 </div>
 
-<div class="form-group col-md-6">
+<div class="form-group ">
       <label for="telefono">Teléfono:</label>
       <input class="form-control" type='text' name='telefono' value='<?php echo $sede->getTelefono(); ?>'>
 </div>
-<div class="form-group col-md-6">
+<div class="form-group ">
       <label>Dirección:</label>
       <input class="form-control" type='text' name='direccion' value='<?php echo $sede->getDireccion(); ?>'>
 </div>
-<div class="form-group col-md-6">
+<div class="form-group ">
       <label>Correo:</label>
       <input class="form-control" type='text' name='correo' value='<?php echo $sede->getCorreo(); ?>'>
 </div>
-      <div class="form-group col-md-6">
+      <div class="form-group ">
       <label>Departamento:</label>
       <input class="form-control" type='text' name='departamento' value='<?php echo $sede->getDepartamento(); ?>'>
 </div> 
-<div class="form-group col-md-6">
+<div class="form-group ">
       <label>Municipio:</label>
       <input class="form-control" type='text' name='municipio' value='<?php echo $sede->getMunicipio(); ?>'>
 </div>
     
     
-	</table>	
-	<input type="submit"  class="btn btn-success boton" name="actualizar" value='Actualizar'>
-    <a class="btn btn-info" href="./index_sede.php">Cancelar</a>
+<div class="trans"> 
+	<input type="submit" class="btn btn-warning  btn-responsive btninter " name="actualizar" value='Actualizar'>
+    <a class="btn btn-info btn-responsive btninter  boton" href="./index_sede.php">Cancelar</a>
+</div>
+</div>
+</div>
 </form>
 
 

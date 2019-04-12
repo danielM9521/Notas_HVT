@@ -3,7 +3,8 @@
 <body>
 <?php require_once("../navbar.php");?>
     <div style="padding-left:16px">
-        <h2>Mantenimiento Rol</h2>
+    <br><br>
+<h2>MANTENIMIENTO ROL</h2>
         <br>
 <a class="btn btn-outline-success" href="crear_rol.php">Agregar Rol</a>
 <br><br>
@@ -33,7 +34,7 @@
 
                         <td><a class="btn btn-warning " href="editar_rol.php?id_rol=<?php echo $rol->getId_rol(); ?>">Editar</a></td>
                         <td><a class="btn btn-danger " href="eliminar_rol.php?id_rol=<?php echo $rol->getId_rol(); ?>">Eliminar</a></td>
-                        <td></td>
+                        
                     </tr>
                 <?php } ?>
             </tbody>

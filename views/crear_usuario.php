@@ -3,8 +3,11 @@
 <body>
 <?php require_once("../navbar.php");?>
 <br><br>
-<form method="post">
-<div class="form-group col-md-6">
+<form method="post" class="cont">
+<h3>  NUEVO USUARIO </h3>
+<div class="card">
+<div class="card-body">
+<div class="form-group ">
 <label for="id_rol">Rol:</label>
     <select  class="form-control" name="id_rol">
     <?php 
@@ -19,27 +22,32 @@
     </select>
             </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group ">
     <label for="nombre">Nombres:</label>
-    <input  class="form-control" type="text" name="nombre">
+    <input  class="form-control" type="text" name="nombre" required placeholder="Ingrese nombres ">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group">
     <label for="apellidos">Apellidos:</label>
-    <input  class="form-control" type="text" name="apellidos">
+    <input  class="form-control" type="text" name="apellidos" required placeholder="Ingrese apellidos">
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group">
     <label for="correo">Correo:</label>
-    <input  class="form-control" type="text" name="correo">
+    <input  class="form-control" type="text" name="correo" required placeholder="Ej.ulises.samayoa@proyectosfgk.org ">
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group">
     <label for="estado">Contraseña:</label>
-    <input  class="form-control" type="password" name="contrasenia">
+    <input  class="form-control" type="password" name="contrasenia" required placeholder="Ingrese contraseña ">
     </div>
 
-    <input  type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
-    <a class="btn btn-info" href="./index_usuario.php">Cancelar</a>
+    <div class="trans"> 
+    <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">
+    <a class="btn btn-info btn-responsive btninter  boton " href="./index_usuario.php">Cancelar</a>
+            </div> 
+            </div>
+
+</div>
 </form>
 
 <?php

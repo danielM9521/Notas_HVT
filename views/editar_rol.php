@@ -19,17 +19,25 @@ if (isset($_POST) && !empty($_POST)) {
   $cc->update($c);
 }
 ?>
-
-<form method='post'>
-	<table>
+<br><br>
+<form method='post' class="cont">
+<h3>  EDITAR ROL </h3>
+<div class="card">
+<div class="card-body">
 		<input type='hidden' name='id_rol' value='<?php echo $rol->getId_rol(); ?>'>
         <input type='hidden' name='action' value='update'>
-		<tr>
-			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $rol->getNombre(); ?>'></td>
-		</tr>
-	</table>	
-	<input type="submit" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_rol.php">Cancelar</a>
+        <div class="form-group ">
+  <label>Nombre:</label>
+  <input type='text' name='nombre'class="form-control" value='<?php echo $rol->getNombre(); ?>'>
+</div>
+		
+  <div class="trans"> 
+	<input type="submit" class="btn btn-warning  btn-responsive btninter " name="actualizar" value='Actualizar'>
+    <a class="btn btn-info btn-responsive btninter  boton" href="./index_rol.php">Cancelar</a>
+</div>
+</div>
+</div>
+
 </form>
 
 

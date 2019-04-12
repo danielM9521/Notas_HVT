@@ -3,12 +3,15 @@
 <body>
 <?php require_once("../navbar.php");?>
 <br><br>
-<form method="post">
-<div class="form-group col-md-6">
+<form method="post" class="cont">
+<h3>  NUEVO CRITERIO </h3>
+<div class="card">
+        <div class="card-body">
+<div class="form-group  ">
     <label for="nombre">Nombre:</label>
-    <input  class="form-control" type="text" name="nombre">
+    <input  class="form-control" type="text" name="nombre" required placeholder="Ej.Identifica sus  fortalezas y  aspectos a mejorar ">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group ">
 <label for="id_tipo_criterio">Competencia:</label>
 
     <select class="form-control" name="id_tipo_criterio">
@@ -23,8 +26,12 @@
 
     </select>
     </div>
-    <input type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
-    <a class="btn btn-info" href="./index_criterio.php">Cancelar</a>
+    <div class="trans"> 
+    <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">
+    <a class="btn btn-info btn-responsive btninter  boton " href="./index_criterio.php">Cancelar</a>
+            </div> 
+            </div>
+            </div>
 </form>
 
 <?php

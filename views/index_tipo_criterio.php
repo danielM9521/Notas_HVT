@@ -3,7 +3,8 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento Competencias</h2>
+<br><br>
+<h2>MANTENIMIENTO COMPETENCIAS</h2>
 <br>
 <a class="btn btn-outline-success" href="crear_tipo_criterio.php">Agregar Competencia</a>
 <br><br>

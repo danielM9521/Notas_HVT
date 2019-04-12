@@ -3,7 +3,8 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento Alumno</h2>
+<br><br>
+<h2>MANTENIMIENTO ALUMNO</h2>
 <br>
 <a class="btn btn-outline-success" href="crear_alumno.php">Agregar Alumno</a>
 <br><br>

@@ -3,9 +3,12 @@
 <body>
 <?php require_once("../navbar.php");?>
 <br><br>
-<form method="post">
-    
-<div class="form-group col-md-6">
+
+<form method="post" class="cont">
+<h3>  NUEVO COHORTE </h3>
+<div class="card">
+<div class="card-body">
+<div class="form-group">
 <label for="id_sede">Sede:</label>
     <select class="form-control" name="id_sede">
         <?php 
@@ -19,7 +22,7 @@
 
     </select>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
 <label for="id_curso">Curso:</label>
     <select class="form-control" name="id_curso">
     <?php 
@@ -34,34 +37,38 @@
     </select>
     </div>
 
-<div class="form-group col-md-6">
+<div class="form-group">
     <label for="nombre">Nombre:</label>
-    <input type="text"  class="form-control" name="nombre">
+    <input type="text"  class="form-control" name="nombre" placeholder="Ej. COHORTE-1" required>
 </div>
 
-<div class="form-group col-md-6">
+<div class="form-group ">
     <label for="fecha_inicio">Fecha de inicio:</label>
     <input type="date"  class="form-control" name="fecha_inicio">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
     <label for="fecha_fin">Fecha de finalización:</label>
     <input type="date"  class="form-control" name="fecha_fin">
             </div>
 
-            <div class="form-group col-md-6">      
+            <div class="form-group ">      
     <label for="estado">Estado:</label>
-    <div class="form-check inline ">
-    <input class="form-check-input" type="radio" name="estado" value="1">
+   
+    <input  type="radio" name="estado" value="1" checked>
     <label class="form-check-label">Activo</label>
-    </div>
-    <div class="form-check inline ">    
-    <input class="form-check-input" type="radio" name="estado" value="0">
+    
+       
+    <input  type="radio" name="estado" value="0">
     <label class="form-check-label">Inactivo</label>
-    </div>
+    
             </div>
 
-            <input type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
-            <a class="btn btn-info" href="./index_cohorte.php">Cancelar</a>
+            <div class="trans"> 
+    <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">
+    <a class="btn btn-info btn-responsive btninter  boton " href="./index_cohorte.php">Cancelar</a>
+            </div> 
+            </div>
+            </div>
 </form>
 
 <?php
