@@ -4,10 +4,10 @@
 <body>
 
 	<div class="topnav" id="myTopnav">
-		<a href="home.php" class="active">Inicio</a>
+		<a href="index.php" class="active"><i class="fas fa-home"></i></a>
 
 		<div class="drop">
-			<button class="dropbtn">Mantenimiento
+			<button class="dropbtn"><i class="fas fa-tools left"></i> Mantenimiento
 				<i class="fa fa-caret-down"></i>
 			</button>
 			<div class="drop-content">
@@ -21,8 +21,8 @@
 				<a href="views/index_criterio.php">Criterio</a>
 			</div>
 		</div>
-		<a href="views/acerca_de.php">Acerca de</a>
-		<a href="controllers/logout.php">Cerrar sesión</a>
+		<a href="views/acerca_de.php"><i class="fas fa-question-circle"></i> Acerca de</a>
+		<a href="controllers/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
 		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 	</div>
 
