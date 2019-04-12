@@ -2,6 +2,22 @@
 <link rel="stylesheet" href="./css/style.css">
 <body>
 <?php require_once("../navbar.php");?>
+<?php
+if(isset($_POST['guardar'])){
+    include_once("../controllers/cohorte_controller.php");
+    $cc = new cohorte_controller();
+    $cohorte = new Cohorte();
+    $cohorte->setId_cohorte(null);
+    $cohorte->setNombre($_POST['nombre']);
+    $cohorte->setFecha_inicio($_POST['fecha_inicio']);
+    $cohorte->setFecha_fin($_POST['fecha_fin']);
+    $cohorte->setId_sede($_POST['id_sede']);
+    $cohorte->setId_curso($_POST['id_curso']);
+    $cohorte->setEstado($_POST['estado']);
+    $cc->save($cohorte);
+}
+
+?>
 <br><br>
 
 <form method="post" class="cont">
@@ -71,19 +87,3 @@
             </div>
 </form>
 
-<?php
-if(isset($_POST['guardar'])){
-    include_once("../controllers/cohorte_controller.php");
-    $cc = new cohorte_controller();
-    $cohorte = new Cohorte();
-    $cohorte->setId_cohorte(null);
-    $cohorte->setNombre($_POST['nombre']);
-    $cohorte->setFecha_inicio($_POST['fecha_inicio']);
-    $cohorte->setFecha_fin($_POST['fecha_fin']);
-    $cohorte->setId_sede($_POST['id_sede']);
-    $cohorte->setId_curso($_POST['id_curso']);
-    $cohorte->setEstado($_POST['estado']);
-    $cc->save($cohorte);
-}
-
-?>

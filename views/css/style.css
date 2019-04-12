@@ -124,6 +124,12 @@ body {
   font-weight: lighter;
   
 }
+.nombrescard{
+  font-size: 15px;
+  text-align: center;
+  font-weight: lighter;
+  
+}
 .tablath{
   font-size: 15px;
 }
@@ -195,11 +201,11 @@ width: 50%;
 }
 h3{
   text-align: center;
-  color: #0A7D8B;
+  color: #014185;
 }
 h2{
   text-align: center;
-  color: #0A7D8B;
+  color: #014185;
 }
 
 @media only screen and (max-width:600px){

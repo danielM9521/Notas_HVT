@@ -75,10 +75,10 @@ h2{
     </div>
     <div class="flip-card-back">
     <h1>Desarrollador</h1>
-    <p>Gabriela Menéndez</p> 
-    <p>Para mayor información contactenos</p>
-      <p>gabriela.menendezfgksa@sv.cds</p> 
-    <p>Tel. 7281-4480</p>
+    <h4>Gabriela Menéndez</h4> 
+    <p class="nombrescard">Para mayor información contactenos</p>
+      <p class="nombrescard">gabriela.menendezfgksa@sv.cds</p> 
+    <p class="nombrescard">Tel. 7281-4480</p>
     </div>
   </div>
 </div>
@@ -90,10 +90,10 @@ h2{
     </div>
     <div class="flip-card-back">
     <h1>Desarrollador</h1>
-      <p>Daniel Murillo</p> 
-      <p>Para mayor información contactenos</p>
-      <p>daniel.murillo@proyectosfgk.org</p> 
-      <p>Tel.72083251</p>
+      <h4>Daniel Murillo</h4> 
+      <p class="nombrescard">Para mayor información contactenos</p>
+      <p class="nombrescard">daniel.murillo@proyectosfgk.org</p> 
+      <p class="nombrescard">Tel.72083251</p>
     </div>
   </div>
 </div>
@@ -105,10 +105,10 @@ h2{
     </div>
     <div class="flip-card-back">
       <h1>Desarrollador</h1>
-      <p>Stephannie Escobar</p> 
-      <p>para mayor información contactenos</p> 
-      <p>stephannie.escobar@proyectosfgk.org
-      <p>Tel.75660113</p>
+      <h4>Stephannie Escobar</h4> 
+      <p class="nombrescard">Para mayor información contactenos</p> 
+      <p class="nombrescard">stephannie.escobar@proyectosfgk.org
+      <p class="nombrescard">Tel.75660113</p>
     </div>
   </div>
 </div>

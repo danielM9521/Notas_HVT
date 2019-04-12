@@ -4,7 +4,7 @@
 <body>
 
 	<div class="topnav" id="myTopnav">
-		<a href="index.php" class="active"><i class="fas fa-home"></i></a>
+		<a href="home	.php" class="active"><i class="fas fa-home"></i></a>
 
 		<div class="drop">
 			<button class="dropbtn"><i class="fas fa-tools left"></i> Mantenimiento

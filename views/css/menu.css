@@ -54,7 +54,6 @@ h1
 	text-align:center;
 	background-size: cover;
 	margin-left: 1%;
-	
 }
 
 .team-front
@@ -63,7 +62,7 @@ h1
 	height:175px;;
 	position:relative;
 	z-index:10;
-	background-color: #01418585;
+	background-color: #78b4f3e3;
 	background-size: cover;
 	padding:15px;
 	bottom:0px;
