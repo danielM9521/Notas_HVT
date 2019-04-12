@@ -3,10 +3,10 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<br><br>
-<h2>MANTENIMIENTO SEDE</h2>
 <br>
-<a class="btn btn-outline-success" href="crear_sede.php">Agregar sede</a>
+<h1 style="margin-left:33%;">Mantenimiento Sede</h1>
+<br>
+<a class="btn btn-success" href="crear_sede.php">Agregar sede</a>
 <br><br>
 <div class="table-responsive">
  <table class="table table-bordered">

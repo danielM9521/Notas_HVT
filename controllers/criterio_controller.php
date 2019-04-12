@@ -19,20 +19,6 @@ public static function findAll(){
     return $coleccion;
 }
 
-public static function findAll2(){
-    $coleccion = array();
-    $db=Conexion::getConnect();
-    $sql=$db->query('SELECT * FROM Criterio');
-    // carga en la $listaUsuarios cada registro desde la base de datos
-    foreach ($sql->fetchAll() as $criterio) {
-        $c= new Criterio();
-        $c->setId_criterio($criterio['0']);
-        $c->setId_tipo_criterio($criterio['1']);
-        $c->setNombre($criterio['2']);
-        array_push($coleccion, $c);
-    }
-    return $coleccion;
-}
 
 //Para la pantalla de registrar notas
 public static function findByTipoCriterio($id_tipo_criterio){
@@ -70,7 +56,7 @@ public static function findById($id_criterio){
     //la función para actualizar 
 public static function update($criterio){
     $conexion=Conexion::getConnect();
-    $update=$conexion->prepare('UPDATE Criterio SET id_tipo_criterio=:id_tipo_criterio, nombre=:nombre WHERE id_criterio=:criterio');
+    $update=$conexion->prepare('UPDATE Criterio SET id_tipo_criterio=:id_tipo_criterio, nombre=:nombre WHERE id_criterio=:id_criterio');
     $update->bindValue('id_criterio', $criterio->getId_criterio());
     $update->bindValue('id_tipo_criterio', $criterio->getId_tipo_criterio());
     $update->bindValue('nombre',$criterio->getNombre());

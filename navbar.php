@@ -1,4 +1,3 @@
-
 <div class="topnav" id="myTopnav">
   <a href="../index.php" class="active"><i class="fas fa-home"></i></a>
   
@@ -15,7 +14,6 @@
       <a href="./index_alumno.php">Alumno</a>
       <a href="./index_tipo_criterio.php">Competencia</a>
       <a href="./index_criterio.php">Criterio</a>
-      
     </div>
   </div> 
   <a href="../views/acerca_de.php"><i class="fas fa-question-circle"></i> Acerca de</a>

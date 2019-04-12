@@ -114,7 +114,7 @@ public static function delete($id_cohorte){
     $delete->execute();
     }
 
-//la función para registrar un usuario
+//la función para registrar un cohorte
 public static function save($cohorte){
     $conexion=Conexion::getConnect();
     $insert=$conexion->prepare('INSERT INTO Cohorte VALUES(NULL,:nombre,:fecha_inicio,:fecha_fin,:id_sede,:id_curso,:estado)');

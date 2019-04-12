@@ -34,7 +34,7 @@
 		<!------ Include the above in your HEAD tag ---------->
 		<form method="post">
 		<link rel="stylesheet" href="views/css/menu.css">
-		<h1 class="text-center"> MENU DE COHORTES </h1>
+		<h1 class="text-center">COHORTES ACTIVOS</h1>
 		<div class="container">
 			<div class="row">
 				<?php
@@ -46,20 +46,17 @@
 				<!--team-1-->
 				<div class="col-lg-4">
 					<div class="our-team-main">
-						<div class="team-front ">
-							<img src="http://placehold.it/110x110/9c27b0/fff?text=1" class="img-fluid" />
-							<h3><?php echo $cohorte->getId_curso(); ?>
-							</h3>
+						<div class="team-front">
+							<h2 class="cursocard"><?php echo $cohorte->getId_curso(); ?>
+							</h2><br><br>
 							<input type="hidden" name="nombre_cohorte" value="<?php echo $cohorte->getNombre(); ?>">
-							<p><?php echo $cohorte->getNombre(); ?>
+							<p class="cohortecard"><?php echo $cohorte->getNombre(); ?>
 							</p>
 						</div>
-						<div class="team-back ">
-							<span>
-								<br>
+						<div class="team-back"><br><br><br>
 								<a href="./views/registrar_nota.php?id_cohorte=<?php echo $cohorte->getId_cohorte(); ?>"
-									class="btn-style">Registrar Notas</a><br><br>
-								<a href="" class="btn-style">Ver Notas</a>
+									class="btn btn-primary">Registrar Notas</a>
+								<a href="" class="btn btn-secondary">Ver Notas</a>
 							</span>
 						</div>
 					</div>

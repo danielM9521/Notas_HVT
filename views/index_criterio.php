@@ -3,10 +3,10 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<br><br>
-<h2>MANTENIMIENTO CRITERIO</h2>
 <br>
-<a class="btn btn-outline-success" href="crear_criterio.php">Agregar Criterio</a>
+<h1 style="margin-left:33%;">Mantenimiento Criterio</h1>
+<br>
+<a class="btn btn-success" href="crear_criterio.php">Agregar Criterio</a>
 <br><br>
 <div class="table-responsive">
  <table class="table table-bordered">

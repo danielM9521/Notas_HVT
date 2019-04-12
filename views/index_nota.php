@@ -3,15 +3,16 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento Nota</h2>
-<a href="crear_nota.php">Agregar nota</a>
+<br>
+<h1 style="margin-left:33%;">Mantenimiento Nota</h1>
+<br>
+<a class="btn btn-success" href="crear_nota.php">Agregar nota</a>
  <table>
  <thead>
  <tr>
  <th>
  ID Nota
  </th>
- 
  <th>
  Materia
  </th>
