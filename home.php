@@ -53,7 +53,7 @@
 							</p>
 						</div>
 						<div class="team-back"><br><br><br>
-								<a href="./views/registrar_nota.php?id_cohorte=<?php echo $cohorte->getId_cohorte(); ?>"
+								<a href="./views/registro_nota.php?id_cohorte=<?php echo $cohorte->getId_cohorte(); ?>"
 									class="btn btn-primary">Registrar Notas</a>
 								<a href="" class="btn btn-secondary">Ver Notas</a>
 							</span>

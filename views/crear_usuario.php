@@ -3,6 +3,22 @@
 <body>
 <?php require_once("../navbar.php");?>
 <br><br>
+
+<?php
+if(isset($_POST['guardar'])){
+    include_once("../controllers/usuario_controller.php");
+    $cu = new usuario_controller();
+    $usuario = new Usuario();
+    $usuario->setId_usuario(null);
+    $usuario->setNombre($_POST['nombre']);
+    $usuario->setApellidos($_POST['apellidos']);
+    $usuario->setId_rol($_POST['id_rol']);
+    $usuario->setCorreo($_POST['correo']);
+    $usuario->setContrasenia($_POST['contrasenia']);
+    $cu->save($usuario);
+}
+
+?>
 <form method="post" class="cont">
 <h3>  NUEVO USUARIO </h3>
 <div class="card">
@@ -49,19 +65,3 @@
 
 </div>
 </form>
-
-<?php
-if(isset($_POST['guardar'])){
-    include_once("../controllers/usuario_controller.php");
-    $cu = new usuario_controller();
-    $usuario = new Usuario();
-    $usuario->setId_usuario(null);
-    $usuario->setNombre($_POST['nombre']);
-    $usuario->setApellidos($_POST['apellidos']);
-    $usuario->setId_rol($_POST['id_rol']);
-    $usuario->setCorreo($_POST['correo']);
-    $usuario->setContrasenia($_POST['contrasenia']);
-    $cu->save($usuario);
-}
-
-?>

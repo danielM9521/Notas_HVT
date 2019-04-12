@@ -1,6 +1,6 @@
 body {
   margin:0;
-  font-family:century gothic;
+  font-family:candara ;
   background-color: #e3eaf5;
 }
 
@@ -169,7 +169,7 @@ body {
   width: 100%;
 }
 .referencia{
-font-family: Century gothic;
+font-family: candara;
 margin-left: 10%;
 margin-right: 10%;
 width: 5%;
@@ -177,7 +177,7 @@ text-align: center;
 border: 1px solid #01418552;
 }
 .referencia2{
-font-family: Century gothic;
+font-family: candara;
 margin-left: 20%;
 margin-right: 20%;
 text-align: justify;
@@ -219,4 +219,7 @@ h2{
  
   display: flex;
   justify-content: center;
+}
+.ficha{
+  font-size: 125%;
 }
