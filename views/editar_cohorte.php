@@ -25,22 +25,25 @@
     }
     ?>
     <br><br>
-    <form method='post'>
-        <table>
+<form method='post' class="cont">
+<h3>  EDITAR ROL </h3>
+<div class="card">
+<div class="card-body">
+        
             <input type='hidden' name='id_cohorte' value='<?php echo $cohorte->getId_cohorte(); ?>'>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
             <label>Nombre:</label>
                 <input class="form-control" type='text' name='nombre' value='<?php echo $cohorte->getNombre(); ?>'>
             </div>  
-            <div class="form-group col-md-6">
+            <div class="form-group ">
            <label>Fecha de inicio:</label>
             <input  class="form-control"type='date' name='fecha_inicio' value='<?php echo $cohorte->getFecha_inicio(); ?>'>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
                 <label>Fecha de finalización:</label>
                 <input class="form-control" type='date' name='fecha_fin' value='<?php echo $cohorte->getFecha_fin(); ?>'>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                 <label>Sede:</label>
                 
                     <select class="form-control" name="id_sede">
@@ -58,7 +61,7 @@
 
                 </select>
                 </div>
-    <div class="form-group col-md-6">
+    <div class="form-group ">
     <label>Curso:</label>
                 
                     <select  class="form-control" name="id_curso">
@@ -75,7 +78,7 @@
                 
                                                                             </select>
                                                                             </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                 <label>Estado:</label>
                 <input type="radio" name="estado" value="1" <?php if ($cohorte->getEstado() == 1) {
                                                                     echo "checked";
@@ -85,6 +88,10 @@
                                                                 } ?>>Inactivo
             </div>
 
-        	<input type="submit"  class="btn btn-success boton" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_cohorte.php">Cancelar</a>
+            <div class="trans"> 
+	<input type="submit" class="btn btn-warning  btn-responsive btninter " name="actualizar" value='Actualizar'>
+    <a class="btn btn-info btn-responsive btninter  boton" href="./index_cohorte.php">Cancelar</a>
+</div>
+</div>
+</div>
     </form>

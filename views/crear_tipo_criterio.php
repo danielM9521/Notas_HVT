@@ -3,13 +3,20 @@
 <body>
 <?php require_once("../navbar.php");?>
 <br><br>
-<form method="post">
-<div class="form-group col-md-6">
+<form method="post" class="cont">
+<h3>  NUEVA COMPETENCIA </h3>
+<div class="card">
+<div class="card-body">
+<div class="form-group ">
     <label for="nombre">Nombre:</label>
-    <input class="form-control" type="text" name="nombre">
+    <input class="form-control" type="text" name="nombre" placeholder="Ej. Adaptación al cambio" required>
     </div>
-    <input  type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
-    <a class="btn btn-info" href="./index_tipo_criterio.php">Cancelar</a>
+    <div class="trans"> 
+    <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">
+    <a class="btn btn-info btn-responsive btninter  boton " href="./index_tipo_criterio.php">Cancelar</a>
+            </div> 
+            </div>
+            </div>
 </form>
 
 <?php

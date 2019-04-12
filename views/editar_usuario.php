@@ -23,19 +23,21 @@
         $cc->update($c);
     }
     ?>
-    <br><br>
-    <form method='post'>
-        
+   <br><br>
+<form method='post' class="cont">
+<h3>  EDITAR USUARIO </h3>
+<div class="card">
+<div class="card-body">
             <input type='hidden' name='id_usuario' value='<?php echo $usuario->getId_usuario(); ?>'>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
                 <label>Nombres:</label>
                 <input  class="form-control"  type='text' name='nombre' value='<?php echo $usuario->getNombre(); ?>'>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                 <label>Apellidos:</label>
                 <input class="form-control"  type='text' name='apellidos' value='<?php echo $usuario->getApellidos(); ?>'>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                 <label>Rol:</label>
                 
                     <select  class="form-control"  name="id_rol">
@@ -53,17 +55,21 @@
 
                 </select>
                                                                             </div>
-                                                                            <div class="form-group col-md-6">
+                                                                            <div class="form-group ">
                 <label>Correo:</label>
                 <input  class="form-control" type='text' name='correo' value='<?php echo $usuario->getCorreo(); ?>'>
                                                                             </div>
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                 <label>Contraseña:</label>
                 <input  class="form-control" type='password' name='contrasenia' value='<?php echo $usuario->getContrasenia(); ?>'>
                                                                             </div>
             
 
         
-        <input type="submit"class="btn btn-success boton" name="actualizar" value='Actualizar'>
-        <a class="btn btn-warning" href="./index_usuario.php">Cancelar</a>
+                                                                            <div class="trans"> 
+	<input type="submit" class="btn btn-warning  btn-responsive btninter " name="actualizar" value='Actualizar'>
+    <a class="btn btn-info btn-responsive btninter  boton" href="./index_usuario.php">Cancelar</a>
+</div>
+</div>
+</div>
     </form>

@@ -3,13 +3,22 @@
 <body>
 <?php require_once("../navbar.php");?>
 <br><br>
-<form method="post">
-<div class="form-group col-md-6">
+
+<form method="post"  class="cont">
+<h3>  NUEVO CURSO </h3>
+<div class="card">
+<div class="card-body">
+<div class="form-group ">
     <label for="nombre">Nombre:</label>
-    <input type="text"  class="form-control" name="nombre">
+    <input type="text"  class="form-control" name="nombre" placeholder ="Ej. PHP" required>
 </div>
-    <input type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
-    <a class="btn btn-info" href="./index_curso.php">Cancelar</a>
+<div class="trans"> 
+    <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">
+    <a class="btn btn-info btn-responsive btninter  boton " href="./index_curso.php">Cancelar</a>
+            </div> 
+            </div>
+
+</div>
 </form>
 
 <?php

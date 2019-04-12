@@ -34,7 +34,7 @@
 
                         <td><a class="btn btn-warning " href="editar_rol.php?id_rol=<?php echo $rol->getId_rol(); ?>">Editar</a></td>
                         <td><a class="btn btn-danger " href="eliminar_rol.php?id_rol=<?php echo $rol->getId_rol(); ?>">Eliminar</a></td>
-                        <td></td>
+                        
                     </tr>
                 <?php } ?>
             </tbody>
