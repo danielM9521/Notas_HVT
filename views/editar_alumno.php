@@ -104,7 +104,7 @@
             </div>
             <div class="form-group ">
                 <label>Correo:</label>
-                <input type='text' class="form-control" name='correo' value='<?php echo $alumno->getCorreo(); ?>'>
+                <input type='email' class="form-control" name='correo' value='<?php echo $alumno->getCorreo(); ?>'>
                 </div>
                 <div class="form-group ">
             <label>Fecha de nacimiento:</label>

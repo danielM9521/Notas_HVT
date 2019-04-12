@@ -1,9 +1,7 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php require_once("../header.php");?>
 <style>
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -63,9 +61,9 @@ h2{
 }
 
 </style>
-</head>
 <body>
-
+<?php require_once("../navbar.php");?>
+<link rel="stylesheet" href="./css/style.css">
 <h2>EQUIPO DE TRABAJO</h2>
 <div class="cards-ali">
 

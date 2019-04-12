@@ -57,7 +57,7 @@
                                                                             </div>
                                                                             <div class="form-group ">
                 <label>Correo:</label>
-                <input  class="form-control" type='text' name='correo' value='<?php echo $usuario->getCorreo(); ?>'>
+                <input  class="form-control" type='email' name='correo' value='<?php echo $usuario->getCorreo(); ?>'>
                                                                             </div>
                 <div class="form-group ">
                 <label>Contraseña:</label>

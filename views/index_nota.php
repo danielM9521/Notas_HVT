@@ -4,10 +4,10 @@
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
 <br>
-<h1 style="margin-left:33%;">Mantenimiento Nota</h1>
+<h2>MANTENIMIENTO NOTA</h2>
 <br>
 <a class="btn btn-success" href="crear_nota.php">Agregar nota</a>
- <table>
+ <table class="table-hover">
  <thead>
  <tr>
  <th>

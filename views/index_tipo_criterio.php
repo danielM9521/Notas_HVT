@@ -4,12 +4,12 @@
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
 <br>
-<h1 style="margin-left:33%;">Mantenimiento Competencias</h1>
+<h2>MANTENIMIENTO TIPO CRITERIOS</h2>
 <br>
 <a class="btn btn-success" href="crear_tipo_criterio.php">Agregar Competencia</a>
 <br><br>
 <div class="table-responsive">
- <table class="table table-bordered">
+ <table class="table table-hover">
  <thead>
  <tr>
  <th>

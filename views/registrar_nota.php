@@ -66,7 +66,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                             value="<?php echo $cohorte->getFecha_fin();?>"
                                             disabled>
                                         <br><br>
-                                        <label for="fecha_llenado_inicio">Fecha de llenado al inicio:</label>
+                                        <label for="fecha_llenado_inicio"  style="margin-left:14%;">Fecha de llenado al inicio:</label>
                                         <input name="fecha_llenado_inicio" type="date" style="margin-right:2%;"
                                             required>
                                         <label for="fecha_llenado_fin">Fecha de llenado al final:</label>
@@ -524,7 +524,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                     </div>
 
 
-                    <div class="col-xl-12" style="margin-left: 25%;"><input type="submit" class="btn btn-primary  boton"
+                    <div class="col-xl-12" style="margin-left: 25%;"><input type="submit" class="btn btn-success  boton"
                             value="Guardar" name="guardar">
                         <a class="btn btn-danger" href="../index.php">Cancelar</a></div>
 

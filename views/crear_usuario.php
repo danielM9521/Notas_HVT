@@ -33,7 +33,7 @@
 
     <div class="form-group">
     <label for="correo">Correo:</label>
-    <input  class="form-control" type="text" name="correo" required placeholder="Ej.ulises.samayoa@proyectosfgk.org ">
+    <input  class="form-control" type="email" name="correo" required placeholder="Ej.ulises.samayoa@proyectosfgk.org ">
     </div>
 
     <div class="form-group">

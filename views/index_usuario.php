@@ -4,12 +4,12 @@
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
 <br>
-<h1 style="margin-left:33%;">Mantenimiento Usuario</h1>
+<h2>MANTENIMIENTO USUARIO</h2>
 <br>
 <a class="btn btn-success" href="crear_usuario.php">Agregar Usuario</a>
 <br><br>
 <div class="table-responsive">
- <table class="table table-bordered">
+ <table class="table table-hover">
  <thead>
  <tr>
  <th>
