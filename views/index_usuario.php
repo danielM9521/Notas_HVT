@@ -3,9 +3,10 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento Usuario</h2>
 <br>
-<a class="btn btn-outline-success" href="crear_usuario.php">Agregar Usuario</a>
+<h1 style="margin-left:33%;">Mantenimiento Usuario</h1>
+<br>
+<a class="btn btn-success" href="crear_usuario.php">Agregar Usuario</a>
 <br><br>
 <div class="table-responsive">
  <table class="table table-bordered">

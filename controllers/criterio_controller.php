@@ -56,7 +56,7 @@ public static function findById($id_criterio){
     //la función para actualizar 
 public static function update($criterio){
     $conexion=Conexion::getConnect();
-    $update=$conexion->prepare('UPDATE Criterio SET id_tipo_criterio=:id_tipo_criterio, nombre=:nombre WHERE id_criterio=:criterio');
+    $update=$conexion->prepare('UPDATE Criterio SET id_tipo_criterio=:id_tipo_criterio, nombre=:nombre WHERE id_criterio=:id_criterio');
     $update->bindValue('id_criterio', $criterio->getId_criterio());
     $update->bindValue('id_tipo_criterio', $criterio->getId_tipo_criterio());
     $update->bindValue('nombre',$criterio->getNombre());

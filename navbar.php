@@ -14,7 +14,6 @@
       <a href="./index_alumno.php">Alumno</a>
       <a href="./index_tipo_criterio.php">Competencia</a>
       <a href="./index_criterio.php">Criterio</a>
-      
     </div>
   </div> 
   <a href="../views/acerca_de.php">Acerca de</a>

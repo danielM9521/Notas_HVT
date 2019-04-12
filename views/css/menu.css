@@ -10,7 +10,7 @@ h1
 {
 	width:100%;
 	height:auto;
-	border-bottom:5px #323233 solid;
+	border-bottom:3px #014185 solid;
 	background:#fff;
 	text-align:center;
 	border-radius:10px;
@@ -24,9 +24,9 @@ h1
 
 .our-team-main img
 {
-	border-radius:50%;
-	margin-bottom:20px;
-	width: 90px;
+	border-radius:10%;
+	margin-bottom:5%;
+	width: 45%;
 	
 }
 
@@ -47,30 +47,38 @@ h1
 {
 	width:100%;
 	height:auto;
-	position:absolute;
+	position:absolute;	
 	top:0;
 	left:0;
 	padding:5px 15px 0 15px;
 	text-align:center;
-	background:#fff;
+	background-size: cover;
+	margin-left: 1%;
 	
-   
 }
 
 .team-front
 {
 	width:100%;
-	height:auto;
+	height:175px;;
 	position:relative;
 	z-index:10;
-	background:#fff;
+	background-color: #01418585;
+	background-size: cover;
 	padding:15px;
 	bottom:0px;
-	transition: all 0.5s ease;
-	
-    
+	transition: all 0.5s ease; 
+	font-size: 25px;  
 }
+.cursocard{
+font-family: century gothic;
+font-weight: bold;
 
+
+}
+.cohortecard{
+	font-family: century gothic;
+}
 .our-team-main:hover .team-front
 {
 	bottom:-200px;
@@ -79,7 +87,7 @@ h1
 
 .our-team-main:hover
 {
-	border-color:#777;
+	border-color:#014185;
 	transition:0.5s;
 	
 }
@@ -99,4 +107,15 @@ h1
 		font-size: 16px;
 		
       
+}
+.btn-primary{
+	background-color: #014185;
+}
+.btn-secondary{
+	background-color: ;
+}
+.text-center{
+	color: black;
+	font-family: century gothic;
+	font-weight: bold;
 }

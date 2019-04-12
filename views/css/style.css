@@ -1,9 +1,13 @@
-body {margin:0;font-family:Arial}
+body {
+  margin:0;
+  font-family:century gothic;
+  background-color: #d6dde6;
+}
 
 .topnav {
   overflow: hidden;
   background-color: #014085;
-  border: 1px solid black;
+  
 }
 
 .topnav a {
@@ -45,7 +49,7 @@ body {margin:0;font-family:Arial}
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 158px;
+  min-width: 172px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -105,10 +109,6 @@ body {margin:0;font-family:Arial}
     text-align: left;
   }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> e6b67d2736bc768c5aec5e5e7689ab65f2a0accd
 #materia{
   width: 50%px;
 }
@@ -138,7 +138,7 @@ body {margin:0;font-family:Arial}
   border: 1px solid black;
 }
 .tab-pane{
-  background-color: #01418552;/*Color de fondo de las tabs*/
+  background-color: white;/*Color de fondo de las tabs*/
   border-radius: 4px;
 }
 .nav-tabs{
@@ -154,7 +154,7 @@ body {margin:0;font-family:Arial}
   font-weight: bold;
   text-align: center;
   font-family: century gothic;
-  margin-left: 5%;
+  width: 100%;
 }
 .referencia{
 font-family: Century gothic;
@@ -166,9 +166,8 @@ border: 1px solid #01418552;
 }
 .referencia2{
 font-family: Century gothic;
-margin-left: 10%;
-margin-right: 10%;
-width: 95%;
+margin-left: 20%;
+margin-right: 20%;
 text-align: justify;
 border: 1px solid #01418552;
 }
@@ -178,10 +177,9 @@ border: 1px solid #01418552;
 }
 .divisor{
   height: 2px;
-  width: 50%;
+  width: 75%;
   background-color: #014085;
 }
-
 .cont
 {
 margin:0 auto;
@@ -196,4 +194,11 @@ h3{
 @media only screen and (max-width:600px){
   .cont{
     width: 100%;
+  }
+
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type=number]{
+    text-align: center;
   }
