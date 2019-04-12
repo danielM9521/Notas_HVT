@@ -2,12 +2,16 @@
 <link rel="stylesheet" href="./css/style.css">
 <body>
 <?php require_once("../navbar.php");?>
-<br>
+<br><br>
 <form method="post">
+<div class="form-group col-md-6">
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre"><br><br>
+    <input  class="form-control" type="text" name="nombre">
+    </div>
+    <div class="form-group col-md-6">
 <label for="id_tipo_criterio">Competencia:</label>
-    <select name="id_tipo_criterio">
+
+    <select class="form-control" name="id_tipo_criterio">
     <?php 
             include_once("../controllers/tipo_criterio_controller.php"); 
             $rc = new tipo_criterio_controller();
@@ -17,8 +21,10 @@
             <?php }
         ?>
 
-    </select><br><br>
-    <input type="submit" value="Guardar" name="guardar">
+    </select>
+    </div>
+    <input type="submit" class="btn btn-success  boton" value="Guardar" name="guardar">
+    <a class="btn btn-info" href="./index_criterio.php">Cancelar</a>
 </form>
 
 <?php

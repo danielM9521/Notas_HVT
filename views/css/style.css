@@ -105,7 +105,10 @@ body {margin:0;font-family:Arial}
     text-align: left;
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e6b67d2736bc768c5aec5e5e7689ab65f2a0accd
 #materia{
   width: 50%px;
 }
@@ -178,3 +181,19 @@ border: 1px solid #01418552;
   width: 50%;
   background-color: #014085;
 }
+
+.cont
+{
+margin:0 auto;
+
+width: 50%;
+
+}
+h3{
+  text-align: center;
+}
+
+@media only screen and (max-width:600px){
+  .cont{
+    width: 100%;
+  }

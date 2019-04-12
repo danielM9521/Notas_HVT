@@ -44,7 +44,7 @@ public static function findById($id_usuario){
     //la función para actualizar 
 public static function update($usuario){
     $conexion=Conexion::getConnect();
-    $update=$conexion->prepare('UPDATE Usuario SET nombre=:nombre, apellidos=:apellidos, id_rol=:id_rol, correo=:correo, contrasenia=:contrasenia WHERE id_usuario=:id_usuario');
+    $update=$conexion->prepare('UPDATE Usuario SET nombre=:nombre, apellidos=:apellidos, id_rol=:id_rol, correo=:correo, contrasenia=MD5(:contrasenia) WHERE id_usuario=:id_usuario');
     $update->bindValue('id_usuario', $usuario->getId_usuario());
     $update->bindValue('nombre',$usuario->getNombre());
     $update->bindValue('apellidos',$usuario->getApellidos());
@@ -66,7 +66,7 @@ public static function delete($id_usuario){
 //la función para registrar un usuario
 public static function save($usuario){
     $conexion=Conexion::getConnect();
-    $insert=$conexion->prepare('INSERT INTO Usuario VALUES(NULL,:nombre,:apellidos,:id_rol,:correo,:contrasenia)');
+    $insert=$conexion->prepare('INSERT INTO Usuario VALUES(NULL,:nombre,:apellidos,:id_rol,:correo, MD5(:contrasenia))');
     $insert->bindValue('nombre',$usuario->getNombre());
     $insert->bindValue('apellidos',$usuario->getApellidos());
     $insert->bindValue('id_rol',$usuario->getId_rol());

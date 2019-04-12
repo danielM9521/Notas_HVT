@@ -20,18 +20,20 @@ if (isset($_POST) && !empty($_POST)) {
   $cc->update($c);
 }
 ?>
-
+<br><br>
 <form method='post'>
 	<table>
 		<input type='hidden' name='id_criterio' value='<?php echo $criterio->getId_criterio(); ?>'>
         <input type='hidden' name='action' value='update'>
-		<tr>
-			<td><label>Nombre:</label></td><td><input type='text' name='nombre' value='<?php echo $criterio->getNombre(); ?>'></td>
-		</tr>
-    <tr>
-                <td><label>Competencia:</label></td>
-                <td>
-                    <select name="id_tipo_criterio">
+        <div class="form-group col-md-6">
+		<label>Nombre:</label>
+    <input type='text' name='nombre' class="form-control" value='<?php echo $criterio->getNombre(); ?>'>
+    </div>
+    <div class="form-group col-md-6">
+                <label>Competencia:</label>
+
+                
+                    <select class="form-control"  name="id_tipo_criterio">
                         <?php
                         include_once("../controllers/tipo_criterio_controller.php");
                         $sc = new tipo_criterio_controller();
@@ -42,14 +44,14 @@ if (isset($_POST) && !empty($_POST)) {
                                                                                 } ?>><?php echo $tipo->getNombre(); ?></option>
                         <?php }
                     ?>
-                </td>
+                
 
                 </select>
-            </tr>
+            </div>
 
-	</table>	
-	<input type="submit" name="actualizar" value='Actualizar'>
-    <a class="btn btn-warning" href="./index_criterio.php">Cancelar</a>
+		
+            <input type="submit"class="btn btn-success boton" name="actualizar" value='Actualizar'>
+        <a class="btn btn-warning" href="./index_criterio.php">Cancelar</a>
 </form>
 
 

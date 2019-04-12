@@ -3,7 +3,7 @@
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
-<h2>Mantenimiento-Sede</h2>
+<h2>Mantenimiento Nota</h2>
 <a href="crear_nota.php">Agregar nota</a>
  <table>
  <thead>

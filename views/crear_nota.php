@@ -12,7 +12,7 @@
     <label for="nota_fin">Nota Fin:</label>
     <input type="number" name="nota_fin"><br><br>
     <label for="fecha_llenado_inicio">Fecha Llenano Inicio:</label>
-    <input type="date" name="fecha_llenano_inicio"><br><br>
+    <input type="date" name="fecha_llenado_inicio"><br><br>
     <label for="fecha_llenado_fin">Fecha Llenado Fin:</label>
     <input type="date" name="fecha_llenado_fin"><br><br>
     <label for="id_alumno">Alumno:</label>

@@ -59,7 +59,7 @@
                                                                             </div>
                 <div class="form-group col-md-6">
                 <label>Contraseña:</label>
-                <input  class="form-control" type='text' name='contrasenia' value='<?php echo $usuario->getContrasenia(); ?>'>
+                <input  class="form-control" type='password' name='contrasenia' value='<?php echo $usuario->getContrasenia(); ?>'>
                                                                             </div>
             
 

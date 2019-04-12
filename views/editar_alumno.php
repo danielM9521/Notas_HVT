@@ -31,26 +31,27 @@
         $cc->update($a);
     }
     ?>
+    <br><br>
     <form method='post'>
-        <table>
+        
             <input type='hidden' name='id_alumno' value='<?php echo $alumno->getId_alumno(); ?>'>
-            <tr>
-                <td><label>Nombres:</label></td>
-                <td><input type='text' name='nombre' value='<?php echo $alumno->getNombre(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Apellidos:</label></td>
-                <td><input type='text' name='apellidos' value='<?php echo $alumno->getApellidos(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Dirección:</label></td>
-                <td><input type='text' name='direccion' value='<?php echo $alumno->getDireccion(); ?>'></td>
-            </tr>
-
-            <tr>
-                <td><label>Cohorte:</label></td>
-                <td>
-                    <select name="id_cohorte">
+                <div class="form-group col-md-6">
+                <label>Nombres:</label>
+                <input type='text' class="form-control" name='nombre' value='<?php echo $alumno->getNombre(); ?>'>
+                </div>
+                <div class="form-group col-md-6">
+                <label>Apellidos:</label>
+                <input type='text' class="form-control"  name='apellidos' value='<?php echo $alumno->getApellidos(); ?>'>
+                </div>
+                <div class="form-group col-md-6">
+                <label>Dirección:</label></td>
+                <input type='text' class="form-control"  name='direccion' value='<?php echo $alumno->getDireccion(); ?>'>
+                </div>
+          
+                <div class="form-group col-md-6">
+           <label>Cohorte:</label>
+            
+                    <select  class="form-control" name="id_cohorte">
                         <?php
                         include_once("../controllers/cohorte_controller.php");
                         $sc = new cohorte_controller();
@@ -61,58 +62,57 @@
                                                                                 } ?>><?php echo $cohorte->getNombre(); ?></option>
                         <?php }
                     ?>
-                </td>
+                
                 </select>
-            </tr>
-            
-            <tr>
-                <td><label>Estado civil :</label></td>
-                <td>
-                    <select name="estado_civil">
+                </div>
+                <div class="form-group col-md-6">
+           <label>Estado civil :</label>
+                
+                    <select  class="form-control" name="estado_civil">
                         <option value="Soltera/o" <?php if($alumno->getEstado_civil()=="Soltera/o"){echo "selected";}?>>Soltera/o</option>
                         <option value="Viuda/o"<?php if($alumno->getEstado_civil()=="Viuda/o"){echo "selected";}?>>Viuda/o</option>
                         <option value="Casada/o"<?php if($alumno->getEstado_civil()=="Casada/o"){echo "selected";}?>>Casada/o</option>
                         <option value="Divorciada/o"<?php if($alumno->getEstado_civil()=="Divorciada/o"){echo "selected";}?>>Divorciada/o</option>
                     </select>                                                                
-                </td>
-            </tr>
-            <tr>
-                <td><label>Sexo:</label></td>
-                <td>
+                
+            </div>
+            <div class="form-group col-md-6">
+                <label>Sexo:</label>
+                
                     <input type="radio" name="sexo" value="Femenino" <?php if($alumno->getSexo()=="Femenino"){echo "checked";}?>>Femenino
                     <input type="radio" name="sexo" value="Masculino" <?php if($alumno->getSexo()=="Masculino"){echo "checked";}?>>Masculino
                     <input type="radio" name="sexo" value="Otro" <?php if($alumno->getSexo()=="Otro"){echo "checked";}?>>Otro
-            </td>
-            </tr>
-            <tr>
-                <td><label>DUI:</label></td>
-                <td><input type='text' name='dui' value='<?php echo $alumno->getDui(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>NIT:</label></td>
-                <td><input type='text' name='nit' value='<?php echo $alumno->getNit(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Carnet de minoridad:</label></td>
-                <td><input type='text' name='carnet_minoridad' value='<?php echo $alumno->getCarnet_minoridad(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Teléfono:</label></td>
-                <td><input type='text' name='telefono' value='<?php echo $alumno->getTelefono(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Correo:</label></td>
-                <td><input type='text' name='correo' value='<?php echo $alumno->getCorreo(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Fecha de nacimiento:</label></td>
-                <td><input type='date' name='fecha_nac' value='<?php echo $alumno->getFecha_nac(); ?>'></td>
-            </tr>
-            <tr>
-                <td><label>Discapacidad:</label></td>
-                <td><input type='text' name='discapacidad' value='<?php echo $alumno->getDiscapacidad(); ?>'></td>
-            </tr>
+           </div>
+           <div class="form-group col-md-6">
+                <label>DUI:</label>
+                <input type='text' class="form-control"  name='dui' value='<?php echo $alumno->getDui(); ?>'>
+            </div>
+            <div class="form-group col-md-6">
+                <label>NIT:</label>
+                <td><input type='text' class="form-control"  name='nit' value='<?php echo $alumno->getNit(); ?>'>
+           </div>
+           <div class="form-group col-md-6">
+                <label>Carnet de minoridad:</label>
+                <input type='text' class="form-control" name='carnet_minoridad' value='<?php echo $alumno->getCarnet_minoridad(); ?>'>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Teléfono:</label>
+                <input type='text' class="form-control" name='telefono' value='<?php echo $alumno->getTelefono(); ?>'>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Correo:</label>
+                <input type='text' class="form-control" name='correo' value='<?php echo $alumno->getCorreo(); ?>'>
+                </div>
+                <div class="form-group col-md-6">
+            <label>Fecha de nacimiento:</label>
+                <input type='date' class="form-control" name='fecha_nac' value='<?php echo $alumno->getFecha_nac(); ?>'>
+                </div>
+                <div class="form-group col-md-6">
+           
+                <label>Discapacidad:</label>
+                <input type='text' class="form-control" name='discapacidad' value='<?php echo $alumno->getDiscapacidad(); ?>'>
+            </div>
         </table>
-        <input type="submit" name="actualizar" value='Actualizar'>
-        <a class="btn btn-warning" href="./index_alumno.php">Cancelar</a>
+        <input type="submit"  class="btn btn-success boton" name="actualizar" value='Actualizar'>
+    <a class="btn btn-warning" href="./index_alumno.php">Cancelar</a>
     </form>
