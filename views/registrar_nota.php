@@ -77,7 +77,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                 <div class="card">
                                     <div class="card-body">
 
-                                        <h4>Referencias de puntaje a asignar</h4>
+                                        <h5>Referencias de puntaje a asignar</h5>
                                         <a class="btn btn-info" data-toggle="collapse" data-target="#puntaje">Ver
                                             más</a>
                                         <div id="puntaje" class="collapse">
@@ -180,7 +180,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                             <div class="col-xl-12">
                                 <form>
                                     <div class="form-group">
-                                        <table class="tablac1">
+                                        <table class="tablac1 table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th class="criterios" colspan="2">
@@ -205,7 +205,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                                 <?php
     $j=1;
     foreach ($alumnos as $alumno) {
-        echo '<td class="criterios">'.$j.'</td><td class="criterios">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_11"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_11"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_12"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_12"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_13"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_13"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.$j.'"></td></tr>';
+        echo '<td class="criterios">'.$j.'</td><td class="nombres">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_11"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_11"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_12"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_12"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_13"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_13"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.$j.'"></td></tr>';
         $j++;
     }
 
@@ -225,7 +225,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                             <div class="col-xl-12">
                                 <form>
                                     <div class="form-group">
-                                        <table class="tablac1">
+                                        <table class="tablac1 table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th class="criterios" colspan="2">
@@ -248,7 +248,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                                 <?php
     $j=1;
     foreach ($alumnos as $alumno) {
-        echo '<td class="criterios">'.$j.'</td><td class="criterios">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio2->getId_criterio()-1).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio2->getId_criterio()-1).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio2->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio2->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="diferencia'.($cantidadAlumnos+$j).'"></td></tr>';
+        echo '<td class="criterios">'.$j.'</td><td class="nombres">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio2->getId_criterio()-1).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio2->getId_criterio()-1).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio2->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio2->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="diferencia'.($cantidadAlumnos+$j).'"></td></tr>';
         $j++;
     }
 
@@ -267,7 +267,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                             <div class="col-xl-12">
                                 <form>
                                     <div class="form-group">
-                                        <table class="tablac1">
+                                        <table class="tablac1 table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th class="criterios" colspan="2">
@@ -290,7 +290,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                                 <?php
     $j=1;
     foreach ($alumnos as $alumno) {
-        echo '<td class="criterios">'.$j.'</td><td class="criterios">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio3->getId_criterio()-1).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio3->getId_criterio()-1).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio3->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio3->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
+        echo '<td class="criterios">'.$j.'</td><td class="nombres">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio3->getId_criterio()-1).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio3->getId_criterio()-1).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio3->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio3->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
         $j++;
     }
 
@@ -310,7 +310,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                             <div class="col-xl-12">
                                 <form>
                                     <div class="form-group">
-                                        <table class="tablac1">
+                                        <table class="tablac1 table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th class="criterios" colspan="2">
@@ -331,7 +331,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                                 <?php
     $j=1;
     foreach ($alumnos as $alumno) {
-        echo '<td class="criterios">'.$j.'</td><td class="criterios">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio4->getId_criterio()-1).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio4->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
+        echo '<td class="criterios">'.$j.'</td><td class="nombres">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio4->getId_criterio()-1).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio4->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
         $j++;
     }
 
@@ -349,7 +349,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                             <div class="col-xl-12">
                                 <form>
                                     <div class="form-group">
-                                        <table class="tablac1">
+                                        <table class="tablac1 table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th class="criterios" colspan="2">
@@ -374,7 +374,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                                 <?php
     $j=1;
     foreach ($alumnos as $alumno) {
-        echo '<td class="criterios">'.$j.'</td><td class="criterios">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio5->getId_criterio()-2).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio5->getId_criterio()-2).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio5->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio5->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio5->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio5->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
+        echo '<td class="criterios">'.$j.'</td><td class="nombres">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio5->getId_criterio()-2).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio5->getId_criterio()-2).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio5->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio5->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio5->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio5->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
         $j++;
     }
 
@@ -393,7 +393,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                             <div class="col-xl-12">
                                 <form>
                                     <div class="form-group">
-                                        <table class="tablac1">
+                                        <table class="tablac1 table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th class="criterios" colspan="2">
@@ -420,7 +420,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                                 <?php
     $j=1;
     foreach ($alumnos as $alumno) {
-        echo '<td class="criterios">'.$j.'</td><td class="criterios">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio6->getId_criterio()-3).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio6->getId_criterio()-3).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio6->getId_criterio()-2).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio6->getId_criterio()-2).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio6->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio6->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio6->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio6->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
+        echo '<td class="criterios">'.$j.'</td><td class="nombres">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio6->getId_criterio()-3).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio6->getId_criterio()-3).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio6->getId_criterio()-2).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio6->getId_criterio()-2).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio6->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio6->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio6->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio6->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
         $j++;
     }
 
@@ -440,7 +440,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                             <div class="col-xl-12">
                                 <form>
                                     <div class="form-group">
-                                        <table class="tablac1">
+                                        <table class="tablac1 table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th class="criterios" colspan="2">
@@ -465,7 +465,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                                 <?php
     $j=1;
     foreach ($alumnos as $alumno) {
-        echo '<td class="criterios">'.$j.'</td><td class="criterios">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio7->getId_criterio()-2).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio7->getId_criterio()-2).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio7->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio7->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio7->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio7->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
+        echo '<td class="criterios">'.$j.'</td><td class="nombres">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio7->getId_criterio()-2).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio7->getId_criterio()-2).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio7->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio7->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio7->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio7->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
         $j++;
     }
 
@@ -485,7 +485,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                             <div class="col-xl-12">
                                 <form>
                                     <div class="form-group">
-                                        <table class="tablac1">
+                                        <table class="tablac1 table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th class="criterios" colspan="2">
@@ -510,7 +510,7 @@ $criterios8 = $cco->findByTipoCriterio(8);
                                                 <?php
     $j=1;
     foreach ($alumnos as $alumno) {
-        echo '<td class="criterios">'.$j.'</td><td class="criterios">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio8->getId_criterio()-2).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio8->getId_criterio()-2).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio8->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio8->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio8->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio8->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
+        echo '<td class="criterios">'.$j.'</td><td class="nombres">'.$alumno->getNombre().'</td><td class="notas"><input  type="number" min="1" step="1" max="3"  name="nota_inicio_'.($j.$criterio8->getId_criterio()-2).'"></td><td class="notas"><input type="number" min="1" step="1" max="3" name="nota_fin_'.($j.$criterio8->getId_criterio()-2).'"></td><td class="notas"><input  min="1" step="1" max="3" type="number" name="nota_inicio_'.($j.$criterio8->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_fin_'.($j.$criterio8->getId_criterio()-1).'"></td><td class="notas"><input min="1" step="1" max="3" type="number"  name="nota_inicio_'.($j.$criterio8->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="nota_fin_'.($j.$criterio8->getId_criterio()).'"></td><td class="notas"><input min="1" step="1" max="3" type="number" name="diferencia'.($cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$cantidadAlumnos+$j).'"></td></tr>';
         $j++;
     }
 
