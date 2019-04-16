@@ -34,7 +34,7 @@ public static function findAll(){
 public static function findByCohorte($id_cohorte){
     $coleccion = array();
     $db=Conexion::getConnect();
-    $sql=$db->prepare('SELECT id_alumno, CONCAT(apellidos,", ",nombre) as nombreCompleto, apellidos, direccion, estado_civil, sexo, dui, nit, carnet_minoridad, discapacidad, telefono, correo, fecha_nac, id_cohorte FROM Alumno WHERE id_cohorte=:id_cohorte ORDER BY nombreCompleto');
+    $sql=$db->prepare('SELECT id_alumno, nombre, apellidos, direccion, estado_civil, sexo, dui, nit, carnet_minoridad, discapacidad, telefono, correo, fecha_nac, id_cohorte FROM Alumno WHERE id_cohorte=:id_cohorte ORDER BY apellidos');
 $sql->bindValue('id_cohorte',$id_cohorte);
 $sql->execute();
     foreach ($sql->fetchAll() as $alumno) {

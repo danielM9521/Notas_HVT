@@ -1,5 +1,7 @@
 <?php require_once("../header.php");?>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 <body>
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
@@ -10,7 +12,7 @@
 <br><br>
 
 <div class="table-responsive">
- <table class="table table-hover">
+ <table id="mantenimiento" class="table table-hover">
  <thead >
  <tr>
  <th>
@@ -68,3 +70,9 @@ function myFunction() {
 }
 </script>
 </body>
+<script>
+    $(document).ready(function () {
+$('#mantenimiento').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+</script>

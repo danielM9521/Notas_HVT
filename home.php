@@ -1,6 +1,9 @@
 <?php include("header.php");?>
 <link rel="stylesheet" href="./views/css/style.css">
-
+<link rel="stylesheet" href="./views/css/bootstrap.min.css">
+<script type="text/javascript" src="./views/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./views/js/jquery.min.js"></script>
+<script type="text/javascript" src="./views/js/popper.min.js"></script>
 <body>
 
 	<div class="topnav" id="myTopnav">
@@ -53,7 +56,7 @@
 							</p>
 						</div>
 						<div class="team-back"><br><br><br>
-								<a href="./views/registro_nota.php?id_cohorte=<?php echo $cohorte->getId_cohorte(); ?>"
+								<a href="./views/registro_nota_hvt.php?id_cohorte=<?php echo $cohorte->getId_cohorte(); ?>"
 									class="btn btn-primary">Registrar Notas</a>
 								<a href="" class="btn btn-secondary">Ver Notas</a>
 							</span>

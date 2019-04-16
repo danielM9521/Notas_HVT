@@ -75,7 +75,6 @@ public static function save($nota){
     $conexion=Conexion::getConnect();
     $insert=$conexion->prepare('INSERT INTO Nota VALUES(NULL,:nombre_materia, :id_criterio, :nota_inicio, :nota_fin, :fecha_llenado_inicio,
     :fecha_llenado_fin, :id_alumno,:id_usuario)');
- 
   $insert->bindValue('nombre_materia',$nota->getNombre_materia());
   $insert->bindValue('id_criterio',$nota->getId_criterio());
   $insert->bindValue('nota_inicio',$nota->getNota_inicio());
@@ -89,9 +88,6 @@ public static function save($nota){
 }
 
 }
-
-
-
 
 
 ?>
