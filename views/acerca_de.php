@@ -13,7 +13,7 @@ figure.snip0015 {
   margin: 10px;
   min-width: 220px;
   max-width: 330px;
-  max-height: 600px;
+  max-height: 500px;
   width: 100%;
   background: #000000;
   text-align: center;
@@ -144,7 +144,7 @@ figure.snip0015:hover figcaption::before {
 	<img src="./images/2.jpg" alt="sample39"/>
 	<figcaption>
   <h2 class="texto"><span>Desarrollador</span></h2>
-		<p class="texto">Gabriela Menéndez</p>
+		<p class="texto">Gabriela Nathalie Menéndez</p>
     <p>gabriela.menendez@proyectosfgk.org</p>
 		<a href="#"></a>
 	</figcaption>			

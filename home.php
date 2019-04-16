@@ -1,6 +1,84 @@
 <?php include("header.php");?>
 <link rel="stylesheet" href="./views/css/style.css">
 
+
+<style>
+
+
+
+.carre_couleur
+{
+  margin-top: 10%;
+  width:350px;
+  height: 350px;
+  display: inline-block;
+  position: relative;
+  border-radius:15px;
+ 
+  
+}
+.base_hov .retract
+{
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform-origin: 50% 20%; 
+  -webkit-transform: scale(1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform-origin: 50% 20%;
+  -moz-transform: scale(1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform-origin: 50% 20%;
+  -ms-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform-origin: 50% 20%;
+  transform: scale(1);
+  width:200px;
+  height: 280px;
+  position: absolute;
+  z-index: 2;
+  left:0;
+}
+.base_hov:hover .retract
+{
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(0.6);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(0.6);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(0.6);
+  transition: all 200ms ease-in;
+  transform: scale(0.6);
+}
+.acced
+{
+  width: 180px;
+  padding:10px;
+  
+  bottom:0; 
+  position:absolute;
+  z-index: 1; 
+  text-align: left;
+}
+.big_acced
+{
+  color:#ffffff;
+  font-size:25px;
+  font-weight: 700;
+  font-family:'Roboto';
+}
+.middle_acced
+{
+  color:#ffffff;
+  font-size:15px;
+  font-weight: 400;
+  font-family:'Roboto';
+}
+img {
+  margin-left:35%;
+  width:200px !important;
+  height: 200px !important;
+}
+
+</style>
 <body>
 
 	<div class="topnav" id="myTopnav">
@@ -32,38 +110,73 @@
 
 		<!------ Include the above in your HEAD tag ---------->
 		<form method="post">
-		<link rel="stylesheet" href="views/css/menu.css">
-		<h1 class="text-center">COHORTES ACTIVOS</h1>
-		<div class="container">
+		
+	
+
+		<!--<div class="container">
 			<div class="row">
-				<?php
+				<?php/*
                         include_once("./controllers/cohorte_controller_2.php");
             $cc = new cohorte_controller_2();
             $cohortes = $cc->findAllActives();
             foreach ($cohortes as $cohorte) {
-                ?>
-				<!--team-1-->
+               */ ?>
+				
 				<div class="col-lg-4">
 					<div class="our-team-main">
 						<div class="team-front">
-							<h2 class="cursocard"><?php echo $cohorte->getId_curso(); ?>
+							<h2 class="cursocard"><?php// echo $cohorte->getId_curso(); ?>
 							</h2><br><br>
-							<input type="hidden" name="nombre_cohorte" value="<?php echo $cohorte->getNombre(); ?>">
-							<p class="cohortecard"><?php echo $cohorte->getNombre(); ?>
+							<input type="hidden" name="nombre_cohorte" value="<?php// echo $cohorte->getNombre(); ?>">
+							<p class="cohortecard"><?php //echo $cohorte->getNombre(); ?>
 							</p>
 						</div>
 						<div class="team-back"><br><br><br>
-								<a href="./views/registro_nota.php?id_cohorte=<?php echo $cohorte->getId_cohorte(); ?>"
+								<a href="./views/registro_nota.php?id_cohorte=<?php// echo $cohorte->getId_cohorte(); ?>"
 									class="btn btn-primary">Registrar Notas</a>
 								<a href="" class="btn btn-secondary">Ver Notas</a>
 							</span>
 						</div>
 					</div>
 				</div>
-				<!--team-1-->
+				
 				<?php
-            }
+            //}
         ?>
+
+		
+		-->
+		
+		<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
+
+<div align="center" class="fond">
+
+    <div class="carre_couleur base_hov" style="background-color:#f8b334;">
+    <BR>
+    <h2  class="big_acced">NOTAS</h2>
+      <div class="retract" style="background-color:#f8b334;"><img src="views/images/calificacion.png"></div>
+      <div class="acced">
+        <a  href=" " class="big_acced" style="color:#f39c12;">REGISTAR</a>
+		<a  href=" " class="big_acced" style="color:#f39c12;">EDITAR</a>
+       
+      </div>
+    </div>
+    <div class="carre_couleur base_hov" style="background-color:#2ecc71;">
+    <BR>
+    <h2  class="big_acced">REPORTES</h2>
+      <div class="retract" style="background-color:#2ecc71;"><img src="views/images/reporte.png"></div>
+      <div class="acced">
+	  <a  href=" " class="big_acced" style="color:#27ae60;">COHORTES</a>
+	  <a  href=" " class="big_acced" style="color:#27ae60;">ALUMNOS</a>
+        
+      </div>
+    </div>
+   
+
+ 
+  
+  
+</div>
 		</form>
 </body>
 
