@@ -1,121 +1,163 @@
 <?php require_once("../header.php");?>
+<?php require_once("../navbar.php");?>
+<link rel="stylesheet" href="./css/style.css">
 <style>
 
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.flip-card {
-  
-  margin: 0 auto;
-  margin-top: 40px;
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-
-}
-
-.flip-card-inner {
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
+figure.snip0015 {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
   position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 330px;
+  max-height: 500px;
   width: 100%;
-  height: 100%;
+  background: #000000;
   text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+figure.snip0015 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-.flip-card-front, .flip-card-back {
+figure.snip0015 img {
+  opacity: 1;
+  width: 100%;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip0015 figcaption {
   position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 11em 0em;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+}
+figure.snip0015 figcaption::before {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  bottom: 50%;
+  left: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  content: '';
+  opacity: 0;
+  background-color: #ffffff;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+figure.snip0015 h2,
+figure.snip0015 p {
+  
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s,-webkit-transform 0.35s,-moz-transform 0.35s,-o-transform 0.35s,transform 0.35s;
+}
+figure.snip0015 h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+  text-transform: uppercase;
+  -webkit-transform: translate3d(0%, 50%, 0);
+  transform: translate3d(0%, 50%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+figure.snip0015 h2 span {
+  font-weight: 800;
+}
+figure.snip0015 p {
+  font-weight: 200	;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+figure.snip0015 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  color: #ffffff;
+}
+figure.snip0015:hover img {
+  opacity: 0.35;
+}
+figure.snip0015:hover figcaption h2 {
+  opacity: 1;
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+figure.snip0015:hover figcaption p {
+  opacity: 0.9;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+figure.snip0015:hover figcaption::before {
+  background: rgba(255, 255, 255, 0);
+  top: 30px;
+  bottom: 30px;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
 }
 
-.flip-card-front {
-  background-color: white;
-  color: black;
-  z-index: 2;
-}
 
-.flip-card-back {
-  background-color: #34495E;
-  color: white;
-  transform: rotateY(180deg);
-  z-index: 1;
-}
-.cards-ali{
-  display:flex;
+/* Demo purposes only */
+
+.clas {
+ 
+  display: flex;
   flex-flow:row wrap;
-  justify-content:center;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+  
 }
-h2{
+.texto{
   text-align: center;
-  color: #0A7D8B;
+  color: white;
 }
 
 </style>
 <body>
-<?php require_once("../navbar.php");?>
-<link rel="stylesheet" href="./css/style.css">
+<br><br>
 <h2>EQUIPO DE TRABAJO</h2>
-<div class="cards-ali">
-
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-  <img src="./images/2.jpg"  style="width:300px; height:300px">
-  
-    </div>
-    <div class="flip-card-back">
-    <h1>Desarrollador</h1>
-    <h4>Gabriela Menéndez</h4> 
-    <p class="nombrescard">Para mayor información contactenos</p>
-      <p class="nombrescard">gabriela.menendezfgksa@sv.cds</p> 
-    <p class="nombrescard">Tel. 7281-4480</p>
-    </div>
-  </div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-  <img src="./images/1.jpg"  style="width:300px; height:300px">
-  
-    </div>
-    <div class="flip-card-back">
-    <h1>Desarrollador</h1>
-      <h4>Daniel Murillo</h4> 
-      <p class="nombrescard">Para mayor información contactenos</p>
-      <p class="nombrescard">daniel.murillo@proyectosfgk.org</p> 
-      <p class="nombrescard">Tel.72083251</p>
-    </div>
-  </div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-  <img src="./images/3.jpg"  style="width:300px; height:300px">
-  
-    </div>
-    <div class="flip-card-back">
-      <h1>Desarrollador</h1>
-      <h4>Stephannie Escobar</h4> 
-      <p class="nombrescard">Para mayor información contactenos</p> 
-      <p class="nombrescard">stephannie.escobar@proyectosfgk.org
-      <p class="nombrescard">Tel.75660113</p>
-    </div>
-  </div>
-</div>
-
-
-
-
+<div class="clas">
+<figure class="snip0015">
+	<img src="./images/1.jpg" alt="sample38"/>
+	<figcaption>
+		<h2 class="texto"><span>Desarrollador</span></h2>
+		<p class="texto">Daniel Alberto Murillo </p>
+    <p>daniel.murillo@proyectosfgk.org</p>
+		<a href="#"></a>
+	</figcaption>			
+</figure>
+<figure class="snip0015">
+	<img src="./images/2.jpg" alt="sample39"/>
+	<figcaption>
+  <h2 class="texto"><span>Desarrollador</span></h2>
+		<p class="texto">Gabriela Nathalie Menéndez</p>
+    <p>gabriela.menendez@proyectosfgk.org</p>
+		<a href="#"></a>
+	</figcaption>			
+</figure>
+<figure class="snip0015">
+	<img src="./images/3.jpg" alt="sample40"/>
+	<figcaption>
+  <h2 class="texto"><span>Desarrollador</span></h2>
+		<p class="texto">Stephannie Escobar</p>
+    <p>stephannie.escobar@proyectosfgk.org</p>
+		<a href="#"></a>
+	</figcaption>			
+</figure>
 </div>
 </body>
 </html> 
