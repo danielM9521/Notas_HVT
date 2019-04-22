@@ -16,73 +16,62 @@ $id_cohorte = 1;
 $cohorte = cohorte_controller::findById($id_cohorte);
 $alumnos = alumno_controller::findByCohorte($id_cohorte);
 ?>
-
-<table id="prueba" class="table-bordered">
+<table class="table-bordered">
 <thead>
 <tr>
-<th class="criterios" >N°</th>
-<th class="criterios" >Nombre completo</th>
+<th class="criterios" rowspan="2">N°</th>
+<th class="criterios" rowspan="2">Nombre completo</th>
 <th class="criterios" colspan="2">Puntaje asignado</th>
 </tr>
+
 </thead>
+
 <tbody>
-    <tr>
- 
-<td class="notas">Nombre completo</td>
-<td class="notas">Nota inicio</td>
-<td class="notas">Nota final</td>
-<td class="notas">Nota inicio</td>
-<td class="notas">Nota final</td>
-<td class="notas">Nota inicio</td>
-<td class="notas">Nota final</td>
-<td class="notas">Nota inicio</td>
-<td class="notas">Nota final</td>
-<td class="notas">Nota inicio</td>
-<td class="notas">Nota final</td>
-<td class="notas">Nota inicio</td>
-<td class="notas">Nota final</td>
-<td class="notas">Nota inicio</td>
-<td class="notas">Nota final</td>
+<tr>
+    <td></td>
+<td class="notas">Inicial</td>
+<td class="notas">Final</td>
+
 </tr>
 <tr>
 <?php
 foreach($alumnos as $alumno){
 
-echo '<td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
+echo '<tr><td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
 $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 1); 
     foreach($notas as $nota){
-        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
-        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_fin().'</td>';
     }
     $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 2); 
     foreach($notas as $nota){
-        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
-        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_fin().'</td>';
     }
     $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 3); 
     foreach($notas as $nota){
-        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
-        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
-    }
+    //     echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+    //     echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+     }
     $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 4); 
     foreach($notas as $nota){
-        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
-        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_fin().'</td>';
     }
     $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 5); 
     foreach($notas as $nota){
-        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
-        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_fin().'</td>';
     }
     $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 6); 
     foreach($notas as $nota){
-        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
-        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_fin().'</td>';
     }
     $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 7); 
     foreach($notas as $nota){
-        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
-        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        // echo '<td class="notas">'.$nota->getNota_fin().'</td>';
     }
 }
 ?>
@@ -134,7 +123,7 @@ $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 1);
 <tr>
 <?php
 foreach($alumnos as $alumno){
-echo '<td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
+echo '<tr><td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
 $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 8); 
     foreach($notas as $nota){
         echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
@@ -218,7 +207,7 @@ $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 8);
 <?php
 foreach($alumnos as $alumno){
 
-echo '<td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
+echo '<tr><td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
 $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 16); 
     foreach($notas as $nota){
         echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
