@@ -6,7 +6,7 @@
 <?php require_once("../navbar.php");?>
 <div style="padding-left:16px">
 <br>
-<h2>MANTENIMIENTO TIPO CRITERIOS</h2>
+<h2>MANTENIMIENTO COMPETENCIAS</h2>
 <br>
 <a class="btn btn-success" href="crear_tipo_criterio.php">Agregar Competencia</a>
 <br><br>
