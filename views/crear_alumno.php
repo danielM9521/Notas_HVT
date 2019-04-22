@@ -37,11 +37,11 @@ if(isset($_POST['guardar'])){
 
 <div class="form-group ">
     <label for="nombre">Nombres:</label>
-    <input type="text" class="form-control" name="nombre"  placeholder="Ingrese nombres"  pattern="([a-zA-Z]{3,30}\s*)+" required>
+    <input type="text" class="form-control" name="nombre"  placeholder="Ingrese nombres" pattern="([a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,30}\s*)+"  required>
     </div>
     <div class="form-group ">
     <label for="apellidos">Apellidos:</label>
-    <input class="form-control" type="text" name="apellidos" placeholder="Ingrese apellidos" pattern="([a-zA-Z]{3,30}\s*)+" required>
+    <input class="form-control" type="text" name="apellidos" placeholder="Ingrese apellidos" pattern="([a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,30}\s*)+" required>
     </div>
     <div class="form-group ">
     <label for="id_cohorte">Cohorte:</label>
@@ -58,7 +58,7 @@ if(isset($_POST['guardar'])){
             </div>
     <div class="form-group ">    
     <label for="direccion">Dirección:</label>
-    <input  class="form-control" type="text" name="direccion" placeholder="Ingrese dirección" required>
+    <input  class="form-control" type="text" name="direccion" pattern="( [[:word:]][[:punct:]]{3,30}\s*)+"  placeholder="Ingrese dirección" required>
     </div>
 
     <div class="form-group "> 

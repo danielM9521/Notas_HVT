@@ -40,11 +40,11 @@
             <input type='hidden' name='id_alumno' value='<?php echo $alumno->getId_alumno(); ?>'>
                 <div class="form-group ">
                 <label>Nombres:</label>
-                <input type='text' class="form-control" name='nombre'  pattern="([a-zA-Z]{3,30}\s*)+" value='<?php echo $alumno->getNombre(); ?>'>
+                <input type='text' class="form-control" name='nombre'  pattern="([a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,30}\s*)+" value='<?php echo $alumno->getNombre(); ?>'>
                 </div>
                 <div class="form-group ">
                 <label>Apellidos:</label>
-                <input type='text' class="form-control"  name='apellidos' pattern="([a-zA-Z]{3,30}\s*)+"  value='<?php echo $alumno->getApellidos(); ?>'>
+                <input type='text' class="form-control"  name='apellidos'  pattern="([a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,30}\s*)+" value='<?php echo $alumno->getApellidos(); ?>'>
                 </div>
                 <div class="form-group ">
                 <label>Dirección:</label></td>

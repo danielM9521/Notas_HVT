@@ -29,7 +29,7 @@ if (isset($_POST) && !empty($_POST)) {
         <input type='hidden' name='action' value='update'>
         <div class="form-group ">
         <label>Nombre:</label>
-        <input type='text'  class="form-control"  name='nombre'  pattern="([a-zA-Z._%+-#'´]{3,30}\s*)+"  value='<?php echo $curso->getNombre(); ?>'>
+        <input type='text'  class="form-control"  name='nombre'  pattern="([\D]{1,30}\s*)+"  value='<?php echo $curso->getNombre(); ?>'>
 </div>
 		
 <div class="trans"> 
