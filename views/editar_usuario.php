@@ -31,11 +31,11 @@
             <input type='hidden' name='id_usuario' value='<?php echo $usuario->getId_usuario(); ?>'>
             <div class="form-group ">
                 <label>Nombres:</label>
-                <input  class="form-control"  type='text' name='nombre' value='<?php echo $usuario->getNombre(); ?>'>
+                <input  class="form-control"  type='text' name='nombre'  pattern= "([a-zA-Z]{3,30}\s*)+"  value='<?php echo $usuario->getNombre(); ?>'>
                 </div>
                 <div class="form-group ">
                 <label>Apellidos:</label>
-                <input class="form-control"  type='text' name='apellidos' value='<?php echo $usuario->getApellidos(); ?>'>
+                <input class="form-control"  type='text' name='apellidos'  pattern= "([a-zA-Z]{3,30}\s*)+"  value='<?php echo $usuario->getApellidos(); ?>'>
                 </div>
                 <div class="form-group ">
                 <label>Rol:</label>
@@ -57,7 +57,7 @@
                                                                             </div>
                                                                             <div class="form-group ">
                 <label>Correo:</label>
-                <input  class="form-control" type='email' name='correo' value='<?php echo $usuario->getCorreo(); ?>'>
+                <input  class="form-control" type='email' name='correo' id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value='<?php echo $usuario->getCorreo(); ?>'>
                                                                             </div>
                 <div class="form-group ">
                 <label>Contraseña:</label>

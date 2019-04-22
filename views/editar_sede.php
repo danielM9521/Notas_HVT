@@ -35,28 +35,28 @@ if (isset($_POST) && !empty($_POST)) {
 
 <div class="form-group c">
       <label for="nombre">Nombre:</label>
-      <input class="form-control" type='text' name='nombre'  value='<?php echo $sede->getNombre(); ?>'>
+      <input class="form-control" type='text' name='nombre'  pattern="([a-zA-Z0-9.'´]{3,30}\s*)+"  value='<?php echo $sede->getNombre(); ?>'>
 </div>
 
 <div class="form-group ">
       <label for="telefono">Teléfono:</label>
-      <input class="form-control" type='text' name='telefono' value='<?php echo $sede->getTelefono(); ?>'>
+      <input class="form-control" type='text' name='telefono' id="telefono"  value='<?php echo $sede->getTelefono(); ?>'>
 </div>
 <div class="form-group ">
       <label>Dirección:</label>
-      <input class="form-control" type='text' name='direccion' value='<?php echo $sede->getDireccion(); ?>'>
+      <input class="form-control" type='text' name='direccion' pattern="([a-zA-Z._%+-#'´]{3,30}\s*)+" value='<?php echo $sede->getDireccion(); ?>'>
 </div>
 <div class="form-group ">
       <label>Correo:</label>
-      <input class="form-control" type='text' name='correo' value='<?php echo $sede->getCorreo(); ?>'>
+      <input class="form-control" type='text' name='correo' id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"   value='<?php echo $sede->getCorreo(); ?>'>
 </div>
       <div class="form-group ">
       <label>Departamento:</label>
-      <input class="form-control" type='text' name='departamento' value='<?php echo $sede->getDepartamento(); ?>'>
+      <input class="form-control" type='text' name='departamento'  pattern="([a-zA-Z.'´]{3,30}\s*)+" value='<?php echo $sede->getDepartamento(); ?>'>
 </div> 
 <div class="form-group ">
       <label>Municipio:</label>
-      <input class="form-control" type='text' name='municipio' value='<?php echo $sede->getMunicipio(); ?>'>
+      <input class="form-control" type='text' name='municipio'  pattern="([a-zA-Z.'´]{3,30}\s*)+" value='<?php echo $sede->getMunicipio(); ?>'>
 </div>
     
     

@@ -55,16 +55,16 @@ if(isset($_POST['guardar'])){
 
 <div class="form-group">
     <label for="nombre">Nombre:</label>
-    <input type="text"  class="form-control" name="nombre" placeholder="Ej. COHORTE-1" required>
+    <input type="text"  class="form-control" name="nombre" id="cohorte" placeholder="Ej. COHORTE-1" required>
 </div>
 
 <div class="form-group ">
     <label for="fecha_inicio">Fecha de inicio:</label>
-    <input type="date"  class="form-control" name="fecha_inicio">
+    <input type="date"  class="form-control" name="fecha_inicio" required>
             </div>
             <div class="form-group ">
     <label for="fecha_fin">Fecha de finalización:</label>
-    <input type="date"  class="form-control" name="fecha_fin">
+    <input type="date"  class="form-control" name="fecha_fin" required>
             </div>
 
             <div class="form-group ">      

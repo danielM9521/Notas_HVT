@@ -9,7 +9,7 @@
         <div class="card-body">
 <div class="form-group  ">
     <label for="nombre">Nombre:</label>
-    <input  class="form-control" type="text" name="nombre" required placeholder="Ej.Identifica sus  fortalezas y  aspectos a mejorar ">
+    <input  class="form-control" type="text" name="nombre"  pattern="([a-zA-Z]{3,200}\s*)+" required placeholder="Ej.Identifica sus  fortalezas y  aspectos a mejorar ">
     </div>
     <div class="form-group ">
 <label for="id_tipo_criterio">Competencia:</label>
