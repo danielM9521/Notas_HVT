@@ -10,7 +10,7 @@
 <div class="card-body">
 <div class="form-group ">
     <label for="nombre">Nombre:</label>
-    <input type="text"  class="form-control" name="nombre"   placeholder ="Ej. PHP" required>
+    <input type="text"  class="form-control" name="nombre"  pattern="([\D]{1,30}\s*)+" placeholder ="Ej. PHP" required>
 </div>
 <div class="trans"> 
     <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">

@@ -35,7 +35,7 @@ if (isset($_POST) && !empty($_POST)) {
 
 <div class="form-group c">
       <label for="nombre">Nombre:</label>
-      <input class="form-control" type='text' name='nombre'  pattern="([a-zA-Z0-9.'´]{3,30}\s*)+"  value='<?php echo $sede->getNombre(); ?>'>
+      <input class="form-control" type='text' name='nombre'   pattern="([\D]{3,30}\s*)+" value='<?php echo $sede->getNombre(); ?>'>
 </div>
 
 <div class="form-group ">

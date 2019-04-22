@@ -10,7 +10,7 @@
 <div class="form-group ">
 
     <label for="nombre">Nombre:</label>
-    <input type="text" class="form-control" name="nombre"  pattern="([a-zA-Z]{3,30}\s*)+" placeholder="Ej. FGK-SANTA ANA" required>
+    <input type="text" class="form-control" name="nombre"  pattern="([\D]{3,30}\s*)+" placeholder="Ej. FGK-SANTA ANA" required>
 </div>
 <div class="form-group ">
     <label for="telefono">Teléfono:</label>
@@ -18,7 +18,7 @@
 </div>
 <div class="form-group ">
     <label for="direccion">Dirección:</label>
-    <input type="text" class="form-control" name="direccion" placeholder="Ingrese dirección" required>
+    <input type="text" class="form-control" name="direccion"pattern="( [[:word:]][[:punct:]]{3,30}\s*)+" placeholder="Ingrese dirección" required>
     </div>
 <div class="form-group ">
     <label for="correo">Correo:</label>
@@ -26,11 +26,11 @@
     </div>
 <div class="form-group ">
     <label for="departamento">Departamento:</label>
-    <input type="text" class="form-control" name="departamento"  pattern="([a-zA-Z]{3,30}\s*)+"  placeholder="Ej.SANTA ANA" required>
+    <input type="text" class="form-control" name="departamento"  pattern="([a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,30}\s*)+"  placeholder="Ej.SANTA ANA" required>
     </div>
     <div class="form-group ">
     <label for="municipio">Municipio:</label>
-    <input type="text" class="form-control"  name="municipio" pattern="([a-zA-Z]{3,30}\s*)+"  placeholder="Ej.Texistepeque" required>
+    <input type="text" class="form-control"  name="municipio" pattern="([a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,30}\s*)+" placeholder="Ej.Texistepeque" required>
     </div>
     <div class="trans"> 
     <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">
