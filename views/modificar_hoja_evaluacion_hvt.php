@@ -19,7 +19,7 @@
         $id_cohorte = $_POST['id_cohorte'];
         $alumnos = $ac->findByCohorte($id_cohorte);
         $cantidadAlumnos = count($alumnos);
-   
+
     //Para llenar la tabla con los criterio de evaluación
     include_once("../controllers/criterio_controller.php");
     $cco = new criterio_controller();
@@ -32,7 +32,10 @@
     $criterios7 = $cco->findByTipoCriterio(7);
     $criterios8 = $cco->findByTipoCriterio(8);
     $cantidadCriterios = count($criterios1)+count($criterios2)+count($criterios3)+count($criterios4)+count($criterios5)+count($criterios6)+count($criterios7)+count($criterios8);
-    }
+    
+
+
+}
         
     ?>
 <?php require_once("../navbar.php"); ?>
@@ -108,7 +111,7 @@ if (isset($_POST['guardar'])) {
     
 
     for ($m=1; $m <= $cantidadAlumnos; $m++) {
-      $id=1;
+        $id=1;
         for ($cuenta;$cuenta<=($cantidadCriterios*$m);$cuenta++) {
             $notas = array();
             
@@ -125,8 +128,8 @@ if (isset($_POST['guardar'])) {
                 $nota->setNota_inicio($notas[0]);
                 $nota->setNota_fin($notas[1]);
                 $nc->save($nota);
-                $id++;
                 unset($notas);
+                $id++;
                 
             } elseif ($cuenta>$cuentac1 && $cuenta<=($cuentac1+$cuentac2)) {//Guardar notas del criterios #2
                 $nota = new Nota();
@@ -166,7 +169,7 @@ if (isset($_POST['guardar'])) {
                 $nota->setFecha_llenado_fin($fecha_llenado_fin);
                 $nota->setFecha_llenado_inicio($fecha_llenado_inicio);
                 $nota->setNombre_materia("Habilidades para la vida y el trabajo");
-                $nota->setId_criterio($id);
+                $nota->setId_criterio(id);
                 $nota->setId_usuario($id_usuario);
                 $nota->setNota_inicio($notas[0]);
                 $nota->setNota_fin($notas[1]);

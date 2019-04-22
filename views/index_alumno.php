@@ -5,7 +5,7 @@
 
 <body>
   <?php require_once("../navbar.php");?>
-  <div style="padding-left:16px">
+  
     <br>
     <h2>MANTENIMIENTO ALUMNO</h2>
     <br>
