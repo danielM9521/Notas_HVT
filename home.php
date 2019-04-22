@@ -79,85 +79,66 @@
   }
 </style>
 
-<div class="topnav" id="myTopnav">
-      <a href="home	.php" class="active"><i class="fas fa-home"></i></a>
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="home	.php" class="active"><i class="fas fa-home"></i></a>
 
-      <div class="drop">
-        <button class="dropbtn"><i class="fas fa-tools left"></i> Mantenimiento
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="drop-content">
-          <a href="views/index_sede.php">Sede</a>
-          <a href="views/index_curso.php">Curso</a>
-          <a href="views/index_cohorte.php">Cohorte</a>
-          <a href="views/index_rol.php">Rol</a>
-          <a href="views/index_usuario.php">Usuario</a>
-          <a href="views/index_alumno.php">Alumno</a>
-          <a href="views/index_tipo_criterio.php">Competencia</a>
-          <a href="views/index_criterio.php">Criterio</a>
-        </div>
+    <div class="drop">
+      <button class="dropbtn"><i class="fas fa-tools left"></i> Mantenimiento
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="drop-content">
+        <a href="views/index_sede.php">Sede</a>
+        <a href="views/index_curso.php">Curso</a>
+        <a href="views/index_cohorte.php">Cohorte</a>
+        <a href="views/index_rol.php">Rol</a>
+        <a href="views/index_usuario.php">Usuario</a>
+        <a href="views/index_alumno.php">Alumno</a>
+        <a href="views/index_tipo_criterio.php">Competencia</a>
+        <a href="views/index_criterio.php">Criterio</a>
       </div>
-      <a href="views/acerca_de.php"><i class="fas fa-question-circle"></i> Acerca de</a>
-      <a href="controllers/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
-      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
-
-
-
-<div class="portada">
-  <div id="desarrollofrontend">
-
-    
-
+    <a href="views/acerca_de.php"><i class="fas fa-question-circle"></i> Acerca de</a>
+    <a href="controllers/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 
-  <div class="text">
-    <form method="post">
 
 
-      <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
 
-      <div align="center" class="fond">
 
-        <div class="carre_couleur base_hov" style="background-color:#f8b334;">
-          <BR>
-          <h2 class="big_acced">NOTAS</h2>
-          <div class="retract" style="background-color:#f8b334;"><img src="views/images/calificacion.png"></div>
-          <div class="acced">
-            <a href="registro_nota_hvt.php" class="big_acced" style="color:#f39c12;">REGISTAR</a>
-            <a href=" " class="big_acced" style="color:#f39c12;">MODIFICAR</a>
+  <form method="post">
 
-          </div>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
+
+    <div align="center" class="fond">
+
+      <div class="carre_couleur base_hov" style="background-color:#f8b334;">
+        <BR>
+        <h2 class="big_acced">NOTAS</h2>
+        <div class="retract" style="background-color:#f8b334;"><img src="views/images/calificacion.png"></div>
+        <div class="acced">
+          <a href="./views/seleccion_cohorte.php" class="big_acced" style="color:#f39c12;">REGISTRAR</a>
+
         </div>
-        <div class="carre_couleur base_hov" style="background-color:#2ecc71;">
-          <BR>
-          <h2 class="big_acced">REPORTES</h2>
-          <div class="retract" style="background-color:#2ecc71;"><img src="views/images/reporte.png"></div>
-          <div class="acced">
-            <a href=" " class="big_acced" style="color:#27ae60;">COHORTES</a>
-            <a href=" " class="big_acced" style="color:#27ae60;">ALUMNOS</a>
-
-          </div>
-        </div>
-
-
-
-
       </div>
-    </form>
+      <div class="carre_couleur base_hov" style="background-color:#2ecc71;">
+        <BR>
+        <h2 class="big_acced">REPORTES</h2>
+        <div class="retract" style="background-color:#2ecc71;"><img src="views/images/reporte.png"></div>
+        <div class="acced">
+          <a href="./views/reporte_cohorte.php" class="big_acced" style="color:#27ae60;">COHORTES</a>
+          <a href="./views/reporte_alumno.php" class="big_acced" style="color:#27ae60;">ALUMNOS</a>
+        </div>
+      </div>
 
-  </div>
 
 
-</div>
+
+    </div>
+  </form>
 
 </body>
 
 </html>
-
-
-
-
-
-
-

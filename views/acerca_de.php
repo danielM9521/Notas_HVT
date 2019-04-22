@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="./css/style.css">
 <style>
 
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
 figure.snip0015 {
   font-family: 'Raleway', Arial, sans-serif;

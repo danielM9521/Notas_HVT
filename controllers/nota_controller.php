@@ -46,6 +46,55 @@ public static function findById($id_nota){
     return $nota;
     }
 
+    public static function findByAlumno($id_alumno){
+        //buscar
+        $conexion=Conexion::getConnect();
+        $select=$conexion->prepare('SELECT * FROM Nota WHERE id_alumno=:id_alumno');
+        $select->bindValue('id_alumno',$id_alumno);
+        $select->execute();
+        //asignarlo al objeto usuario
+        $NotaDb=$select->fetch();
+        $nota= new Nota();
+        $nota->setId_nota( $NotaDb['id_nota']);
+        $nota->setNombre_materia( $NotaDb['nombre_materia']);
+        $nota->setId_criterio( $NotaDb['id_criterio']);
+        $nota->setNota_inicio( $NotaDb['nota_inicio']);
+        $nota->setNota_fin( $NotaDb['nota_fin']);
+        $nota->setFecha_llenado_inicio( $NotaDb['fecha_llenado_inicio']);
+        $nota->setFecha_llenado_fin( $NotaDb['fecha_llenado_fin']);
+        $nota->setId_alumno( $NotaDb['id_alumno']);
+        $nota->setId_usuario( $NotaDb['id_usuario']);
+        return $nota;
+        }
+
+        public static function findAllByAC($id_alumno, $id_criterio){
+            $coleccion = array();
+            $db=Conexion::getConnect();
+            $sql=$db->prepare('SELECT * FROM Nota WHERE id_alumno=:id_alumno AND id_criterio=:id_criterio');
+            $sql->bindValue('id_alumno',$id_alumno);
+            $sql->bindValue('id_criterio',$id_criterio);
+            $sql->execute();
+            // carga en la $listaUsuarios cada registro desde la base de datos
+            foreach ($sql->fetchAll() as $nota) {
+                $c= new Nota();
+                $c->setId_nota($nota['id_nota']);
+                $c->setNombre_materia($nota['nombre_materia']);
+                $c->setId_criterio($nota['id_criterio']);
+                $c->setNota_inicio($nota['nota_inicio']);
+                $c->setNota_fin($nota['nota_fin']);
+                $c->setFecha_llenado_inicio($nota['fecha_llenado_inicio']);
+                $c->setFecha_llenado_fin($nota['fecha_llenado_fin']);
+                $c->setId_alumno($nota['id_alumno']);
+                $c->setId_usuario($nota['id_usuario']);
+                array_push($coleccion, $c);
+            }
+            return $coleccion;
+        }
+
+
+
+
+
     //la función para actualizar 
 public static function update($nota){
     $conexion=Conexion::getConnect();
@@ -61,7 +110,7 @@ public static function update($nota){
      $update->bindValue('id_alumno',$nota->getId_alumno());
      $update->bindValue('id_usuario',$nota->getId_usuario());
     $update->execute();
-    require_once("../views/index_nota.php");
+    require_once("../home.php");
 }
 public static function delete($id_nota){
     $conexion=Conexion::getConnect();
@@ -84,7 +133,7 @@ public static function save($nota){
   $insert->bindValue('id_alumno',$nota->getId_alumno());
   $insert->bindValue('id_usuario',$nota->getId_usuario());
   $insert->execute();
-    header("location:../views/index_nota.php");
+    header("location:../home.php");
 }
 
 }

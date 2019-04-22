@@ -3,20 +3,37 @@
 <?php
     //Para llenar la tabla con los alumnos
     include_once("../controllers/cohorte_controller.php");
+    include_once("../controllers/nota_controller.php");
+    include_once("../controllers/alumno_controller.php");
+    $nc = new nota_controller();
     $cc = new cohorte_controller();
+    $ac = new alumno_controller();
     if (isset($_GET['id_cohorte'])) {
         $id_cohorte = $_GET['id_cohorte'];
         $cohorte = $cc->findById2($id_cohorte);
+        $alumnos = $ac->findByCohorte($id_cohorte);
     } else {
         header("location:../index.php");
     }
+
+foreach ($alumnos as $alumno) {
+    $id = $alumno->getId_alumno();
+}
+$nota = $nc->findByAlumno($id);
+if ($nota) {
+    $fecha_llenado_inicio = $nota->getFecha_llenado_inicio();
+    $fecha_llenado_fin = $nota->getFecha_llenado_fin();
+}else{
+    $fecha_llenado_inicio = "";
+    $fecha_llenado_fin = "";
+}
     ?>
 <body>
     <?php require_once("../navbar.php"); ?>
     <div class="container" style="margin-top:2%;">
         <div class="row justify-content-xl-center">
             <div class="col-xl-10">
-                <form action="hoja_evaluacion_hvt.php" method="post">
+                <form action="modificar_hoja_evaluacion_hvt.php" method="post">
                     <input type="hidden" name="id_cohorte" value="<?php echo $cohorte->getId_cohorte(); ?>">
                     <div class="card">
                         <div class="card-header">
@@ -72,11 +89,11 @@
                             <div class="form-row">
                                 <div class="form-group col-xl-6">
                                     <label for="fecha_llenado_inicio" class="ficha">Fecha de llenado al inicio:</label>
-                                    <input class="form-control " name="fecha_llenado_inicio" type="date" required>
+                                    <input class="form-control " name="fecha_llenado_inicio" min="<?php echo $cohorte->getFecha_inicio(); ?>" max="<?php echo $cohorte->getFecha_fin(); ?>" value="<?php echo $fecha_llenado_inicio ?>" type="date" required>
                                 </div>
                                 <div class="form-group col-xl-6">
                                     <label for="fecha_llenado_fin" class="ficha">Fecha de llenado al final:</label>
-                                    <input class="form-control " type="date" name="fecha_llenado_fin" required>
+                                    <input class="form-control " type="date" min="<?php echo $cohorte->getFecha_inicio(); ?>" max="<?php echo $cohorte->getFecha_fin(); ?>" value="<?php echo $fecha_llenado_fin ?>" name="fecha_llenado_fin" required>
                                 </div>
                             </div>
                             <div class="form-row">
