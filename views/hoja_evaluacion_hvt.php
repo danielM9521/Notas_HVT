@@ -1,5 +1,5 @@
 <?php require_once("../header.php"); ?>
-<link rel="stylesheet" href="./css/style.css">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -7,7 +7,7 @@
 <!-- DataTables -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-
+<link rel="stylesheet" href="./css/style.css">
 
 <?php
     //Para llenar la tabla con los alumnos
@@ -77,16 +77,13 @@ if (isset($_POST['guardar'])) {
     //Acá viene el código maravilloso que permitirá ingresar las notas a la base de datos
     require_once('../controllers/nota_controller.php');
     $nc = new nota_controller();
-    $id_usuario = 6;
+    $id_usuario = 4;
     $id_alumnos = array();
     $id_criterios = array();
     for ($k=1; $k <= $cantidadAlumnos; $k++) {
         array_push($id_alumnos, $_POST[''.$k]);
     }
-    for ($q=1; $q <= $cantidadCriterios; $q++) {
-        array_push($id_criterios, $_POST['id_criterio_'.$q]);
-    }
-    
+       
     $cuenta = 1;
     $cuentac1 = count($criterios1);
     $cuentac2 = count($criterios2);

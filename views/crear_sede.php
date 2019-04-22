@@ -2,6 +2,23 @@
 <link rel="stylesheet" href="./css/style.css">
 <body>
 <?php require_once("../navbar.php");?>
+
+<?php
+if(isset($_POST['guardar'])){
+    include_once("../controllers/sede_controller.php");
+    $sc = new sede_controller();
+    $sede = new Sede();
+    $sede->setId_sede(null);
+    $sede->setNombre($_POST['nombre']);
+    $sede->setCorreo($_POST['correo']);
+    $sede->setDepartamento($_POST['departamento']);
+    $sede->setDireccion($_POST['direccion']);
+    $sede->setMunicipio($_POST['municipio']);
+    $sede->setTelefono($_POST['telefono']);
+    $sc->save($sede);
+}
+
+?>
 <br><br>
 <form method="post"  class="cont">
 <h3>  NUEVA SEDE </h3>
@@ -40,20 +57,3 @@
 
 </div>
 </form>
-
-<?php
-if(isset($_POST['guardar'])){
-    include_once("../controllers/sede_controller.php");
-    $sc = new sede_controller();
-    $sede = new Sede();
-    $sede->setId_sede(null);
-    $sede->setNombre($_POST['nombre']);
-    $sede->setCorreo($_POST['correo']);
-    $sede->setDepartamento($_POST['departamento']);
-    $sede->setDireccion($_POST['direccion']);
-    $sede->setMunicipio($_POST['municipio']);
-    $sede->setTelefono($_POST['telefono']);
-    $sc->save($sede);
-}
-
-?>

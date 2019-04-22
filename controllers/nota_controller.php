@@ -48,23 +48,28 @@ public static function findById($id_nota){
 
     public static function findByAlumno($id_alumno){
         //buscar
+        $coleccion = array();
         $conexion=Conexion::getConnect();
         $select=$conexion->prepare('SELECT * FROM Nota WHERE id_alumno=:id_alumno');
         $select->bindValue('id_alumno',$id_alumno);
         $select->execute();
         //asignarlo al objeto usuario
-        $NotaDb=$select->fetch();
+        foreach ($select->fetchAll() as $notas) {
         $nota= new Nota();
-        $nota->setId_nota( $NotaDb['id_nota']);
-        $nota->setNombre_materia( $NotaDb['nombre_materia']);
-        $nota->setId_criterio( $NotaDb['id_criterio']);
-        $nota->setNota_inicio( $NotaDb['nota_inicio']);
-        $nota->setNota_fin( $NotaDb['nota_fin']);
-        $nota->setFecha_llenado_inicio( $NotaDb['fecha_llenado_inicio']);
-        $nota->setFecha_llenado_fin( $NotaDb['fecha_llenado_fin']);
-        $nota->setId_alumno( $NotaDb['id_alumno']);
-        $nota->setId_usuario( $NotaDb['id_usuario']);
-        return $nota;
+        $nota->setId_nota( $notas['id_nota']);
+        $nota->setNombre_materia( $notas['nombre_materia']);
+        $nota->setId_criterio( $notas['id_criterio']);
+        $nota->setNota_inicio( $notas['nota_inicio']);
+        $nota->setNota_fin( $notas['nota_fin']);
+        $nota->setFecha_llenado_inicio( $notas['fecha_llenado_inicio']);
+        $nota->setFecha_llenado_fin( $notas['fecha_llenado_fin']);
+        $nota->setId_alumno( $notas['id_alumno']);
+        $nota->setId_usuario( $notas['id_usuario']);
+        array_push($coleccion, $nota);
+        }
+        
+        
+        return $coleccion;
         }
 
         public static function findAllByAC($id_alumno, $id_criterio){

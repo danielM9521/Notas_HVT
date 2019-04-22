@@ -27,7 +27,7 @@
 <th>SEDE</th>
 <th>NOMBRE</th>
 <th>CURSO</th>
-<th colspan="2">ACCIÓN</th>
+<th colspan="3">ACCIÓN</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +40,8 @@
 										<td><?php echo $cohorte->getNombre(); ?></td>
                                         <td><?php echo $cohorte->getId_curso();?></td>
                     <td><a  class="btn btn-success " href="registrar_nota_hvt.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Registrar notas</a></td>
-                    <td><a class="btn btn-warning "  href="modificar_nota_hvt.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Modificar notas</a></td></tr>
+                    <td><a class="btn btn-warning "  href="modificar_nota_hvt.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Modificar notas</a></td>
+                    <td><a  class="btn btn-info " href="reporte_cohorte.php?id_cohorte=<?php echo $cohorte->getId_cohorte();?>">Generar reporte</a></td></tr>
                     
                 <?php }?>
  </tbody>

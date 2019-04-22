@@ -13,8 +13,6 @@
     display: inline-block;
     position: relative;
     border-radius: 15px;
-
-
   }
 
   .base_hov .retract {
@@ -128,8 +126,7 @@
         <h2 class="big_acced">REPORTES</h2>
         <div class="retract" style="background-color:#2ecc71;"><img src="views/images/reporte.png"></div>
         <div class="acced">
-          <a href="./views/reporte_cohorte.php" class="big_acced" style="color:#27ae60;">COHORTES</a>
-          <a href="./views/reporte_alumno.php" class="big_acced" style="color:#27ae60;">ALUMNOS</a>
+          <a href="./views/seleccion_cohorte.php" class="big_acced" style="color:#27ae60;">COHORTES</a>
         </div>
       </div>
 

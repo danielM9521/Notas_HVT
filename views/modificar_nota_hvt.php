@@ -1,115 +1,282 @@
 <?php require_once("../header.php"); ?>
-<link rel="stylesheet" href="./css/style.css">
-<?php
-    //Para llenar la tabla con los alumnos
-    include_once("../controllers/cohorte_controller.php");
-    include_once("../controllers/nota_controller.php");
-    include_once("../controllers/alumno_controller.php");
-    $nc = new nota_controller();
-    $cc = new cohorte_controller();
-    $ac = new alumno_controller();
-    if (isset($_GET['id_cohorte'])) {
-        $id_cohorte = $_GET['id_cohorte'];
-        $cohorte = $cc->findById2($id_cohorte);
-        $alumnos = $ac->findByCohorte($id_cohorte);
-    } else {
-        header("location:../index.php");
-    }
 
-foreach ($alumnos as $alumno) {
-    $id = $alumno->getId_alumno();
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- DataTables -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" href="./css/style.css">
+<?php require_once '../controllers/cohorte_controller.php';
+require_once '../controllers/alumno_controller.php';
+require_once '../controllers/nota_controller.php';
+//$id_cohorte = $_GET['id_cohorte'];
+$id_cohorte = 1;
+$cohorte = cohorte_controller::findById($id_cohorte);
+$alumnos = alumno_controller::findByCohorte($id_cohorte);
+?>
+
+<table id="prueba" class="table-bordered">
+<thead>
+<tr>
+<th class="criterios"><?php echo $cohorte->getNombre()?></th>
+<th class="criterios" colspan="6">Gestionar el desarrollo personal</th>
+<th class="criterios" colspan="4">Comunicar con efectividad</th>
+<th class="criterios" colspan="4">Identificar oportunidades</th>
+</tr>
+<tr>
+<th class="criterios">Listado de jóvenes</th>
+<th class="criterios" colspan="2">Identifica sus fortalezas y aspectos a mejorar</th>
+<th class="criterios" colspan="2">Identifica y relaciona sus intereses con las posibilidades de desarrollo personal, profesional y laboral</th>
+<th class="criterios" colspan="2">Asume y responde oportuna y eficientemente a los compromisos adquiridos</th>
+<th class="criterios" colspan="2">Utiliza el lenguaje escrito con claridad, fluidez y adecuadamente, para interactuar en distintos contextos sociales y con otras personas</th>
+<th class="criterios" colspan="2">Utiliza el lenguaje oral con claridad, fluidez y adecuadamente, para interactuar en distintos contextos sociales y con otras personas</th>
+<th class="criterios" colspan="2">Analiza el entorno y las diferentes situaciones de la vida, desde diversos puntos de vista</th>
+<th class="criterios" colspan="2">Transforma necesidades u obstáculos en oportunidades</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+ 
+<td class="notas">Nombre completo</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+</tr>
+<tr>
+<?php
+foreach($alumnos as $alumno){
+
+echo '<td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
+$notas = nota_controller::findAllByAC($alumno->getId_alumno(), 1); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 2); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 3); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 4); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 5); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 6); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 7); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
 }
-$nota = $nc->findByAlumno($id);
-if ($nota) {
-    $fecha_llenado_inicio = $nota->getFecha_llenado_inicio();
-    $fecha_llenado_fin = $nota->getFecha_llenado_fin();
-}else{
-    $fecha_llenado_inicio = "";
-    $fecha_llenado_fin = "";
+?>
+</tr>
+</tbody>
+</table>
+
+<br><br>
+<table id="prueba2" class="table-bordered">
+<thead>
+<tr>
+<th class="criterios"><?php echo $cohorte->getNombre()?></th>
+<th colspan="2">Pensar y actuar de manera creativa</th>
+<th colspan="6">Traducir ideas en un plan de acción</th>
+<th colspan="8">Trabajar de manera colaborativa</th>
+</tr>
+<tr>
+<th class="criterios">Listado de jóvenes</th>
+<th colspan="2">Identifica los aspectos del entorno visualizando necesidades, obstáculos y oportunidades para posible solución</th>
+<th colspan="2">Considera importante pensar el futuro y trazarse un objetivo</th>
+<th colspan="2">Especifica tiempos y recursos necesarios para cada acción propuesta</th>
+<th colspan="2">Considera cuidadosamente ventajas y desventajas para valorar alternativas</th>
+<th colspan="2">Participa y aporta conocimientos y capacidades para el desarrollo de una tarea u objetivo común</th>
+<th colspan="2">Diferencia roles y funciones en el desarrollo de una tarea u objetivo común</th>
+<th colspan="2">Interactúa con las y los demás y promueve el trabajo en equipo</th>
+<th colspan="2">Se responsabiliza de cumplir con su parte para el logro común de los objetivos</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+<td class="notas">Nombre completo</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+</tr>
+<tr>
+<?php
+foreach($alumnos as $alumno){
+echo '<td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
+$notas = nota_controller::findAllByAC($alumno->getId_alumno(), 8); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 9); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 10); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 11); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 12); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 13); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 14); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 15); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
 }
-    ?>
-<body>
-    <?php require_once("../navbar.php"); ?>
-    <div class="container" style="margin-top:2%;">
-        <div class="row justify-content-xl-center">
-            <div class="col-xl-10">
-                <form action="modificar_hoja_evaluacion_hvt.php" method="post">
-                    <input type="hidden" name="id_cohorte" value="<?php echo $cohorte->getId_cohorte(); ?>">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="form-row">
-                                <div class="form-group col-xl-2">
-                                    <img class="img-responsive img-rounded" src="./images/kriete.png" width="50%"
-                                        alt="Logo de Fundación Gloria de Kriete">
-                                </div>
-                                <div class="form-group col-xl-8">
-                                    <p class="titulo">Ficha de seguimiento y evaluación de competencias del módulo de
-                                        Habilidades para la vida y el trabajo</p>
-                                </div>
-                                <div class="form-group col-xl-2">
-                                    <img class="img-responsive img-rounded" style="margin-top:25%;"
-                                        src="./images/usaid2.png" width="100%" alt="Logo de USAID">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-row">
-                                <div class="form-group col-xl-6">
-                                    <label for="sede" class="ficha">Sede:</label>
-                                    <input type="email" class="form-control ficha" id="sede"
-                                        value="<?php echo $cohorte->getId_sede(); ?>"
-                                        disabled>
-                                </div>
-                                <div class="form-group col-xl-6">
-                                    <label for="inputPassword4" class="ficha">Materia:</label>
-                                    <input type="text" name="nombre_materia" class="form-control ficha" id="materia"
-                                        value="HABILIDADES PARA LA VIDA Y EL TRABAJO" disabled>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-xl-4">
-                                    <label for="id_curso" class="ficha">Curso:</label>
-                                    <input class="form-control ficha" type="text" name="id_curso"
-                                        value="<?php echo $cohorte->getId_curso(); ?>"
-                                        disabled style="margin-right:2%;">
-                                </div>
-                                <div class="form-group col-xl-4">
-                                    <label for="fecha_inicio" class="ficha">Fecha de inicio del curso:</label>
-                                    <input class="form-control ficha" name="fecha_inicio" type="date"
-                                        value="<?php echo $cohorte->getFecha_inicio(); ?>"
-                                        disabled style="margin-right:2%;">
-                                </div>
-                                <div class="form-group col-xl-4">
-                                    <label for="fecha_fin" class="ficha">Fecha de finalización del curso:</label>
-                                    <input class="form-control ficha" type="date" name="fecha_fin"
-                                        value="<?php echo $cohorte->getFecha_fin(); ?>"
-                                        disabled>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-xl-6">
-                                    <label for="fecha_llenado_inicio" class="ficha">Fecha de llenado al inicio:</label>
-                                    <input class="form-control " name="fecha_llenado_inicio" min="<?php echo $cohorte->getFecha_inicio(); ?>" max="<?php echo $cohorte->getFecha_fin(); ?>" value="<?php echo $fecha_llenado_inicio ?>" type="date" required>
-                                </div>
-                                <div class="form-group col-xl-6">
-                                    <label for="fecha_llenado_fin" class="ficha">Fecha de llenado al final:</label>
-                                    <input class="form-control " type="date" min="<?php echo $cohorte->getFecha_inicio(); ?>" max="<?php echo $cohorte->getFecha_fin(); ?>" value="<?php echo $fecha_llenado_fin ?>" name="fecha_llenado_fin" required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                            <div class="form-group col-xl-3"></div>
-                                <div class="form-group col-xl-3">
-                                <input type="submit" class="btn btn-success  btn-responsive form-control" name="evaluar"
-                                        value='Ir a hoja de evaluación'>
-                                </div>
-                                <div class="form-group col-xl-3">
-                                        <a class="btn btn-warning btn-responsive form-control" href="../home.php">Cancelar</a>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</body>
+?>
+</tr>
+</tbody>
+</table>
+<br><br>
+<table id="prueba3" class="table-bordered">
+<thead>
+<tr>
+<th class="criterios"><?php echo $cohorte->getNombre()?></th>
+<th colspan="6">Actuar con iniciativa</th>
+<th colspan="6">Adaptacion al cambio</th>
+</tr>
+<tr>
+<th class="criterios">Listado de jóvenes</th>
+<th colspan="2">Analiza de manera anticipada problemas, dificultades y riesgos; propone soluciones</th>
+<th colspan="2">Moviliza continuamente proactivamente sus recursos para lograr resultados</th>
+<th colspan="2">Hace lo que se necesita hacer antes que otras personas tengan que pedirle que lo haga</th>
+<th colspan="2">Asimila con rapidez los nuevos conocimientos y los pone en practica cotidianamente</th>
+<th colspan="2">Evalúa y revisa sus acciones, adecuándose a nuevas condiciones, entornos y personas</th>
+<th colspan="2">Percibe los cambios o los desaciertos, como una posibilidad de nuevos aprendizajes</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+<td class="notas">Nombre completo</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+<td class="notas">Nota inicio</td>
+<td class="notas">Nota final</td>
+</tr>
+<tr>
+<?php
+foreach($alumnos as $alumno){
+
+echo '<td class="nombres">'.$alumno->getApellidos().', '.$alumno->getNombre().'</td>';
+$notas = nota_controller::findAllByAC($alumno->getId_alumno(), 16); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 17); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 18); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 19); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 20); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+    $notas = nota_controller::findAllByAC($alumno->getId_alumno(), 21); 
+    foreach($notas as $nota){
+        echo '<td class="notas">'.$nota->getNota_inicio().'</td>';
+        echo '<td class="notas">'.$nota->getNota_fin().'</td>';
+    }
+}
+?>
+</tr>
+</tbody>
+</table>
+
+<script>
+$(document).ready(function() {
+  $('#prueba').DataTable();
+  $('.dataTables_length').addClass('bs-select');
+});
+$(document).ready(function() {
+  $('#prueba2').DataTable();
+  $('.dataTables_length').addClass('bs-select');
+});
+$(document).ready(function() {
+  $('#prueba3').DataTable();
+  $('.dataTables_length').addClass('bs-select');
+});
+</script>

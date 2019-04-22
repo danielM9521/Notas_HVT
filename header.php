@@ -12,7 +12,6 @@
 <script type="text/javascript" src="./js/popper.min.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js" > </script>
-
 <script>
 $(document).ready(function($){
 $('#telefono').mask ("9999-9999", { placeholder: "____-___"});
