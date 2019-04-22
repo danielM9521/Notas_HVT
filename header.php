@@ -10,4 +10,34 @@
 <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./js/jquery.min.js"></script>
 <script type="text/javascript" src="./js/popper.min.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js" > </script>
+
+<script>
+$(document).ready(function($){
+$('#telefono').mask ("9999-9999", { placeholder: "____-___"});
+$('#dui').mask ("99999999-9",{placeholder: "________-_"});
+$('#nit').mask("9999-999999-999-9", {placeholder:"____-______-___-_"});
+$('#carnet').mask ("999999",{ placeholder:"______"});
+$('#cohorte').mask("aaaaaaa-9",{placeholder:"_______-_"});
+
+
+$('#email').inputmask({
+    mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+    greedy: false,
+    onBeforePaste: function (pastedValue, opts) {
+      pastedValue = pastedValue.toLowerCase();
+      return pastedValue.replace("mailto:", "");
+    },
+    definitions: {
+      '*': {
+        validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
+        casing: "lower"
+      }
+    }
+  });
+
+});
+
+</script>
 </head>

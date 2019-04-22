@@ -37,11 +37,11 @@ if(isset($_POST['guardar'])){
 
 <div class="form-group ">
     <label for="nombre">Nombres:</label>
-    <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombres" required>
+    <input type="text" class="form-control" name="nombre"  placeholder="Ingrese nombres"  pattern="([a-zA-Z]{3,30}\s*)+" required>
     </div>
     <div class="form-group ">
     <label for="apellidos">Apellidos:</label>
-    <input class="form-control" type="text" name="apellidos" placeholder="Ingrese apellidos" required>
+    <input class="form-control" type="text" name="apellidos" placeholder="Ingrese apellidos" pattern="([a-zA-Z]{3,30}\s*)+" required>
     </div>
     <div class="form-group ">
     <label for="id_cohorte">Cohorte:</label>
@@ -78,15 +78,15 @@ if(isset($_POST['guardar'])){
     </div>
     <div class="form-group "> 
     <label for="dui">Dui:</label>
-    <input  class="form-control" type="text" name="dui"placeholder="Ej. 02782142-9" >
+    <input  class="form-control" type="text" name="dui" id="dui"  >
     </div>
     <div class="form-group "> 
     <label for="nit">Nit:</label>
-    <input class="form-control" type="text" name="nit" placeholder="Ej. 0213-170395-101-2" required> </div>
+    <input class="form-control" type="text" name="nit" id="nit" required> </div>
 
     <div class="form-group "> 
     <label for="carnet_minoridad">Carnet de minoridad:</label>
-    <input class="form-control" type="text" name="carnet_minoridad " placeholder="Ej. 123456" > </div>
+    <input class="form-control" type="text" name="carnet_minoridad " id="carnet" placeholder="Ej. 123456" > </div>
 
     <div class="form-group "> 
     <label for="discapacidad">Discapacidad:</label>
@@ -94,15 +94,15 @@ if(isset($_POST['guardar'])){
 
     <div class="form-group "> 
     <label for="telefono">Teléfono:</label>
-    <input class="form-control" type="text" name="telefono" placeholder="Ej. 7777-9999"> </div>
+    <input class="form-control" type="phone" id="telefono" name="telefono"  placeholder= "Ej. 7243-4021" required > </div>
 
     <div class="form-group "> 
     <label for="correo">Correo:</label>
-    <input class="form-control" type="email" name="correo" placeholder="Ej.gabriela.menendez@proyectosfgk.org"> </div>
+    <input class="form-control" type="text" name="correo" id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  placeholder="Ej.usuario@gmail.com" required "> </div>
 
     <div class="form-group "> 
     <label for="fecha_nac">Fecha de nacimiento:</label>
-    <input class="form-control" type="date" name="fecha_nac"> </div>
+    <input class="form-control" type="date" name="fecha_nac" required > </div>
 
     <div class="trans"> 
     <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">

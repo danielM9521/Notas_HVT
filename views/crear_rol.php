@@ -9,7 +9,7 @@
 <div class="card-body">
 <div class="form-group ">
     <label for="nombre">Nombre:</label>
-    <input type="text" class="form-control" name="nombre" required placeholder="Ej. Docente">
+    <input type="text" class="form-control" name="nombre" pattern= "([a-zA-Z]{3,30}\s*)+" placeholder="Ej. Docente" required>
 </div>
 <div class="trans"> 
     <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">

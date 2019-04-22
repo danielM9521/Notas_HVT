@@ -40,11 +40,11 @@
             <input type='hidden' name='id_alumno' value='<?php echo $alumno->getId_alumno(); ?>'>
                 <div class="form-group ">
                 <label>Nombres:</label>
-                <input type='text' class="form-control" name='nombre' value='<?php echo $alumno->getNombre(); ?>'>
+                <input type='text' class="form-control" name='nombre'  pattern="([a-zA-Z]{3,30}\s*)+" value='<?php echo $alumno->getNombre(); ?>'>
                 </div>
                 <div class="form-group ">
                 <label>Apellidos:</label>
-                <input type='text' class="form-control"  name='apellidos' value='<?php echo $alumno->getApellidos(); ?>'>
+                <input type='text' class="form-control"  name='apellidos' pattern="([a-zA-Z]{3,30}\s*)+"  value='<?php echo $alumno->getApellidos(); ?>'>
                 </div>
                 <div class="form-group ">
                 <label>Dirección:</label></td>
@@ -88,23 +88,23 @@
            </div>
            <div class="form-group ">
                 <label>DUI:</label>
-                <input type='text' class="form-control"  name='dui' value='<?php echo $alumno->getDui(); ?>'>
+                <input type='text' class="form-control"  name='dui' id="dui" value='<?php echo $alumno->getDui(); ?>'>
             </div>
             <div class="form-group ">
                 <label>NIT:</label>
-                <td><input type='text' class="form-control"  name='nit' value='<?php echo $alumno->getNit(); ?>'>
+                <td><input type='text' class="form-control"  name='nit' id="nit" value='<?php echo $alumno->getNit(); ?>'>
            </div>
            <div class="form-group ">
                 <label>Carnet de minoridad:</label>
-                <input type='text' class="form-control" name='carnet_minoridad' value='<?php echo $alumno->getCarnet_minoridad(); ?>'>
+                <input type='text' class="form-control" name='carnet_minoridad' id="carnet" value='<?php echo $alumno->getCarnet_minoridad(); ?>'>
             </div>
             <div class="form-group ">
                 <label>Teléfono:</label>
-                <input type='text' class="form-control" name='telefono' value='<?php echo $alumno->getTelefono(); ?>'>
+                <input type='text' class="form-control" name='telefono' id="telefono" value='<?php echo $alumno->getTelefono(); ?>'>
             </div>
             <div class="form-group ">
                 <label>Correo:</label>
-                <input type='email' class="form-control" name='correo' value='<?php echo $alumno->getCorreo(); ?>'>
+                <input type='text' class="form-control" name='correo' id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  value='<?php echo $alumno->getCorreo(); ?>'>
                 </div>
                 <div class="form-group ">
             <label>Fecha de nacimiento:</label>

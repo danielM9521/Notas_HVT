@@ -26,14 +26,14 @@
     ?>
     <br><br>
 <form method='post' class="cont">
-<h3>  EDITAR ROL </h3>
+<h3>  EDITAR COHORTE </h3>
 <div class="card">
 <div class="card-body">
         
             <input type='hidden' name='id_cohorte' value='<?php echo $cohorte->getId_cohorte(); ?>'>
             <div class="form-group ">
             <label>Nombre:</label>
-                <input class="form-control" type='text' name='nombre' value='<?php echo $cohorte->getNombre(); ?>'>
+                <input class="form-control" type='text' name='nombre'  id="cohorte" value='<?php echo $cohorte->getNombre(); ?>'>
             </div>  
             <div class="form-group ">
            <label>Fecha de inicio:</label>

@@ -40,16 +40,16 @@ if(isset($_POST['guardar'])){
 
     <div class="form-group ">
     <label for="nombre">Nombres:</label>
-    <input  class="form-control" type="text" name="nombre" required placeholder="Ingrese nombres ">
+    <input  class="form-control" type="text" name="nombre" pattern= "([a-zA-Z]{3,30}\s*)+"  required placeholder="Ingrese nombres ">
     </div>
     <div class="form-group">
     <label for="apellidos">Apellidos:</label>
-    <input  class="form-control" type="text" name="apellidos" required placeholder="Ingrese apellidos">
+    <input  class="form-control" type="text" name="apellidos" pattern= "([a-zA-Z]{3,30}\s*)+"   required placeholder="Ingrese apellidos">
     </div>
 
     <div class="form-group">
     <label for="correo">Correo:</label>
-    <input  class="form-control" type="email" name="correo" required placeholder="Ej.ulises.samayoa@proyectosfgk.org ">
+    <input  class="form-control" type="email" name="correo"  id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required placeholder="Ej.ulises.samayoa@proyectosfgk.org ">
     </div>
 
     <div class="form-group">

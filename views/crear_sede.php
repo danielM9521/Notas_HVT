@@ -10,11 +10,11 @@
 <div class="form-group ">
 
     <label for="nombre">Nombre:</label>
-    <input type="text" class="form-control" name="nombre" placeholder="Ej. FGK-SANTA ANA" required>
+    <input type="text" class="form-control" name="nombre"  pattern="([a-zA-Z]{3,30}\s*)+" placeholder="Ej. FGK-SANTA ANA" required>
 </div>
 <div class="form-group ">
     <label for="telefono">Teléfono:</label>
-    <input type="text" class="form-control" name="telefono" placeholder="Ej. 2440-1212" required>
+    <input type="text" class="form-control" name="telefono" id="telefono"  placeholder="Ej.7798-0092" required>
 </div>
 <div class="form-group ">
     <label for="direccion">Dirección:</label>
@@ -22,15 +22,15 @@
     </div>
 <div class="form-group ">
     <label for="correo">Correo:</label>
-    <input type="text" class="form-control" name="correo"  placeholder="Ej.usuario@gmail.com" required>
+    <input type="email" class="form-control" name="correo"  id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  placeholder="Ej.usuario@gmail.com" required>
     </div>
 <div class="form-group ">
     <label for="departamento">Departamento:</label>
-    <input type="text" class="form-control" name="departamento" placeholder="Ej.SANTA ANA" required>
+    <input type="text" class="form-control" name="departamento"  pattern="([a-zA-Z]{3,30}\s*)+"  placeholder="Ej.SANTA ANA" required>
     </div>
     <div class="form-group ">
     <label for="municipio">Municipio:</label>
-    <input type="text" class="form-control"  name="municipio" placeholder="Ej.Texistepeque" required>
+    <input type="text" class="form-control"  name="municipio" pattern="([a-zA-Z]{3,30}\s*)+"  placeholder="Ej.Texistepeque" required>
     </div>
     <div class="trans"> 
     <input type="submit" class="btn btn-success  btn-responsive btninter " value="Guardar" name="guardar">
